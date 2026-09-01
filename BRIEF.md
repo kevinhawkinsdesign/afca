@@ -2,7 +2,9 @@
 
 ## 2. What AfCA is
 
-African Charging Alliance (AfCA) is an independent, non-profit trade association and ecosystem platform accelerating reliable, scalable, interoperable EV charging infrastructure across Africa. It is registered in Rwanda and positions itself as an apolitical source of truth between public policy and technical implementation.
+African Charging Alliance (AfCA) is an independent, non-profit trade association and ecosystem platform accelerating reliable, scalable, interoperable EV charging infrastructure across Africa. Its registration in Rwanda is in progress (with counsel), and it positions itself as an apolitical source of truth between public policy and technical implementation.
+
+**Note for anyone editing this site: do not state registration as complete anywhere in copy, metadata, or structured data until it is confirmed. Use "registration pending" / "registration in progress" language.**
 
 It convenes Charge Point Operators (CPOs), Electromobility Service Providers (EMSPs), electric utilities, fleet operators, hardware OEMs, and policymakers.
 

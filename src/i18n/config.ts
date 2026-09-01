@@ -32,7 +32,7 @@ export const ui = {
     },
     footer: {
       tagline:
-        "African Charging Alliance is an independent, non-profit trade association registered in Rwanda.",
+        "African Charging Alliance is an independent, non-profit trade association, with registration in Rwanda in progress.",
       standardsNote:
         "OCPI is owned and maintained by the EVRoaming Foundation. OCPP and OSCP are owned by the Open Charge Alliance. AfCA's contribution is African implementation guidance and benchmarking.",
     },
@@ -55,7 +55,7 @@ export const ui = {
     },
     footer: {
       tagline:
-        "African Charging Alliance est une association professionnelle indépendante à but non lucratif, enregistrée au Rwanda.",
+        "African Charging Alliance est une association professionnelle indépendante à but non lucratif, dont l'enregistrement au Rwanda est en cours.",
       standardsNote:
         "OCPI est détenu et maintenu par l'EVRoaming Foundation. OCPP et OSCP sont détenus par l'Open Charge Alliance. La contribution d'AfCA porte sur les lignes directrices de mise en œuvre et le benchmarking pour l'Afrique.",
     },
@@ -78,7 +78,7 @@ export const ui = {
     },
     footer: {
       tagline:
-        "African Charging Alliance ni ishyirahamwe ry'ubucuruzi ryigenga, ritagamije inyungu, ryanditswe mu Rwanda.",
+        "African Charging Alliance ni ishyirahamwe ry'ubucuruzi ryigenga, ritagamije inyungu; iyandikwa ryaryo mu Rwanda riracyategerejwe.",
       standardsNote:
         "OCPI ifitwe kandi igacungwa na EVRoaming Foundation. OCPP na OSCP bifitwe na Open Charge Alliance. Umusanzu wa AfCA ni amabwiriza yo gushyira mu bikorwa n'igereranya muri Afurika.",
     },
@@ -101,7 +101,7 @@ export const ui = {
     },
     footer: {
       tagline:
-        "African Charging Alliance är en oberoende, ideell branschorganisation registrerad i Rwanda.",
+        "African Charging Alliance är en oberoende, ideell branschorganisation vars registrering i Rwanda pågår.",
       standardsNote:
         "OCPI ägs och underhålls av EVRoaming Foundation. OCPP och OSCP ägs av Open Charge Alliance. AfCA:s bidrag är afrikansk implementeringsvägledning och benchmarking.",
     },
