@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 import { getCollection } from "astro:content";
 
 const locale = "en" as const;
@@ -23,12 +24,13 @@ const visible = allEntries
   technicalEnglishOnly={true}
 >
   <section class="mx-auto max-w-content px-6 py-16">
-    <h1 class="font-sans text-3xl font-semibold text-ink md:text-4xl">Intelligence</h1>
-    <p class="mt-4 max-w-prose text-lg text-text">
-      Country-by-country market mapping and the Pan-African Interoperability and Reliability
-      Index. Every figure carries a source; superseded reports stay published with a link to the
-      current version rather than being deleted.
-    </p>
+    <PageHero title="Intelligence" visualTitle="Stylised network map illustrating AfCA's ecosystem intelligence coverage">
+      <p class="text-lg text-text">
+        Country-by-country market mapping and the Pan-African Interoperability and Reliability
+        Index. Every figure carries a source; superseded reports stay published with a link to the
+        current version rather than being deleted.
+      </p>
+    </PageHero>
 
     <div class="mt-10 grid gap-6 md:grid-cols-2">
       {visible.map((entry) => (

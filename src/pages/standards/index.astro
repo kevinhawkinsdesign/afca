@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 
 const locale = "en" as const;
 
@@ -14,18 +15,19 @@ const guides: Array<[string, string, string]> = [
 
 <BaseLayout locale={locale} title="Standards" technicalEnglishOnly={true}>
   <section class="mx-auto max-w-content px-6 py-16">
-    <h1 class="font-sans text-3xl font-semibold text-ink md:text-4xl">Standards &amp; Implementation Guidance</h1>
-    <p class="mt-4 max-w-prose text-text">
-      Published, vendor-neutral guides for operators, integrators, and policymakers building
-      charging infrastructure. These reflect open protocols and public standards — AfCA does not
-      own OCPI, OCPP, or OSCP, and does not recommend individual companies.
-    </p>
+    <PageHero title="Standards &amp; Implementation Guidance" visualTitle="Stylised network map illustrating AfCA's technical standards work">
+      <p class="text-text">
+        Published, vendor-neutral guides for operators, integrators, and policymakers building
+        charging infrastructure. These reflect open protocols and public standards — AfCA does not
+        own OCPI, OCPP, or OSCP, and does not recommend individual companies.
+      </p>
 
-    <div class="mt-4 max-w-prose rounded border border-rule bg-paper-warm px-4 py-3 font-sans text-sm text-text-muted">
-      OCPI is owned and maintained by the <a href="https://evroaming.org" class="text-ink underline">EVRoaming Foundation</a>.
-      OCPP and OSCP are owned by the <a href="https://openchargealliance.org" class="text-ink underline">Open Charge Alliance</a>.
-      AfCA's contribution is African implementation guidance and benchmarking against these standards.
-    </div>
+      <div class="mt-4 rounded border border-rule bg-paper-warm px-4 py-3 font-sans text-sm text-text-muted">
+        OCPI is owned and maintained by the <a href="https://evroaming.org" class="text-ink underline">EVRoaming Foundation</a>.
+        OCPP and OSCP are owned by the <a href="https://openchargealliance.org" class="text-ink underline">Open Charge Alliance</a>.
+        AfCA's contribution is African implementation guidance and benchmarking against these standards.
+      </div>
+    </PageHero>
 
     <div class="mt-12 grid gap-6 md:grid-cols-2">
       {guides.map(([href, title, summary]) => (
