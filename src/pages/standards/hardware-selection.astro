@@ -1,5 +1,6 @@
 ---
 import GuideLayout from "../../layouts/GuideLayout.astro";
+import { withBase } from "../../lib/url";
 ---
 
 <GuideLayout
@@ -8,10 +9,10 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
 >
   <h2>Evaluation criteria, in priority order</h2>
   <ol>
-    <li><strong>OCPP conformance.</strong> Ask for the specific OCPP version and evidence of conformance testing (see the <a href="/standards/ocpi-ocpp-testing">testing guide</a>), not a marketing claim of "OCPP compatible." Many devices implement a subset of the message set.</li>
+    <li><strong>OCPP conformance.</strong> Ask for the specific OCPP version and evidence of conformance testing (see the <a href={withBase("/standards/ocpi-ocpp-testing")}>testing guide</a>), not a marketing claim of "OCPP compatible." Many devices implement a subset of the message set.</li>
     <li><strong>Serviceability in-market.</strong> Confirm spare parts and technician support exist locally, or via a regional partner, before committing to a hardware line. A charger that requires shipping a part from another continent has an effective uptime ceiling regardless of build quality.</li>
     <li><strong>Environmental rating.</strong> Confirm IP and temperature ratings against actual site conditions — dust ingress and heat are the two most common causes of premature hardware failure in the region, not electrical faults.</li>
-    <li><strong>Connector standard fit.</strong> Match connector type (CCS2, GB/T, Type 2, CHAdeMO) to the vehicle population the site will actually serve — see the guide on <a href="/standards/chinese-integration">Chinese vehicle integration</a> if GB/T-equipped vehicles are a meaningful share of expected traffic.</li>
+    <li><strong>Connector standard fit.</strong> Match connector type (CCS2, GB/T, Type 2, CHAdeMO) to the vehicle population the site will actually serve — see the guide on <a href={withBase("/standards/chinese-integration")}>Chinese vehicle integration</a> if GB/T-equipped vehicles are a meaningful share of expected traffic.</li>
     <li><strong>Grid footprint.</strong> Confirm the charger's power draw and demand profile against the site's actual grid connection and DSO agreement before ordering, not after delivery.</li>
   </ol>
 

@@ -113,13 +113,25 @@ export const ui = {
   },
 } as const satisfies Record<Locale, unknown>;
 
+// Astro.url.pathname includes the configured base path (e.g. "/afca")
+// when the site is deployed under a subpath, such as a GitHub Pages
+// project site. Strip it before doing any locale-segment logic.
+function stripAppBase(pathname: string): string {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  if (base && pathname.startsWith(base)) {
+    const rest = pathname.slice(base.length);
+    return rest === "" ? "/" : rest;
+  }
+  return pathname;
+}
+
 export function getLocaleFromPath(pathname: string): Locale {
-  const seg = pathname.split("/").filter(Boolean)[0];
+  const seg = stripAppBase(pathname).split("/").filter(Boolean)[0];
   return (locales as readonly string[]).includes(seg) ? (seg as Locale) : defaultLocale;
 }
 
 export function stripLocale(pathname: string): string {
-  const seg = pathname.split("/").filter(Boolean);
+  const seg = stripAppBase(pathname).split("/").filter(Boolean);
   if (seg.length && (locales as readonly string[]).includes(seg[0])) {
     seg.shift();
   }
@@ -127,7 +139,8 @@ export function stripLocale(pathname: string): string {
 }
 
 export function localizePath(pathname: string, locale: Locale): string {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   const bare = stripLocale(pathname);
-  if (locale === defaultLocale) return bare === "/" ? "/" : bare;
-  return `/${locale}${bare === "/" ? "" : bare}`;
+  const app = locale === defaultLocale ? (bare === "/" ? "/" : bare) : `/${locale}${bare === "/" ? "" : bare}`;
+  return `${base}${app}`;
 }

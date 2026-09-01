@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import { getCollection } from "astro:content";
+import { withBase } from "../../lib/url";
 
 const locale = "en" as const;
 
@@ -34,7 +35,7 @@ const visible = allEntries
 
     <div class="mt-10 grid gap-6 md:grid-cols-2">
       {visible.map((entry) => (
-        <a href={`/intelligence/${entry.slug}`} class="block rounded border border-rule bg-paper p-6 no-underline hover:border-ink">
+        <a href={withBase(`/intelligence/${entry.slug}`)} class="block rounded border border-rule bg-paper p-6 no-underline hover:border-ink">
           <p class="font-sans text-xs font-medium uppercase tracking-wide text-text-muted">
             {entry.data.publishDate.toLocaleDateString("en-GB", { year: "numeric", month: "long" })}
             &middot; v{entry.data.methodologyVersion}

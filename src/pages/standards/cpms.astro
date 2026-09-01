@@ -1,5 +1,6 @@
 ---
 import GuideLayout from "../../layouts/GuideLayout.astro";
+import { withBase } from "../../lib/url";
 ---
 
 <GuideLayout
@@ -53,7 +54,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
 
   <h2>Operational checklist before go-live</h2>
   <ol>
-    <li>Every charger model in the fleet has passed OCPP conformance testing against the CPMS (see the <a href="/standards/ocpi-ocpp-testing">testing guide</a>).</li>
+    <li>Every charger model in the fleet has passed OCPP conformance testing against the CPMS (see the <a href={withBase("/standards/ocpi-ocpp-testing")}>testing guide</a>).</li>
     <li>Offline authorization is tested by physically disconnecting backhaul mid-session.</li>
     <li>Alerting exists for connector faults, not just charger-offline events.</li>
     <li>Billing reconciliation has been run against at least one full billing cycle of real session data before charging real money.</li>

@@ -4,12 +4,28 @@ import { locales, localeNames, localizePath, ui, type Locale } from "../i18n/con
 interface Props {
   locale: Locale;
   pathname: string;
+  /**
+   * Technical content (Intelligence, Standards) is intentionally
+   * English-only per BRIEF.md section 5, with no /fr, /rw, /sv routes
+   * for these pages at all. Offering those locales here would link to
+   * pages that don't exist, so show a static, non-interactive badge
+   * instead of a switcher with dead options.
+   */
+  technicalEnglishOnly?: boolean;
 }
 
-const { locale, pathname } = Astro.props;
+const { locale, pathname, technicalEnglishOnly = false } = Astro.props;
 const t = ui[locale];
 ---
 
+{technicalEnglishOnly ? (
+  <span
+    class="flex items-center gap-1.5 rounded border border-rule bg-paper px-3 py-1.5 font-sans text-sm font-medium text-text-muted"
+    title="This section is English-only technical content"
+  >
+    EN
+  </span>
+) : (
 <div class="relative" data-lang-switcher>
   <button
     type="button"
@@ -45,6 +61,7 @@ const t = ui[locale];
     ))}
   </ul>
 </div>
+)}
 
 <script>
   for (const wrapper of document.querySelectorAll<HTMLElement>("[data-lang-switcher]")) {

@@ -1,5 +1,6 @@
 ---
 import PageHero from "./PageHero.astro";
+import { withBase } from "../lib/url";
 ---
 
 <section class="mx-auto max-w-content px-6 py-16">
@@ -16,7 +17,7 @@ import PageHero from "./PageHero.astro";
     <!-- TODO: membership tiers, fees, and eligibility criteria — pending governance sign-off. -->
     Membership tiers, fees, and eligibility criteria are being finalised alongside AfCA's Rwanda
     registration and will be published here once confirmed. Participation follows the open-call
-    principle described in the <a href="/about" class="text-ink underline">operating principles</a>:
+    principle described in the <a href={withBase("/about")} class="text-ink underline">operating principles</a>:
     organisations self-select against published criteria rather than being hand-picked.
   </p>
 

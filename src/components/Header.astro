@@ -1,23 +1,33 @@
 ---
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import { ui, localizePath, type Locale } from "../i18n/config";
+import { withBase } from "../lib/url";
 
 interface Props {
   locale: Locale;
   pathname: string;
+  technicalEnglishOnly?: boolean;
 }
 
-const { locale, pathname } = Astro.props;
+const { locale, pathname, technicalEnglishOnly = false } = Astro.props;
 const t = ui[locale];
 
-const links: Array<[string, string]> = [
-  [t.nav.about, "/about"],
-  [t.nav.intelligence, "/intelligence"],
-  [t.nav.standards, "/standards"],
-  [t.nav.summit, "/summit"],
-  [t.nav.community, "/community"],
-  [t.nav.news, "/news"],
+// Intelligence and Standards are intentionally English-only technical
+// content (BRIEF.md section 5) with no locale-prefixed routes — link them
+// straight to their English URL rather than through localizePath, which
+// would point at a non-existent /fr/intelligence, /fr/standards, etc.
+const links: Array<[string, string, boolean]> = [
+  [t.nav.about, "/about", false],
+  [t.nav.intelligence, "/intelligence", true],
+  [t.nav.standards, "/standards", true],
+  [t.nav.summit, "/summit", false],
+  [t.nav.community, "/community", false],
+  [t.nav.news, "/news", false],
 ];
+
+function navHref(href: string, englishOnly: boolean): string {
+  return englishOnly ? withBase(href) : localizePath(href, locale);
+}
 ---
 
 <header class="border-b border-rule bg-paper">
@@ -26,8 +36,8 @@ const links: Array<[string, string]> = [
       African Charging Alliance
     </a>
     <nav aria-label="Primary" class="hidden items-center gap-6 font-sans text-sm md:flex">
-      {links.map(([label, href]) => (
-        <a href={localizePath(href, locale)} class="text-text hover:text-ink no-underline">
+      {links.map(([label, href, englishOnly]) => (
+        <a href={navHref(href, englishOnly)} class="text-text hover:text-ink no-underline">
           {label}
         </a>
       ))}
@@ -39,12 +49,12 @@ const links: Array<[string, string]> = [
       >
         {t.nav.contact}
       </a>
-      <LanguageSwitcher locale={locale} pathname={pathname} />
+      <LanguageSwitcher locale={locale} pathname={pathname} technicalEnglishOnly={technicalEnglishOnly} />
     </div>
   </div>
   <nav aria-label="Primary" class="flex flex-wrap gap-x-4 gap-y-2 border-t border-rule px-6 py-3 font-sans text-sm md:hidden">
-    {links.map(([label, href]) => (
-      <a href={localizePath(href, locale)} class="text-text no-underline">{label}</a>
+    {links.map(([label, href, englishOnly]) => (
+      <a href={navHref(href, englishOnly)} class="text-text no-underline">{label}</a>
     ))}
     <a href={localizePath("/contact", locale)} class="text-ink no-underline">{t.nav.contact}</a>
   </nav>

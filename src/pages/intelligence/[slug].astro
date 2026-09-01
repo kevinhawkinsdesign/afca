@@ -4,6 +4,7 @@ import ScopeNote from "../../components/ScopeNote.astro";
 import SupersededBanner from "../../components/SupersededBanner.astro";
 import SourceList from "../../components/SourceList.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
+import { withBase } from "../../lib/url";
 
 export async function getStaticPaths() {
   const entries = await getCollection("intelligence", (e) => e.data.locale === "en");
@@ -30,7 +31,7 @@ const locale = "en" as const;
 >
   <article class="mx-auto max-w-prose px-6 py-16">
     <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
-      <a href="/intelligence" class="no-underline text-accent">Intelligence</a>
+      <a href={withBase("/intelligence")} class="no-underline text-accent">Intelligence</a>
     </p>
     <h1 class="font-sans text-3xl font-semibold text-ink">{entry.data.title}</h1>
     <p class="mt-2 font-sans text-sm text-text-muted">

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
+import { withBase } from "../../lib/url";
 
 const locale = "en" as const;
 
@@ -31,7 +32,7 @@ const guides: Array<[string, string, string]> = [
 
     <div class="mt-12 grid gap-6 md:grid-cols-2">
       {guides.map(([href, title, summary]) => (
-        <a href={href} class="block rounded border border-rule bg-paper p-6 no-underline hover:border-ink">
+        <a href={withBase(href)} class="block rounded border border-rule bg-paper p-6 no-underline hover:border-ink">
           <h2 class="font-sans text-lg font-semibold text-ink">{title}</h2>
           <p class="mt-2 text-sm text-text-muted">{summary}</p>
         </a>
