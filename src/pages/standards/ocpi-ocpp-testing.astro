@@ -1,0 +1,47 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+---
+
+<GuideLayout
+  title="Testing OCPI and OCPP connectivity"
+  description="A protocol implementation that passes a demo and fails in production usually failed to test the paths that only occur under real-world conditions: drops, retries, and partial messages."
+>
+  <h2>OCPP: charger to CPMS</h2>
+  <p>
+    OCPP conformance testing should cover the full session lifecycle, not just the happy path.
+    A minimum sequence:
+  </p>
+  <ol>
+    <li><strong>Boot and handshake.</strong> BootNotification is accepted, and the charger correctly applies any configuration pushed in response.</li>
+    <li><strong>Authorization.</strong> Both remote-start and card/tag-present flows succeed, including a deliberately invalid tag to confirm rejection is handled cleanly.</li>
+    <li><strong>Transaction lifecycle.</strong> StartTransaction, MeterValues at the configured interval, and StopTransaction all report consistent, non-zero energy figures that reconcile with a physical meter reading.</li>
+    <li><strong>Fault handling.</strong> Simulate a connector fault mid-session and confirm the charger reports StatusNotification correctly and the CPMS reacts (alerting, session termination) rather than showing a stale "charging" state.</li>
+    <li><strong>Connectivity loss.</strong> Disconnect backhaul mid-session, confirm offline authorization/local behaviour, then reconnect and confirm the CPMS reconciles the session rather than losing it.</li>
+    <li><strong>Firmware and configuration push.</strong> Confirm a remote configuration change and firmware update both complete without corrupting session state on unrelated connectors.</li>
+  </ol>
+  <p>
+    Test against the specific OCPP version the CPMS speaks (1.6J and 2.0.1 are not interchangeable
+    in practice) and log raw message exchanges during testing — a passed test with no message log
+    is not reproducible when a fault reappears in production months later.
+  </p>
+
+  <h2>OCPI: CPO to EMSP roaming</h2>
+  <p>
+    OCPI testing needs to be validated from both directions of the roaming relationship:
+  </p>
+  <ul>
+    <li><strong>Location and status sync.</strong> Confirm the EMSP's view of site availability matches the CPO's actual real-time status, including after a connector goes offline — sync lag here is a leading cause of driver complaints on roamed sessions.</li>
+    <li><strong>Tariff propagation.</strong> Confirm the price shown to a roaming driver before starting a session matches what is actually billed, including time-of-use and idle fee components.</li>
+    <li><strong>CDR (Charge Detail Record) accuracy.</strong> Reconcile a sample of CDRs against the CPO's own metering data before going live with a new roaming partner — mismatches here become billing disputes.</li>
+    <li><strong>Session commands.</strong> Remote start/stop initiated by the EMSP correctly reaches the physical charger and reflects real state, not just an acknowledgement at the API layer.</li>
+  </ul>
+
+  <h2>A note on "conformant" claims</h2>
+  <p>
+    Passing an automated conformance test suite is necessary but not sufficient. It validates
+    message structure and sequencing; it does not validate that a charger behaves correctly under
+    the connectivity and load conditions of a specific deployment. Site-level testing after
+    conformance testing is not redundant — it is the step that actually determines whether a
+    charger will hold up in production.
+  </p>
+</GuideLayout>

@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const locale = "en" as const;
+
+const guides: Array<[string, string, string]> = [
+  ["/standards/cpms", "Building and operating a CPMS", "Core functions, uptime and observability, tariff and roaming engines, and the operational discipline a Charge Point Management System needs to run reliably at scale."],
+  ["/standards/driver-app", "The driver app: consumer and fleet", "What a world-class charging app has to get right for individual drivers, and where fleet requirements diverge — depot scheduling, cost allocation, and multi-driver access."],
+  ["/standards/hardware-selection", "Selecting and installing charging hardware", "Criteria for evaluating chargers before purchase, and the installation and commissioning steps that determine whether a site performs for the next ten years."],
+  ["/standards/ocpi-ocpp-testing", "Testing OCPI and OCPP connectivity", "A practical conformance testing sequence for both protocols, and the failure modes that pass a demo but break in production."],
+  ["/standards/chinese-integration", "Integrating Chinese vehicles and devices", "GB/T charging standards, NEV telematics reporting, and what interoperability with the Chinese market actually requires on top of OCPP/OCPI."],
+];
+---
+
+<BaseLayout locale={locale} title="Standards" technicalEnglishOnly={true}>
+  <section class="mx-auto max-w-content px-6 py-16">
+    <h1 class="font-sans text-3xl font-semibold text-ink md:text-4xl">Standards &amp; Implementation Guidance</h1>
+    <p class="mt-4 max-w-prose text-text">
+      Published, vendor-neutral guides for operators, integrators, and policymakers building
+      charging infrastructure. These reflect open protocols and public standards — AfCA does not
+      own OCPI, OCPP, or OSCP, and does not recommend individual companies.
+    </p>
+
+    <div class="mt-4 max-w-prose rounded border border-rule bg-paper-warm px-4 py-3 font-sans text-sm text-text-muted">
+      OCPI is owned and maintained by the <a href="https://evroaming.org" class="text-ink underline">EVRoaming Foundation</a>.
+      OCPP and OSCP are owned by the <a href="https://openchargealliance.org" class="text-ink underline">Open Charge Alliance</a>.
+      AfCA's contribution is African implementation guidance and benchmarking against these standards.
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {guides.map(([href, title, summary]) => (
+        <a href={href} class="block rounded border border-rule bg-paper p-6 no-underline hover:border-ink">
+          <h2 class="font-sans text-lg font-semibold text-ink">{title}</h2>
+          <p class="mt-2 text-sm text-text-muted">{summary}</p>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="mt-16 font-sans text-xl font-semibold text-ink">Glossary</h2>
+    <dl class="mt-4 max-w-prose divide-y divide-rule font-sans text-sm">
+      <div class="py-3"><dt class="font-semibold text-ink">CPO</dt><dd class="text-text-muted">Charge Point Operator — owns and operates physical charging stations.</dd></div>
+      <div class="py-3"><dt class="font-semibold text-ink">EMSP</dt><dd class="text-text-muted">E-Mobility Service Provider — sells charging access to drivers, often across multiple CPO networks.</dd></div>
+      <div class="py-3"><dt class="font-semibold text-ink">DSO</dt><dd class="text-text-muted">Distribution System Operator — the utility responsible for the local electricity grid a site connects to.</dd></div>
+      <div class="py-3"><dt class="font-semibold text-ink">CPMS</dt><dd class="text-text-muted">Charge Point Management System — the backend that monitors, controls, and bills charging stations.</dd></div>
+      <div class="py-3"><dt class="font-semibold text-ink">OCPI</dt><dd class="text-text-muted">Open Charge Point Interface — protocol for roaming between CPOs and EMSPs. Owned by the EVRoaming Foundation.</dd></div>
+      <div class="py-3"><dt class="font-semibold text-ink">OCPP</dt><dd class="text-text-muted">Open Charge Point Protocol — protocol between a charger and its CPMS. Owned by the Open Charge Alliance.</dd></div>
+      <div class="py-3"><dt class="font-semibold text-ink">OICP</dt><dd class="text-text-muted">Open InterCharge Protocol — an alternative roaming protocol, notably used by Hubject.</dd></div>
+    </dl>
+  </section>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+---
+
+<GuideLayout
+  title="The driver app: consumer and fleet"
+  description="A charging app is judged in the ten seconds before a session starts. Everything else — account management, history, support — is secondary to that moment working."
+>
+  <h2>The moment that matters</h2>
+  <p>
+    A driver approaching a charger needs, in order: confirmation the connector is actually
+    available (not just "online"), a way to start the session that works even on a weak signal,
+    and immediate feedback that charging has begun. Apps that get this wrong don't fail loudly —
+    drivers just quietly stop trusting the network and go elsewhere.
+  </p>
+  <ul>
+    <li>Show live connector status, not charger status. A four-connector site with one broken plug should not read as "available."</li>
+    <li>Support start-by-tap (NFC/RFID) as a fallback to app-based start. Do not make the app a single point of failure for authorization.</li>
+    <li>Confirm session start with a state the driver can see without opening the app — a charger LED or beep, not just a push notification that may be delayed.</li>
+  </ul>
+
+  <h2>Consumer requirements</h2>
+  <ul>
+    <li><strong>Trip planning:</strong> route-aware charger search that accounts for real-world reliability, not just registered locations.</li>
+    <li><strong>Transparent pricing:</strong> the price shown before starting a session should be the price charged, including idle fees, displayed clearly rather than in fine print.</li>
+    <li><strong>Roaming clarity:</strong> when a session is via a roaming partner (OCPI), the app should be honest about which network operates the physical charger — drivers troubleshoot faster when they know who to call.</li>
+    <li><strong>Payment methods that match the market:</strong> mobile money and card, not card-only. This is not optional in most African markets.</li>
+  </ul>
+
+  <h2>Where fleet requirements diverge</h2>
+  <p>
+    Fleet operators are not consumers with more vehicles — they need different primitives
+    entirely:
+  </p>
+  <ul>
+    <li><strong>Depot scheduling:</strong> queueing and reservation logic so vehicles charge in the sequence the depot needs them dispatched, not first-come-first-served.</li>
+    <li><strong>Cost allocation:</strong> sessions need to be attributable to a vehicle, driver, and cost center, with exportable data for fleet accounting — not just a personal receipt.</li>
+    <li><strong>Multi-driver access:</strong> a single vehicle may be driven by different people across shifts; authorization needs to follow the vehicle or the shift, not a single driver's account.</li>
+    <li><strong>Charge-to-target, not charge-to-full:</strong> fleet scheduling software often needs the app/API to support stopping at a target state of charge or time, to manage battery health and depot throughput.</li>
+    <li><strong>API-first:</strong> fleet customers will want to pull session and status data into their own dispatch or telematics systems. Treat the API as a product, not an afterthought to the app.</li>
+  </ul>
+
+  <h2>Accessibility and connectivity realities</h2>
+  <p>
+    Design for low-bandwidth conditions and older Android devices, which represent a large share
+    of the installed base across target markets. A driver app that requires a large initial
+    download or a persistent high-bandwidth connection to function will exclude exactly the users
+    who most need reliable public charging.
+  </p>
+</GuideLayout>

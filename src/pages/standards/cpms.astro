@@ -1,0 +1,62 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+---
+
+<GuideLayout
+  title="Building and operating a CPMS"
+  description="A Charge Point Management System is infrastructure, not a feature list. Reliability, observability, and clean protocol handling matter more than the dashboard."
+>
+  <h2>What a CPMS actually has to do</h2>
+  <p>
+    A Charge Point Management System sits between physical chargers and everything that depends on
+    them working: drivers, billing, roaming partners, and the grid. Its core responsibilities are
+    narrow but unforgiving:
+  </p>
+  <ul>
+    <li>Maintain a live OCPP connection to every charger and know within seconds when one drops.</li>
+    <li>Authorize sessions — locally cached where connectivity is unreliable, so a network blip doesn't strand a driver mid-plug.</li>
+    <li>Meter and bill sessions accurately, including partial sessions caused by faults or manual stops.</li>
+    <li>Expose availability and status to EMSPs and roaming partners over OCPI or OICP without lag.</li>
+    <li>Push firmware and configuration changes without taking chargers offline during peak hours.</li>
+  </ul>
+
+  <h2>Design for degraded connectivity, not ideal connectivity</h2>
+  <p>
+    Across much of the African market, cellular backhaul to charging sites is intermittent. A CPMS
+    that assumes always-on connectivity will fail exactly where reliability matters most. Two
+    decisions determine whether an outage is invisible or a stranded driver:
+  </p>
+  <ul>
+    <li><strong>Offline authorization.</strong> Chargers should hold a local authorization cache (an OCPP local list or equivalent) so a known RFID tag or app token can start a session without a live round trip to the backend.</li>
+    <li><strong>Session reconciliation on reconnect.</strong> When a charger reconnects after a drop, the CPMS needs to reconcile meter values and session state rather than treating the gap as data loss.</li>
+  </ul>
+
+  <h2>Uptime is a monitoring problem before it's an engineering problem</h2>
+  <p>
+    "Uptime" is frequently reported optimistically because it's measured as connector-reachable
+    rather than session-completable. A charger that accepts a connection but fails every
+    <code>StartTransaction</code> request is not up. Track and publish at minimum:
+  </p>
+  <ul>
+    <li>Heartbeat / connectivity uptime (is the charger reachable)</li>
+    <li>Transactional uptime (did a session that was attempted actually complete)</li>
+    <li>Mean time to detect a fault, and mean time to resolve it</li>
+  </ul>
+
+  <h2>Roaming and tariffs</h2>
+  <p>
+    If the CPMS will ever expose sites to third-party EMSPs, build the OCPI (or OICP) integration
+    as a first-class module, not a bolt-on. Tariff structures in particular need to support
+    time-of-use pricing, session fees, and idle fees independently, since grid tariffs and site
+    economics vary significantly by country and utility.
+  </p>
+
+  <h2>Operational checklist before go-live</h2>
+  <ol>
+    <li>Every charger model in the fleet has passed OCPP conformance testing against the CPMS (see the <a href="/standards/ocpi-ocpp-testing">testing guide</a>).</li>
+    <li>Offline authorization is tested by physically disconnecting backhaul mid-session.</li>
+    <li>Alerting exists for connector faults, not just charger-offline events.</li>
+    <li>Billing reconciliation has been run against at least one full billing cycle of real session data before charging real money.</li>
+    <li>A rollback plan exists for firmware pushes, and a fleet-wide push has never been tested for the first time in production.</li>
+  </ol>
+</GuideLayout>

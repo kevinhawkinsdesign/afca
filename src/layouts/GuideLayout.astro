@@ -1,0 +1,57 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<BaseLayout locale="en" title={title} description={description} technicalEnglishOnly={true}>
+  <article class="mx-auto max-w-prose px-6 py-16">
+    <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
+      <a href="/standards" class="no-underline text-accent">Standards &amp; Implementation Guidance</a>
+    </p>
+    <h1 class="font-sans text-3xl font-semibold text-ink">{title}</h1>
+    <p class="mt-4 text-lg text-text">{description}</p>
+    <div class="prose-guide mt-10">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .prose-guide h2 {
+    @apply mt-10 mb-3 font-sans text-xl font-semibold text-ink;
+  }
+  .prose-guide h3 {
+    @apply mt-7 mb-2 font-sans text-base font-semibold text-ink;
+  }
+  .prose-guide p {
+    @apply mt-3 text-text;
+  }
+  .prose-guide ul,
+  .prose-guide ol {
+    @apply mt-3 list-outside space-y-1.5 pl-5 text-text;
+  }
+  .prose-guide ul {
+    @apply list-disc;
+  }
+  .prose-guide ol {
+    @apply list-decimal;
+  }
+  .prose-guide strong {
+    @apply font-semibold text-ink;
+  }
+  .prose-guide table {
+    @apply mt-4 w-full border-collapse font-sans text-sm;
+  }
+  .prose-guide th,
+  .prose-guide td {
+    @apply border border-rule px-3 py-2 text-left align-top;
+  }
+  .prose-guide th {
+    @apply bg-paper-warm font-semibold text-ink;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+---
+
+<GuideLayout
+  title="Selecting and installing charging hardware"
+  description="Hardware decisions made at purchase determine site economics for a decade. Installation decisions determine whether the hardware performs as specified."
+>
+  <h2>Evaluation criteria, in priority order</h2>
+  <ol>
+    <li><strong>OCPP conformance.</strong> Ask for the specific OCPP version and evidence of conformance testing (see the <a href="/standards/ocpi-ocpp-testing">testing guide</a>), not a marketing claim of "OCPP compatible." Many devices implement a subset of the message set.</li>
+    <li><strong>Serviceability in-market.</strong> Confirm spare parts and technician support exist locally, or via a regional partner, before committing to a hardware line. A charger that requires shipping a part from another continent has an effective uptime ceiling regardless of build quality.</li>
+    <li><strong>Environmental rating.</strong> Confirm IP and temperature ratings against actual site conditions — dust ingress and heat are the two most common causes of premature hardware failure in the region, not electrical faults.</li>
+    <li><strong>Connector standard fit.</strong> Match connector type (CCS2, GB/T, Type 2, CHAdeMO) to the vehicle population the site will actually serve — see the guide on <a href="/standards/chinese-integration">Chinese vehicle integration</a> if GB/T-equipped vehicles are a meaningful share of expected traffic.</li>
+    <li><strong>Grid footprint.</strong> Confirm the charger's power draw and demand profile against the site's actual grid connection and DSO agreement before ordering, not after delivery.</li>
+  </ol>
+
+  <h2>Installation and commissioning</h2>
+  <p>
+    A charger that passes factory testing can still fail on site due to installation issues.
+    Commissioning should include, at minimum:
+  </p>
+  <ul>
+    <li>Verified earthing and electrical protection appropriate to local grid conditions, signed off by a certified electrician.</li>
+    <li>A live OCPP handshake test with the target CPMS before the site is marked live — not just a factory-default connection test.</li>
+    <li>A full-power test session, since many faults only appear under sustained load rather than at connection time.</li>
+    <li>Physical siting review: cable strain relief, connector height and reach for accessibility, and protection from vehicle impact.</li>
+  </ul>
+
+  <h2>Common failure modes worth planning for</h2>
+  <table>
+    <thead>
+      <tr><th>Failure mode</th><th>Root cause</th><th>Mitigation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Charger reachable, sessions fail</td><td>Partial OCPP implementation</td><td>Conformance testing before purchase</td></tr>
+      <tr><td>Intermittent connector faults</td><td>Dust/heat ingress</td><td>Match IP rating to site conditions, not spec sheet minimums</td></tr>
+      <tr><td>Long repair turnaround</td><td>No local service partner</td><td>Confirm serviceability before hardware selection, not after failure</td></tr>
+      <tr><td>Site under-delivers rated power</td><td>Grid connection undersized</td><td>Validate against DSO agreement before ordering hardware</td></tr>
+    </tbody>
+  </table>
+</GuideLayout>

@@ -1,0 +1,52 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+---
+
+<GuideLayout
+  title="Integrating Chinese vehicles and devices"
+  description="Chinese-manufactured EVs and charging hardware are a growing share of the African market. Interoperability with them requires more than an OCPP connection."
+>
+  <h2>Why this needs separate treatment</h2>
+  <p>
+    A meaningful and growing share of vehicles entering African markets — both new and
+    used-import — are manufactured in China, and Chinese charging hardware is increasingly common
+    in new site builds due to cost and availability. Treating this as "just another OCPP charger"
+    or "just another CCS2 vehicle" misses real differences that show up as integration failures.
+  </p>
+
+  <h2>Connector and charging standard: GB/T</h2>
+  <p>
+    Most Chinese domestic-market EVs use the GB/T DC and AC charging standard rather than CCS2,
+    CHAdeMO, or Type 2. GB/T is electrically and mechanically distinct — it is not adapter-solvable
+    in the way voltage differences sometimes are. Two practical implications:
+  </p>
+  <ul>
+    <li>A site expecting meaningful GB/T-equipped traffic needs GB/T connectors specified at hardware selection, not retrofitted later.</li>
+    <li>GB/T's communication protocol (based on a CAN-bus handshake) differs from the CCS/PLC-based handshake, which affects how a charger's internal controller talks to the vehicle — this is a hardware and firmware decision, not a CPMS-layer one.</li>
+  </ul>
+  <p>
+    Where a market has a mixed vehicle population, dual-standard chargers (offering both a GB/T and
+    a CCS2 connector) are frequently the more economical choice than running parallel site builds.
+  </p>
+
+  <h2>NEV telematics and data reporting</h2>
+  <p>
+    China's New Energy Vehicle (NEV) monitoring framework requires many domestically-sold vehicles
+    to report telematics data (state of charge, location, battery health) to a national monitoring
+    platform. Vehicles exported or grey-imported outside this framework may have this reporting
+    disabled or absent, which has two consequences worth planning for:
+  </p>
+  <ul>
+    <li>Do not assume vehicle-side telematics data will be available to a CPMS or fleet system for imported GB/T vehicles — session and charging data should be sourced from the charger, not assumed from the vehicle.</li>
+    <li>Battery management behaviour (charge curve, thermal limits) calibrated for the NEV monitoring context may differ from what a non-domestic deployment expects — validate real-world charge curves during commissioning rather than relying on spec sheets.</li>
+  </ul>
+
+  <h2>Practical integration checklist</h2>
+  <ol>
+    <li>Confirm connector standard needs (GB/T, CCS2, or both) against actual and projected vehicle population before hardware selection.</li>
+    <li>For GB/T hardware, confirm OCPP conformance separately — GB/T support is often added by manufacturers as a variant of an existing CCS2 platform, and conformance can differ between variants.</li>
+    <li>Do not rely on vehicle-reported telematics for imported vehicles; instrument the charger and CPMS as the source of truth.</li>
+    <li>Validate real-world charge curves for the specific vehicle models expected on-site, especially for imported units, rather than assuming spec-sheet performance.</li>
+    <li>Confirm payment and app integration handles the RFID/card conventions common on Chinese-manufactured hardware, which sometimes differ from CCS2-market defaults.</li>
+  </ol>
+</GuideLayout>
