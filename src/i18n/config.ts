@@ -3,6 +3,11 @@ export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "en";
 
+// Locales that get a URL prefix (everything except the default, which
+// lives at the root — see BRIEF.md section 5). Used by [locale] dynamic
+// routes' getStaticPaths so adding a fifth locale is a one-line change.
+export const prefixedLocales = locales.filter((l) => l !== defaultLocale) as Exclude<Locale, "en">[];
+
 export const localeNames: Record<Locale, string> = {
   en: "English",
   fr: "Français",
