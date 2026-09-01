@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutContent from "../../components/AboutContent.astro";
+import { prefixedLocales } from "../../i18n/config";
+
+export function getStaticPaths() {
+  return prefixedLocales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
+---
+
+<BaseLayout
+  locale={locale}
+  title="About"
+  description="AfCA's positioning, mission, operating principles, founders, and governance."
+  isFallback={true}
+>
+  <AboutContent />
+</BaseLayout>

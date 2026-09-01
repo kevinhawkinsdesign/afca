@@ -58,4 +58,37 @@
   .superseded-banner {
     @apply mb-10 rounded border border-accent bg-accent/10 px-5 py-4 font-sans text-sm text-ink;
   }
+
+  .prose-guide h2 {
+    @apply mt-10 mb-3 font-sans text-xl font-semibold text-ink;
+  }
+  .prose-guide h3 {
+    @apply mt-7 mb-2 font-sans text-base font-semibold text-ink;
+  }
+  .prose-guide p {
+    @apply mt-3 text-text;
+  }
+  .prose-guide ul,
+  .prose-guide ol {
+    @apply mt-3 list-outside space-y-1.5 pl-5 text-text;
+  }
+  .prose-guide ul {
+    @apply list-disc;
+  }
+  .prose-guide ol {
+    @apply list-decimal;
+  }
+  .prose-guide strong {
+    @apply font-semibold text-ink;
+  }
+  .prose-guide table {
+    @apply mt-4 w-full border-collapse font-sans text-sm;
+  }
+  .prose-guide th,
+  .prose-guide td {
+    @apply border border-rule px-3 py-2 text-left align-top;
+  }
+  .prose-guide th {
+    @apply bg-paper-warm font-semibold text-ink;
+  }
 }

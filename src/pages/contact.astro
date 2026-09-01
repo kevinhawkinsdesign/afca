@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactContent from "../components/ContactContent.astro";
+
+const locale = "en" as const;
+---
+
+<BaseLayout locale={locale} title="Contact" description="Get in touch with African Charging Alliance.">
+  <ContactContent />
+</BaseLayout>

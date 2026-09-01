@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SummitContent from "../components/SummitContent.astro";
+
+const locale = "en" as const;
+---
+
+<BaseLayout locale={locale} title="Summit" description="The AfCA Annual Summit.">
+  <SummitContent />
+</BaseLayout>

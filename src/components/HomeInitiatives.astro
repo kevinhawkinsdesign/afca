@@ -1,0 +1,30 @@
+---
+const initiatives: Array<[string, string]> = [
+  [
+    "Ecosystem intelligence and market mapping",
+    "Country-by-country overviews of active CPOs, grid capacity, real-world charging performance, and policy enforcement — plus the Pan-African Interoperability and Reliability Index, benchmarking charger uptime, hardware compliance, open protocol adoption (OCPI/OICP), and payment integration success.",
+  ],
+  [
+    "The AfCA Annual Summit",
+    "Curated representation across the value chain, action-oriented workshops rather than panels, and a catalyst for regional initiatives, donor-funded corridor pilots, and harmonised policy recommendations.",
+  ],
+  [
+    "Practical implementation and ecosystem support",
+    "Market entry and technical advisory delivered as open training and published guidance, plus harmonisation and standards advocacy to governments and regional economic communities (EAC, ECOWAS).",
+  ],
+];
+---
+
+<section class="border-t border-rule bg-paper-warm">
+  <div class="mx-auto max-w-content px-6 py-16">
+    <h2 class="font-sans text-2xl font-semibold text-ink">Initiatives</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      {initiatives.map(([title, body]) => (
+        <div class="rounded border border-rule bg-paper p-6">
+          <h3 class="font-sans font-semibold text-ink">{title}</h3>
+          <p class="mt-2 text-sm text-text-muted">{body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

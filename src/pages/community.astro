@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CommunityContent from "../components/CommunityContent.astro";
+
+const locale = "en" as const;
+---
+
+<BaseLayout locale={locale} title="Community" description="Membership, working groups, and the AfCA participant directory.">
+  <CommunityContent />
+</BaseLayout>

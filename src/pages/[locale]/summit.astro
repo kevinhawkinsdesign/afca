@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SummitContent from "../../components/SummitContent.astro";
+import { prefixedLocales } from "../../i18n/config";
+
+export function getStaticPaths() {
+  return prefixedLocales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
+---
+
+<BaseLayout locale={locale} title="Summit" description="The AfCA Annual Summit." isFallback={true}>
+  <SummitContent />
+</BaseLayout>

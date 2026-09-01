@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutContent from "../components/AboutContent.astro";
+
+const locale = "en" as const;
+---
+
+<BaseLayout
+  locale={locale}
+  title="About"
+  description="AfCA's positioning, mission, operating principles, founders, and governance."
+>
+  <AboutContent />
+</BaseLayout>

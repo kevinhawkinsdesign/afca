@@ -1,0 +1,52 @@
+---
+---
+
+<section class="mx-auto max-w-content px-6 py-16">
+  <h1 class="font-sans text-3xl font-semibold text-ink md:text-4xl">Contact</h1>
+  <p class="mt-4 max-w-prose text-lg text-text">
+    Questions about membership, working groups, the Index, or press enquiries.
+  </p>
+
+  <div class="mt-10 grid gap-10 md:grid-cols-2">
+    <div>
+      <h2 class="font-sans text-xl font-semibold text-ink">Details</h2>
+      <dl class="mt-4 space-y-3 font-sans text-sm">
+        <div>
+          <dt class="font-semibold text-ink">Email</dt>
+          <!-- TODO: confirm official contact address once domain/registration is finalised. -->
+          <dd><a href="mailto:info@afca.example.org" class="text-ink underline">info@afca.example.org</a></dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-ink">Registered office</dt>
+          <!-- TODO: registered address, pending completion of Rwanda registration. -->
+          <dd class="text-text-muted">To be published once registration in Rwanda is complete.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div>
+      <h2 class="font-sans text-xl font-semibold text-ink">Send a message</h2>
+      <form class="mt-4 space-y-4 font-sans text-sm" action="mailto:info@afca.example.org" method="post" enctype="text/plain">
+        <div>
+          <label for="name" class="mb-1 block font-medium text-ink">Name</label>
+          <input id="name" name="name" type="text" required class="w-full rounded border border-rule bg-paper px-3 py-2" />
+        </div>
+        <div>
+          <label for="email" class="mb-1 block font-medium text-ink">Email</label>
+          <input id="email" name="email" type="email" required class="w-full rounded border border-rule bg-paper px-3 py-2" />
+        </div>
+        <div>
+          <label for="organization" class="mb-1 block font-medium text-ink">Organisation</label>
+          <input id="organization" name="organization" type="text" class="w-full rounded border border-rule bg-paper px-3 py-2" />
+        </div>
+        <div>
+          <label for="message" class="mb-1 block font-medium text-ink">Message</label>
+          <textarea id="message" name="message" required rows="5" class="w-full rounded border border-rule bg-paper px-3 py-2"></textarea>
+        </div>
+        <button type="submit" class="rounded bg-ink px-5 py-2.5 font-medium text-paper hover:bg-ink-soft">
+          Send message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

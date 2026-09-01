@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NewsIndexList from "../../components/NewsIndexList.astro";
+
+const locale = "en" as const;
+---
+
+<BaseLayout locale={locale} title="News" description="AfCA news and publishing cadence.">
+  <NewsIndexList locale={locale} />
+</BaseLayout>
