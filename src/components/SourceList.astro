@@ -1,0 +1,25 @@
+---
+interface Source {
+  label: string;
+  url?: string;
+  accessed: Date;
+}
+interface Props {
+  sources: Source[];
+}
+const { sources } = Astro.props;
+---
+
+{sources.length > 0 && (
+  <section class="mt-12 border-t border-rule pt-6 font-sans text-sm" aria-label="Sources">
+    <h2 class="mb-3 text-base font-semibold text-ink">Sources</h2>
+    <ol class="space-y-1.5 text-text-muted">
+      {sources.map((s) => (
+        <li>
+          {s.url ? <a href={s.url} class="text-ink">{s.label}</a> : <span>{s.label}</span>}
+          {" "}&middot; accessed {s.accessed.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

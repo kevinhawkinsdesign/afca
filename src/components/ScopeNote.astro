@@ -1,0 +1,12 @@
+---
+interface Props {
+  scopeNote: string;
+  methodologyVersion: string;
+}
+const { scopeNote, methodologyVersion } = Astro.props;
+---
+
+<aside class="scope-note" aria-label="Scope note">
+  <p class="mb-1 font-sans font-semibold text-ink">Scope note &middot; methodology v{methodologyVersion}</p>
+  <p>{scopeNote}</p>
+</aside>

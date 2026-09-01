@@ -1,0 +1,79 @@
+---
+import { locales, localeNames, localizePath, ui, type Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+  pathname: string;
+}
+
+const { locale, pathname } = Astro.props;
+const t = ui[locale];
+---
+
+<div class="relative" data-lang-switcher>
+  <button
+    type="button"
+    class="flex items-center gap-1.5 rounded border border-rule bg-paper px-3 py-1.5 font-sans text-sm font-medium text-ink hover:border-ink"
+    aria-haspopup="listbox"
+    aria-expanded="false"
+    data-lang-trigger
+  >
+    <span aria-hidden="true">{locale.toUpperCase()}</span>
+    <span class="sr-only">{t.languageLabel}</span>
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+      <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+  <ul
+    role="listbox"
+    aria-label={t.languageLabel}
+    class="absolute right-0 z-10 mt-1 hidden min-w-[10rem] rounded border border-rule bg-paper py-1 shadow-md"
+    data-lang-list
+  >
+    {locales.map((code) => (
+      <li role="option" aria-selected={code === locale}>
+        <a
+          href={localizePath(pathname, code)}
+          class:list={[
+            "block px-3 py-2 font-sans text-sm hover:bg-paper-warm",
+            code === locale ? "font-semibold text-ink" : "text-text",
+          ]}
+        >
+          {localeNames[code]}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  for (const wrapper of document.querySelectorAll<HTMLElement>("[data-lang-switcher]")) {
+    const trigger = wrapper.querySelector<HTMLButtonElement>("[data-lang-trigger]");
+    const list = wrapper.querySelector<HTMLUListElement>("[data-lang-list]");
+    if (!trigger || !list) continue;
+
+    const close = () => {
+      list.classList.add("hidden");
+      trigger.setAttribute("aria-expanded", "false");
+    };
+    const open = () => {
+      list.classList.remove("hidden");
+      trigger.setAttribute("aria-expanded", "true");
+    };
+
+    trigger.addEventListener("click", () => {
+      list.classList.contains("hidden") ? open() : close();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!wrapper.contains(e.target as Node)) close();
+    });
+
+    wrapper.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        close();
+        trigger.focus();
+      }
+    });
+  }
+</script>

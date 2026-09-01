@@ -1,0 +1,11 @@
+---
+interface Props {
+  currentSlug: string;
+}
+const { currentSlug } = Astro.props;
+---
+
+<div class="superseded-banner" role="note">
+  This report has been superseded by a newer version.
+  <a href={`/intelligence/${currentSlug}`} class="font-semibold underline">View the current version &rarr;</a>
+</div>

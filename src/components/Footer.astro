@@ -1,0 +1,39 @@
+---
+import { ui, localizePath, type Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale];
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-rule bg-paper-warm">
+  <div class="mx-auto max-w-content px-6 py-12">
+    <div class="grid gap-10 font-sans text-sm md:grid-cols-3">
+      <div>
+        <p class="font-semibold text-ink">African Charging Alliance</p>
+        <p class="mt-2 max-w-prose text-text-muted">{t.footer.tagline}</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="space-y-1.5">
+          <li><a href={localizePath("/about", locale)} class="text-text hover:text-ink">{t.nav.about}</a></li>
+          <li><a href={localizePath("/intelligence", locale)} class="text-text hover:text-ink">{t.nav.intelligence}</a></li>
+          <li><a href={localizePath("/standards", locale)} class="text-text hover:text-ink">{t.nav.standards}</a></li>
+          <li><a href={localizePath("/summit", locale)} class="text-text hover:text-ink">{t.nav.summit}</a></li>
+          <li><a href={localizePath("/community", locale)} class="text-text hover:text-ink">{t.nav.community}</a></li>
+          <li><a href={localizePath("/news", locale)} class="text-text hover:text-ink">{t.nav.news}</a></li>
+          <li><a href={localizePath("/contact", locale)} class="text-text hover:text-ink">{t.nav.contact}</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="text-text-muted">{t.footer.standardsNote}</p>
+        <p class="mt-4 text-xs text-text-muted">
+          &copy; {year} African Charging Alliance. Registered in Rwanda.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

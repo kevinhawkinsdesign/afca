@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const locale = "en" as const;
+---
+
+<BaseLayout
+  locale={locale}
+  title="Home"
+  description="African Charging Alliance is an independent, non-profit trade association and ecosystem platform accelerating interoperable EV charging infrastructure across Africa."
+>
+  <section class="mx-auto max-w-content px-6 py-16">
+    <p class="mb-3 font-sans text-sm font-medium uppercase tracking-wide text-accent">
+      Registered in Rwanda
+    </p>
+    <h1 class="max-w-3xl font-sans text-4xl font-semibold leading-tight text-ink md:text-5xl">
+      African Charging Alliance
+    </h1>
+    <p class="mt-6 max-w-prose text-lg text-text">
+      African Charging Alliance is an independent, non-profit trade association and ecosystem
+      platform committed to accelerating the deployment of reliable, scalable, and interoperable
+      electric vehicle charging infrastructure across Africa.
+    </p>
+    <p class="mt-4 max-w-prose text-text">
+      Operating as an apolitical source of truth, AfCA bridges the gap between public policy and
+      ground-level technical implementation and operation. We bring together Charge Point
+      Operators, Electromobility Service Providers, electric utilities, fleet operators, hardware
+      OEMs, and policymakers to build a unified, sustainable charging market.
+    </p>
+  </section>
+</BaseLayout>

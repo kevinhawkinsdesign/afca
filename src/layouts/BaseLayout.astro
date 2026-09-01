@@ -1,0 +1,55 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ui, localeNames, type Locale } from "../i18n/config";
+import "../styles/global.css";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description?: string;
+  /**
+   * Set when this page is rendering the English fallback because no
+   * translation exists yet for `locale`. Triggers the visible notice
+   * required by BRIEF.md section 5 — never fall back silently.
+   */
+  isFallback?: boolean;
+  /** Set for English-only technical pages (Index methodology, standards guidance). */
+  technicalEnglishOnly?: boolean;
+}
+
+const { locale, title, description, isFallback = false, technicalEnglishOnly = false } = Astro.props;
+const t = ui[locale];
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} — African Charging Alliance</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">{t.skipToContent}</a>
+    <Header locale={locale} pathname={pathname} />
+    <main id="main">
+      {isFallback && (
+        <div class="mx-auto max-w-content px-6 pt-8">
+          <p class="locale-notice" role="status">
+            {t.notTranslatedNotice(localeNames[locale])}
+          </p>
+        </div>
+      )}
+      {technicalEnglishOnly && locale === "en" && (
+        <div class="mx-auto max-w-content px-6 pt-8">
+          <p class="locale-notice" role="note">{t.technicalEnglishNotice}</p>
+        </div>
+      )}
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

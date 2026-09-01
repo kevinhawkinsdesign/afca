@@ -1,0 +1,61 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/source-serif-4/400.css";
+@import "@fontsource/source-serif-4/400-italic.css";
+@import "@fontsource/source-serif-4/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-paper text-text font-serif text-[1.0625rem] leading-relaxed antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans font-semibold text-ink;
+  }
+
+  a {
+    @apply underline-offset-2;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
+
+  ::selection {
+    @apply bg-accent/20;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-medium focus:text-paper;
+  }
+
+  .locale-notice {
+    @apply mb-8 rounded border border-accent/40 bg-accent/10 px-4 py-3 font-sans text-sm text-ink;
+  }
+
+  .scope-note {
+    @apply mb-10 rounded border border-rule bg-paper-warm px-5 py-4 font-sans text-sm text-text-muted;
+  }
+
+  .superseded-banner {
+    @apply mb-10 rounded border border-accent bg-accent/10 px-5 py-4 font-sans text-sm text-ink;
+  }
+}
