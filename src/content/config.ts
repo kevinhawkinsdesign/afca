@@ -30,14 +30,4 @@ const intelligence = defineCollection({
   }),
 });
 
-const news = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    locale: localeEnum,
-    publishDate: z.date(),
-    summary: z.string(),
-  }),
-});
-
-export const collections = { intelligence, news };
+export const collections = { intelligence };

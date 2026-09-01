@@ -37,10 +37,14 @@ No browser storage APIs (`localStorage`, `sessionStorage`) anywhere.
 /standards            Implementation guidance, glossary, protocol owner links
 /summit               Annual Summit
 /community            Membership, working groups, participant directory
-/news                 Publishing cadence (content collection)
-/news/[slug]
 /contact
 ```
+
+**Note: the News section (/news, /news/[slug]) described in this brief and
+in section 6 below was removed from the build on request. The `news`
+content collection no longer exists. Re-adding it means restoring the
+collection schema in src/content/config.ts, the pages, and the nav
+entries — not just uncommenting, since those were deleted outright.**
 
 Public by default. Working group material may later sit behind membership, but all intelligence outputs and the Index are open. Build no auth.
 
