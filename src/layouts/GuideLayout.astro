@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import HeroVisual from "../components/HeroVisual.astro";
 import { withBase } from "../lib/url";
 
 interface Props {
@@ -10,14 +11,23 @@ const { title, description } = Astro.props;
 ---
 
 <BaseLayout locale="en" title={title} description={description} technicalEnglishOnly={true}>
-  <article class="mx-auto max-w-prose px-6 py-16">
-    <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
-      <a href={withBase("/standards")} class="no-underline text-accent">Standards &amp; Implementation Guidance</a>
-    </p>
-    <h1 class="font-sans text-3xl font-semibold text-ink">{title}</h1>
-    <p class="mt-4 text-lg text-text">{description}</p>
-    <div class="prose-guide mt-10">
-      <slot />
+  <article class="px-6 py-16">
+    <div class="mx-auto grid max-w-content items-start gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+      <div class="max-w-prose">
+        <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
+          <a href={withBase("/standards")} class="no-underline text-accent">Standards &amp; Implementation Guidance</a>
+        </p>
+        <h1 class="font-sans text-3xl font-semibold text-ink">{title}</h1>
+        <p class="mt-4 text-lg text-text">{description}</p>
+      </div>
+      <div class="hidden max-w-xs justify-self-end lg:block">
+        <HeroVisual title={`Stylised protocol handshake illustration for: ${title}`} variant="protocol" />
+      </div>
+    </div>
+    <div class="mx-auto max-w-prose">
+      <div class="prose-guide mt-10">
+        <slot />
+      </div>
     </div>
   </article>
 </BaseLayout>

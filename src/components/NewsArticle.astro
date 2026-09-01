@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { withBase } from "../lib/url";
+import HeroVisual from "./HeroVisual.astro";
 
 interface Props {
   entry: CollectionEntry<"news">;
@@ -9,15 +10,24 @@ interface Props {
 const { entry, Content } = Astro.props;
 ---
 
-<article class="mx-auto max-w-prose px-6 py-16">
-  <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
-    <a href={withBase("/news")} class="no-underline text-accent">News</a>
-  </p>
-  <h1 class="font-sans text-3xl font-semibold text-ink">{entry.data.title}</h1>
-  <p class="mt-2 font-sans text-sm text-text-muted">
-    {entry.data.publishDate.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
-  </p>
-  <div class="prose-guide mt-8">
-    <Content />
+<article class="px-6 py-16">
+  <div class="mx-auto grid max-w-content items-start gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+    <div class="max-w-prose">
+      <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
+        <a href={withBase("/news")} class="no-underline text-accent">News</a>
+      </p>
+      <h1 class="font-sans text-3xl font-semibold text-ink">{entry.data.title}</h1>
+      <p class="mt-2 font-sans text-sm text-text-muted">
+        {entry.data.publishDate.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
+      </p>
+    </div>
+    <div class="hidden max-w-xs justify-self-end lg:block">
+      <HeroVisual title={`Stylised network map illustration for: ${entry.data.title}`} />
+    </div>
+  </div>
+  <div class="mx-auto max-w-prose">
+    <div class="prose-guide mt-8">
+      <Content />
+    </div>
   </div>
 </article>

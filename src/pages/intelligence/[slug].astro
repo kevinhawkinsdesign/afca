@@ -5,6 +5,7 @@ import SupersededBanner from "../../components/SupersededBanner.astro";
 import SourceList from "../../components/SourceList.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { withBase } from "../../lib/url";
+import HeroVisual from "../../components/HeroVisual.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("intelligence", (e) => e.data.locale === "en");
@@ -29,30 +30,39 @@ const locale = "en" as const;
   description={entry.data.summary}
   technicalEnglishOnly={true}
 >
-  <article class="mx-auto max-w-prose px-6 py-16">
-    <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
-      <a href={withBase("/intelligence")} class="no-underline text-accent">Intelligence</a>
-    </p>
-    <h1 class="font-sans text-3xl font-semibold text-ink">{entry.data.title}</h1>
-    <p class="mt-2 font-sans text-sm text-text-muted">
-      {entry.data.publishDate.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
-      &middot; Methodology v{entry.data.methodologyVersion}
-    </p>
-
-    {entry.data.supersededBy && (
-      <div class="mt-6">
-        <SupersededBanner currentSlug={entry.data.supersededBy} />
+  <article class="px-6 py-16">
+    <div class="mx-auto grid max-w-content items-start gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+      <div class="max-w-prose">
+        <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
+          <a href={withBase("/intelligence")} class="no-underline text-accent">Intelligence</a>
+        </p>
+        <h1 class="font-sans text-3xl font-semibold text-ink">{entry.data.title}</h1>
+        <p class="mt-2 font-sans text-sm text-text-muted">
+          {entry.data.publishDate.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
+          &middot; Methodology v{entry.data.methodologyVersion}
+        </p>
       </div>
-    )}
-
-    <div class="mt-6">
-      <ScopeNote scopeNote={entry.data.scopeNote} methodologyVersion={entry.data.methodologyVersion} />
+      <div class="hidden max-w-xs justify-self-end lg:block">
+        <HeroVisual title={`Stylised benchmarking chart illustration for: ${entry.data.title}`} variant="data" />
+      </div>
     </div>
 
-    <div class="prose-guide">
-      <Content />
-    </div>
+    <div class="mx-auto max-w-prose">
+      {entry.data.supersededBy && (
+        <div class="mt-6">
+          <SupersededBanner currentSlug={entry.data.supersededBy} />
+        </div>
+      )}
 
-    <SourceList sources={entry.data.sources} />
+      <div class="mt-6">
+        <ScopeNote scopeNote={entry.data.scopeNote} methodologyVersion={entry.data.methodologyVersion} />
+      </div>
+
+      <div class="prose-guide">
+        <Content />
+      </div>
+
+      <SourceList sources={entry.data.sources} />
+    </div>
   </article>
 </BaseLayout>

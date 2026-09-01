@@ -4,8 +4,13 @@ import HeroVisual from "./HeroVisual.astro";
 interface Props {
   title: string;
   visualTitle?: string;
+  variant?: "network" | "protocol" | "data";
 }
-const { title, visualTitle = "Stylised network map of interoperable charging infrastructure across Africa" } = Astro.props;
+const {
+  title,
+  visualTitle = "Stylised network map of interoperable charging infrastructure across Africa",
+  variant = "network",
+} = Astro.props;
 ---
 
 <div class="grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
@@ -16,6 +21,6 @@ const { title, visualTitle = "Stylised network map of interoperable charging inf
     </div>
   </div>
   <div class="hidden lg:block">
-    <HeroVisual title={visualTitle} />
+    <HeroVisual title={visualTitle} variant={variant} />
   </div>
 </div>

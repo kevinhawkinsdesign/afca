@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { localizePath, type Locale } from "../i18n/config";
+import PageHero from "./PageHero.astro";
 
 interface Props {
   locale: Locale;
@@ -15,8 +16,8 @@ const entries = (await getCollection("news", (e) => e.data.locale === "en")).sor
 ---
 
 <section class="mx-auto max-w-content px-6 py-16">
-  <h1 class="font-sans text-3xl font-semibold text-ink md:text-4xl">News</h1>
-  <div class="mt-10 space-y-6">
+  <PageHero title="News" visualTitle="Stylised network map illustrating AfCA's publishing cadence" />
+  <div class="mt-14 space-y-6">
     {entries.map((entry) => (
       <a
         href={localizePath(`/news/${entry.slug}`, locale)}
