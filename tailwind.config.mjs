@@ -3,20 +3,25 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      // Dark-first palette (site has no light theme — this is the only one).
+      // Token names are kept from the original light palette so component
+      // markup didn't need to change, but the values are inverted: "paper"
+      // is now the dark page background, "ink" is now the light
+      // foreground/heading color.
       colors: {
         ink: {
-          DEFAULT: "#14322B",
-          soft: "#2B4A42",
+          DEFAULT: "#F5F1E8",
+          soft: "#D8CFC0",
         },
-        accent: "#C8792F",
+        accent: "#E0924A",
         paper: {
-          DEFAULT: "#FAF8F4",
-          warm: "#F2EDE4",
+          DEFAULT: "#10201B",
+          warm: "#16281F",
         },
-        rule: "#E3DBCF",
+        rule: "#2A3F35",
         text: {
-          DEFAULT: "#2B2724",
-          muted: "#6B625A",
+          DEFAULT: "#E5E0D5",
+          muted: "#9C9384",
         },
       },
       fontFamily: {

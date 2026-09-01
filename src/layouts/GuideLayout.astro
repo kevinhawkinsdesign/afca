@@ -11,16 +11,16 @@ const { title, description } = Astro.props;
 ---
 
 <BaseLayout locale="en" title={title} description={description} technicalEnglishOnly={true}>
-  <article class="px-6 py-16">
-    <div class="mx-auto grid max-w-content items-start gap-10 lg:grid-cols-[1.3fr_0.7fr]">
-      <div class="max-w-prose">
+  <article class="px-6 py-10 md:py-16">
+    <div class="mx-auto grid max-w-content items-start gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:gap-10">
+      <div class="order-1 max-w-prose">
         <p class="mb-2 font-sans text-sm font-medium uppercase tracking-wide text-accent">
           <a href={withBase("/standards")} class="no-underline text-accent">Standards &amp; Implementation Guidance</a>
         </p>
         <h1 class="font-sans text-3xl font-semibold text-ink">{title}</h1>
         <p class="mt-4 text-lg text-text">{description}</p>
       </div>
-      <div class="hidden max-w-xs justify-self-end lg:block">
+      <div class="order-2 mx-auto w-full max-w-[12rem] sm:max-w-[14rem] lg:order-2 lg:mx-0 lg:max-w-xs lg:justify-self-end">
         <HeroVisual title={`Stylised protocol handshake illustration for: ${title}`} variant="protocol" />
       </div>
     </div>

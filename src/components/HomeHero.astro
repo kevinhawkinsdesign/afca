@@ -5,13 +5,13 @@
 import HeroVisual from "./HeroVisual.astro";
 ---
 
-<section class="mx-auto max-w-content px-6 py-16">
-  <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-    <div>
+<section class="mx-auto max-w-content px-6 py-10 md:py-16">
+  <div class="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+    <div class="order-2 lg:order-1">
       <p class="mb-3 font-sans text-sm font-medium uppercase tracking-wide text-accent">
         Registration pending in Rwanda
       </p>
-      <h1 class="max-w-3xl font-sans text-4xl font-semibold leading-tight text-ink md:text-5xl">
+      <h1 class="max-w-3xl font-sans text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-5xl">
         African Charging Alliance
       </h1>
       <p class="mt-6 max-w-prose text-lg text-text">
@@ -26,7 +26,7 @@ import HeroVisual from "./HeroVisual.astro";
         OEMs, and policymakers to build a unified, sustainable charging market.
       </p>
     </div>
-    <div class="hidden lg:block">
+    <div class="order-1 mx-auto w-full max-w-xs sm:max-w-sm lg:order-2 lg:mx-0 lg:max-w-none">
       <HeroVisual title="Stylised network map of interoperable charging infrastructure across Africa" />
     </div>
   </div>

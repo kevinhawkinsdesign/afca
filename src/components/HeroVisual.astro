@@ -15,11 +15,11 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
 >
   <defs>
     <pattern id="hv-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M28 0H0V28" fill="none" stroke="#E3DBCF" stroke-width="1" />
+      <path d="M28 0H0V28" fill="none" stroke="#2A3F35" stroke-width="1" />
     </pattern>
     <radialGradient id="hv-fade" cx="50%" cy="42%" r="65%">
-      <stop offset="0%" stop-color="#FAF8F4" stop-opacity="0" />
-      <stop offset="100%" stop-color="#FAF8F4" stop-opacity="1" />
+      <stop offset="0%" stop-color="#10201B" stop-opacity="0" />
+      <stop offset="100%" stop-color="#10201B" stop-opacity="1" />
     </radialGradient>
   </defs>
 
@@ -46,13 +46,13 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
            C 170 135, 190 105, 220 90
            C 210 75, 220 62, 240 60 Z"
         fill="none"
-        stroke="#14322B"
+        stroke="#F5F1E8"
         stroke-width="2.5"
         stroke-linejoin="round"
         opacity="0.85"
       />
 
-      <g stroke="#C8792F" stroke-width="1.5" opacity="0.8">
+      <g stroke="#E0924A" stroke-width="1.5" opacity="0.8">
         <line x1="245" y1="140" x2="330" y2="180" />
         <line x1="330" y1="180" x2="300" y2="270" />
         <line x1="300" y1="270" x2="240" y2="330" />
@@ -63,7 +63,7 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
         <line x1="210" y1="220" x2="240" y2="330" />
       </g>
 
-      <g fill="#14322B">
+      <g fill="#F5F1E8">
         <circle cx="245" cy="140" r="6" />
         <circle cx="330" cy="180" r="7" />
         <circle cx="390" cy="230" r="5" />
@@ -72,14 +72,14 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
         <circle cx="240" cy="330" r="7" />
         <circle cx="310" cy="400" r="6" />
       </g>
-      <g fill="#C8792F">
+      <g fill="#E0924A">
         <circle cx="300" cy="270" r="3.5" />
         <circle cx="330" cy="180" r="3" />
       </g>
 
       <path
         d="M 455 385 L 430 430 L 448 430 L 435 470 L 470 420 L 452 420 Z"
-        fill="#C8792F"
+        fill="#E0924A"
         opacity="0.9"
       />
     </>
@@ -88,12 +88,12 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
   {variant === "protocol" && (
     <>
       <!-- two connectors facing each other, handshake pulse between them -->
-      <g stroke="#14322B" stroke-width="2.5" fill="none" stroke-linejoin="round" opacity="0.85">
+      <g stroke="#F5F1E8" stroke-width="2.5" fill="none" stroke-linejoin="round" opacity="0.85">
         <rect x="90" y="240" width="90" height="80" rx="8" />
         <path d="M120 240 V210 a10 10 0 0 1 20 0 V240" />
         <path d="M150 240 V210 a10 10 0 0 1 20 0 V240" />
       </g>
-      <g stroke="#14322B" stroke-width="2.5" fill="none" stroke-linejoin="round" opacity="0.85">
+      <g stroke="#F5F1E8" stroke-width="2.5" fill="none" stroke-linejoin="round" opacity="0.85">
         <rect x="380" y="240" width="90" height="80" rx="8" />
         <path d="M410 240 V210 a10 10 0 0 1 20 0 V240" />
         <path d="M440 240 V210 a10 10 0 0 1 20 0 V240" />
@@ -103,26 +103,26 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
       <path
         d="M180 280 L 240 280 L 260 240 L 300 320 L 320 280 L 380 280"
         fill="none"
-        stroke="#C8792F"
+        stroke="#E0924A"
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
 
-      <g fill="#14322B">
+      <g fill="#F5F1E8">
         <circle cx="135" cy="280" r="4" />
         <circle cx="425" cy="280" r="4" />
       </g>
 
       <!-- protocol labels as simple ticks, evoking a spec diagram -->
-      <g stroke="#6B625A" stroke-width="1" opacity="0.6">
+      <g stroke="#9C9384" stroke-width="1" opacity="0.6">
         <line x1="90" y1="345" x2="180" y2="345" />
         <line x1="380" y1="345" x2="470" y2="345" />
       </g>
 
       <path
         d="M 460 395 L 435 440 L 453 440 L 440 480 L 475 430 L 457 430 Z"
-        fill="#C8792F"
+        fill="#E0924A"
         opacity="0.9"
       />
     </>
@@ -131,17 +131,17 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
   {variant === "data" && (
     <>
       <!-- simple benchmarking bar chart, evoking the Index -->
-      <g stroke="#6B625A" stroke-width="1" opacity="0.5">
+      <g stroke="#9C9384" stroke-width="1" opacity="0.5">
         <line x1="110" y1="380" x2="450" y2="380" />
         <line x1="110" y1="160" x2="110" y2="380" />
       </g>
-      <g fill="#14322B" opacity="0.85">
+      <g fill="#F5F1E8" opacity="0.85">
         <rect x="140" y="300" width="40" height="80" rx="3" />
         <rect x="210" y="250" width="40" height="130" rx="3" />
         <rect x="280" y="200" width="40" height="180" rx="3" />
         <rect x="350" y="230" width="40" height="150" rx="3" />
       </g>
-      <g fill="#C8792F">
+      <g fill="#E0924A">
         <rect x="280" y="200" width="40" height="18" rx="3" opacity="0.95" />
       </g>
 
@@ -149,12 +149,12 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
       <path
         d="M160 300 L 230 250 L 300 205 L 370 232"
         fill="none"
-        stroke="#C8792F"
+        stroke="#E0924A"
         stroke-width="2.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
-      <g fill="#C8792F">
+      <g fill="#E0924A">
         <circle cx="160" cy="300" r="4" />
         <circle cx="230" cy="250" r="4" />
         <circle cx="300" cy="205" r="4" />
@@ -163,7 +163,7 @@ const { title = "Network map illustration", variant = "network" } = Astro.props;
 
       <path
         d="M 455 385 L 430 430 L 448 430 L 435 470 L 470 420 L 452 420 Z"
-        fill="#14322B"
+        fill="#F5F1E8"
         opacity="0.85"
       />
     </>

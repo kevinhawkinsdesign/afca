@@ -12,6 +12,10 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    /* Dark is the only theme this site has — tell the browser so native
+       form controls, scrollbars, etc. render dark by default rather than
+       fighting the OS light-mode default. */
+    color-scheme: dark;
   }
 
   body {

@@ -13,14 +13,14 @@ const {
 } = Astro.props;
 ---
 
-<div class="grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-  <div>
+<div class="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+  <div class="order-2 lg:order-1">
     <h1 class="font-sans text-3xl font-semibold text-ink md:text-4xl">{title}</h1>
     <div class="mt-4 max-w-prose">
       <slot />
     </div>
   </div>
-  <div class="hidden lg:block">
+  <div class="order-1 mx-auto w-full max-w-xs sm:max-w-sm lg:order-2 lg:mx-0 lg:max-w-none">
     <HeroVisual title={visualTitle} variant={variant} />
   </div>
 </div>
