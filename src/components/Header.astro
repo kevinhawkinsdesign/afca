@@ -27,16 +27,19 @@ const links: Array<[string, string, boolean]> = [
 function navHref(href: string, englishOnly: boolean): string {
   return englishOnly ? withBase(href) : localizePath(href, locale);
 }
+
+const navLinkClass =
+  "relative text-text no-underline transition-colors hover:text-ink after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-[width] after:duration-300 hover:after:w-full";
 ---
 
-<header class="border-b border-rule bg-paper">
+<header class="sticky top-0 z-50 border-b border-rule bg-paper/85 backdrop-blur-md">
   <div class="mx-auto flex max-w-content items-center justify-between gap-6 px-6 py-4">
-    <a href={localizePath("/", locale)} class="font-sans text-base font-semibold text-ink no-underline">
+    <a href={localizePath("/", locale)} class="font-sans text-base font-semibold tracking-tight text-ink no-underline">
       African Charging Alliance
     </a>
-    <nav aria-label="Primary" class="hidden items-center gap-6 font-sans text-sm md:flex">
+    <nav aria-label="Primary" class="hidden items-center gap-7 font-sans text-sm md:flex">
       {links.map(([label, href, englishOnly]) => (
-        <a href={navHref(href, englishOnly)} class="text-text hover:text-ink no-underline">
+        <a href={navHref(href, englishOnly)} class={navLinkClass}>
           {label}
         </a>
       ))}
@@ -44,7 +47,7 @@ function navHref(href: string, englishOnly: boolean): string {
     <div class="flex items-center gap-4">
       <a
         href={localizePath("/contact", locale)}
-        class="hidden rounded border border-ink px-3 py-1.5 font-sans text-sm font-medium text-ink no-underline hover:bg-ink hover:text-paper md:inline-block"
+        class="hidden rounded-full bg-ink px-4 py-1.5 font-sans text-sm font-semibold text-paper no-underline transition-transform hover:-translate-y-0.5 hover:opacity-90 md:inline-block"
       >
         {t.nav.contact}
       </a>

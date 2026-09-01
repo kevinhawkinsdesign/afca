@@ -1,9 +1,13 @@
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
+@import "@fontsource/schibsted-grotesk/400.css";
+@import "@fontsource/schibsted-grotesk/500.css";
+@import "@fontsource/schibsted-grotesk/600.css";
+@import "@fontsource/schibsted-grotesk/700.css";
 @import "@fontsource/source-serif-4/400.css";
 @import "@fontsource/source-serif-4/400-italic.css";
 @import "@fontsource/source-serif-4/600.css";
+@import "@fontsource/fraunces/400-italic.css";
+@import "@fontsource/dm-mono/400.css";
+@import "@fontsource/dm-mono/500.css";
 
 @tailwind base;
 @tailwind components;
@@ -26,7 +30,20 @@
   h2,
   h3,
   h4 {
-    @apply font-sans font-semibold text-ink;
+    @apply font-sans font-semibold tracking-tight text-ink text-balance;
+  }
+
+  h1 {
+    @apply tracking-tightest;
+  }
+
+  /* Editorial emphasis: an <em> inside a headline switches to italic
+     serif rather than the browser default italic-of-the-heading-font —
+     a deliberate accent, used sparingly, never for full sentences. */
+  h1 em,
+  h2 em,
+  h3 em {
+    @apply font-accentSerif italic font-normal text-ink;
   }
 
   a {
@@ -49,6 +66,12 @@
 @layer components {
   .skip-link {
     @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:font-sans focus:text-sm focus:font-medium focus:text-paper;
+  }
+
+  /* Uppercase monospace "eyebrow" label — used above headlines and as
+     section kickers, echoing a standards-document header. */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.16em] text-accent;
   }
 
   .locale-notice {
@@ -94,5 +117,23 @@
   }
   .prose-guide th {
     @apply bg-paper-warm font-semibold text-ink;
+  }
+}
+
+/* ── Scroll progress bar (injected by a tiny inline script in BaseLayout) ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: #e0924a;
+  z-index: 900;
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    display: none;
   }
 }

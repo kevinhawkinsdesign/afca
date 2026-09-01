@@ -25,8 +25,15 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Schibsted Grotesk", "system-ui", "sans-serif"],
         serif: ["Source Serif 4", "Georgia", "serif"],
+        // Italic-only editorial emphasis accent — never used for full
+        // paragraphs, only <em> within a headline (see .accent-em below).
+        accentSerif: ["Fraunces", "Georgia", "serif"],
+        mono: ["DM Mono", "SFMono-Regular", "ui-monospace", "monospace"],
+      },
+      letterSpacing: {
+        tightest: "-0.045em",
       },
       maxWidth: {
         prose: "42rem",
