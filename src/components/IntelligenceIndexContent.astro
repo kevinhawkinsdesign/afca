@@ -47,6 +47,14 @@ const signals: Array<[string, string]> = [
   [t.sig5Heading, t.sig5Text],
 ];
 
+const tailwinds: Array<[string, string, string]> = [
+  [t.d1Heading, t.d1Geo, t.d1Timeline],
+  [t.d2Heading, t.d2Geo, t.d2Timeline],
+  [t.d3Heading, t.d3Geo, t.d3Timeline],
+  [t.d4Heading, t.d4Geo, t.d4Timeline],
+  [t.d5Heading, t.d5Geo, t.d5Timeline],
+];
+
 const restraints: Array<[string, string, string]> = [
   [t.r1Heading, t.r1Geo, t.r1Timeline],
   [t.r2Heading, t.r2Geo, t.r2Timeline],
@@ -192,6 +200,32 @@ const prices: Array<[string, string, number]> = [
 
 <section class="bg-paper-warm">
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.tailwindsEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.tailwindsHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.tailwindsIntro}</p>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      {tailwinds.map(([heading, geo, timeline]) => (
+        <div class="rounded-lg border border-accent/30 bg-paper p-5">
+          <p class="font-sans font-semibold text-ink">{heading}</p>
+          <dl class="mt-3 space-y-1.5 font-mono text-xs uppercase tracking-[0.08em] text-text-muted">
+            <div class="flex justify-between gap-4">
+              <dt>{t.restraintsGeoLabel}</dt>
+              <dd class="text-right normal-case tracking-normal text-text">{geo}</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt>{t.restraintsTimelineLabel}</dt>
+              <dd class="text-right normal-case tracking-normal text-text">{timeline}</dd>
+            </div>
+          </dl>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.tailwindsSource}</p>
+  </div>
+</section>
+
+<section>
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
     <p class="eyebrow">{t.restraintsEyebrow}</p>
     <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.restraintsHeading}</h2>
     <p class="mt-3 max-w-prose text-text">{t.restraintsIntro}</p>
@@ -216,7 +250,7 @@ const prices: Array<[string, string, number]> = [
   </div>
 </section>
 
-<section>
+<section class="bg-paper-warm">
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
     <p class="eyebrow">{t.leadersEyebrow}</p>
     <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.leadersHeading}</h2>

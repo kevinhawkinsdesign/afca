@@ -70,6 +70,25 @@ export interface StatsContent {
   sig5Heading: string;
   sig5Text: string;
   signalsSource: string;
+  tailwindsEyebrow: string;
+  tailwindsHeading: string;
+  tailwindsIntro: string;
+  d1Heading: string;
+  d1Geo: string;
+  d1Timeline: string;
+  d2Heading: string;
+  d2Geo: string;
+  d2Timeline: string;
+  d3Heading: string;
+  d3Geo: string;
+  d3Timeline: string;
+  d4Heading: string;
+  d4Geo: string;
+  d4Timeline: string;
+  d5Heading: string;
+  d5Geo: string;
+  d5Timeline: string;
+  tailwindsSource: string;
   restraintsEyebrow: string;
   restraintsHeading: string;
   restraintsIntro: string;
@@ -200,6 +219,25 @@ export const statsContent: Record<Locale, StatsContent> = {
     sig5Heading: "Kenya's boda-boda opportunity",
     sig5Text: "Kenya's 2.2 million motorcycle taxis could cut transport emissions by up to 85% if electrified, running on the country's largely renewable grid.",
     signalsSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
+    tailwindsEyebrow: "Tailwinds",
+    tailwindsHeading: "What's pushing growth further",
+    tailwindsIntro: "The same report's drivers analysis, ranked by estimated boost to the CAGR forecast above.",
+    d1Heading: "Cheaper batteries, mass-market models (+10.8%)",
+    d1Geo: "Concentrated impact in Morocco, South Africa",
+    d1Timeline: "Medium term (2–4 years)",
+    d2Heading: "Mineral supply-chain push (+9.2%)",
+    d2Geo: "DRC, Zambia, Morocco, Madagascar",
+    d2Timeline: "Long term (≥4 years)",
+    d3Heading: "E-motorcycle leapfrog (+8.7%)",
+    d3Geo: "Kenya, Nigeria, Rwanda, Ghana",
+    d3Timeline: "Short term (≤2 years)",
+    d4Heading: "Battery-swap pricing (+7.3%)",
+    d4Geo: "Kenya, Nigeria, Benin, Togo, Rwanda",
+    d4Timeline: "Medium term (2–4 years)",
+    d5Heading: "OEM-fintech micro-leasing (+6.1%)",
+    d5Geo: "Nigeria, Kenya, Ghana",
+    d5Timeline: "Medium term (2–4 years)",
+    tailwindsSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
     restraintsEyebrow: "Headwinds",
     restraintsHeading: "What could slow this down",
     restraintsIntro: "The same report's restraints analysis, ranked by estimated drag on the CAGR forecast above.",
@@ -328,6 +366,25 @@ export const statsContent: Record<Locale, StatsContent> = {
     sig5Heading: "L'opportunité des boda-boda au Kenya",
     sig5Text: "Les 2,2 millions de motos-taxis du Kenya pourraient réduire les émissions du secteur des transports jusqu'à 85 % si elles étaient électrifiées, sur un réseau électrique largement renouvelable.",
     signalsSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
+    tailwindsEyebrow: "Vents favorables",
+    tailwindsHeading: "Ce qui pousse la croissance plus loin",
+    tailwindsIntro: "L'analyse des moteurs du même rapport, classés selon leur impact positif estimé sur les prévisions de TCAC ci-dessus.",
+    d1Heading: "Batteries moins chères, modèles grand public (+10,8 %)",
+    d1Geo: "Impact concentré au Maroc, en Afrique du Sud",
+    d1Timeline: "Moyen terme (2-4 ans)",
+    d2Heading: "Essor de la chaîne d'approvisionnement en minerais (+9,2 %)",
+    d2Geo: "RDC, Zambie, Maroc, Madagascar",
+    d2Timeline: "Long terme (≥ 4 ans)",
+    d3Heading: "Saut technologique des e-motos (+8,7 %)",
+    d3Geo: "Kenya, Nigeria, Rwanda, Ghana",
+    d3Timeline: "Court terme (≤ 2 ans)",
+    d4Heading: "Tarification de l'échange de batteries (+7,3 %)",
+    d4Geo: "Kenya, Nigeria, Bénin, Togo, Rwanda",
+    d4Timeline: "Moyen terme (2-4 ans)",
+    d5Heading: "Micro-crédit-bail constructeur-fintech (+6,1 %)",
+    d5Geo: "Nigeria, Kenya, Ghana",
+    d5Timeline: "Moyen terme (2-4 ans)",
+    tailwindsSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
     restraintsEyebrow: "Vents contraires",
     restraintsHeading: "Ce qui pourrait ralentir cette croissance",
     restraintsIntro: "L'analyse des freins du même rapport, classés selon leur impact estimé sur les prévisions de TCAC ci-dessus.",
@@ -456,6 +513,25 @@ export const statsContent: Record<Locale, StatsContent> = {
     sig5Heading: "Amahirwe y'amapikipiki (boda-boda) muri Kenya",
     sig5Text: "Amapikipiki 2.2 miliyoni akora boda-boda muri Kenya yashobora kugabanya ibyuka bihumanya ikirere biva mu bwikorezi kugera kuri 85% niba yahindurwa akoresha amashanyarazi, hakoreshejwe umuyoboro w'amashanyarazi ukomoka cyane ku ngufu zisubira.",
     signalsSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
+    tailwindsEyebrow: "Inkunga",
+    tailwindsHeading: "Ibitera iterambere kongera kwiyongera",
+    tailwindsIntro: "Isesengura ry'ibitera iterambere ryo muri iyi raporo, rishyizwe ku rutonde hakurikijwe ingaruka nziza ziteganyijwe ku gipimo cya CAGR hejuru.",
+    d1Heading: "Bateri zihendutse, imodoka zigenewe abaguzi benshi (+10.8%)",
+    d1Geo: "Ingaruka zibanze muri Maroc, Afurika y'Epfo",
+    d1Timeline: "Igihe cyo hagati (imyaka 2-4)",
+    d2Heading: "Iterambere ry'urunigi rw'ibikomoka ku butaka (+9.2%)",
+    d2Geo: "RDC, Zambia, Maroc, Madagascar",
+    d2Timeline: "Igihe kirekire (≥ imyaka 4)",
+    d3Heading: "Iterambere ry'amapikipiki y'amashanyarazi (+8.7%)",
+    d3Geo: "Kenya, Nigeria, Rwanda, Ghana",
+    d3Timeline: "Igihe gito (≤ imyaka 2)",
+    d4Heading: "Igiciro cyo guhererekanya bateri (+7.3%)",
+    d4Geo: "Kenya, Nigeria, Benin, Togo, Rwanda",
+    d4Timeline: "Igihe cyo hagati (imyaka 2-4)",
+    d5Heading: "Imisanzu mito hagati y'ibigo bikora imodoka na fintech (+6.1%)",
+    d5Geo: "Nigeria, Kenya, Ghana",
+    d5Timeline: "Igihe cyo hagati (imyaka 2-4)",
+    tailwindsSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
     restraintsEyebrow: "Inzitizi",
     restraintsHeading: "Icyagabanya iyi terambere",
     restraintsIntro: "Isesengura ry'inzitizi ryo muri iyi raporo, rishyizwe ku rutonde hakurikijwe ingaruka ziteganyijwe ku gipimo cya CAGR hejuru.",
@@ -584,6 +660,25 @@ export const statsContent: Record<Locale, StatsContent> = {
     sig5Heading: "Kenyas boda-boda-möjlighet",
     sig5Text: "Kenyas 2,2 miljoner motorcykeltaxin skulle kunna minska transportutsläppen med upp till 85 % om de elektrifierades, med drift på ett i huvudsak förnybart elnät.",
     signalsSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
+    tailwindsEyebrow: "Medvindar",
+    tailwindsHeading: "Vad som driver tillväxten längre",
+    tailwindsIntro: "Samma rapports analys av drivkrafter, rankade efter uppskattad positiv effekt på CAGR-prognosen ovan.",
+    d1Heading: "Billigare batterier, massmarknadsmodeller (+10,8 %)",
+    d1Geo: "Koncentrerad effekt i Marocko, Sydafrika",
+    d1Timeline: "Medellång sikt (2–4 år)",
+    d2Heading: "Satsning på mineralförsörjningskedjan (+9,2 %)",
+    d2Geo: "DR Kongo, Zambia, Marocko, Madagaskar",
+    d2Timeline: "Lång sikt (≥ 4 år)",
+    d3Heading: "Teknologisprång för elmotorcyklar (+8,7 %)",
+    d3Geo: "Kenya, Nigeria, Rwanda, Ghana",
+    d3Timeline: "Kort sikt (≤ 2 år)",
+    d4Heading: "Prissättning av batteribyte (+7,3 %)",
+    d4Geo: "Kenya, Nigeria, Benin, Togo, Rwanda",
+    d4Timeline: "Medellång sikt (2–4 år)",
+    d5Heading: "OEM-fintech mikroleasing (+6,1 %)",
+    d5Geo: "Nigeria, Kenya, Ghana",
+    d5Timeline: "Medellång sikt (2–4 år)",
+    tailwindsSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
     restraintsEyebrow: "Motvindar",
     restraintsHeading: "Vad som kan bromsa utvecklingen",
     restraintsIntro: "Samma rapports analys av hinder, rankade efter uppskattad negativ effekt på CAGR-prognosen ovan.",
