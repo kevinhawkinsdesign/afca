@@ -58,13 +58,12 @@
     @apply tracking-tightest;
   }
 
-  /* Editorial emphasis: an <em> inside a headline switches to italic
-     serif rather than the browser default italic-of-the-heading-font —
-     a deliberate accent, used sparingly, never for full sentences. */
+  /* Editorial emphasis: an <em> inside a headline gets the accent
+     color, not a second typeface — headers stay single-font. */
   h1 em,
   h2 em,
   h3 em {
-    @apply font-accentSerif italic font-normal text-ink;
+    @apply font-sans not-italic font-semibold text-accent;
   }
 
   a {
@@ -169,18 +168,20 @@
   }
 }
 
-/* Every `bg-paper-warm` section band gets a faint accent glow plus a
-   fine film-grain texture layered on top of its flat colour — the
-   grain is what reads as "luxurious" rather than flat digital black,
-   like a textured paper stock or a slow-film photograph. Generated as
-   an inline SVG feTurbulence filter (no image request), tiled at a
-   small size and kept very low-opacity so it never competes with text. */
+/* Every `bg-paper-warm` section band gets a faint accent glow, a fine
+   film-grain texture, and — instead of an abrupt flat-colour cut where
+   the previous section ends — a soft blend at the top edge fading in
+   from the darker `paper` tone, so adjacent sections read as one
+   continuous surface rather than stacked blocks with a seam. */
 .bg-paper-warm {
   background-image:
+    linear-gradient(to bottom, #0a0a0a, transparent 140px),
+    linear-gradient(to top, #0a0a0a, transparent 140px),
     radial-gradient(ellipse 640px 320px at 12% 0%, rgba(224, 146, 74, 0.07), transparent 70%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E");
-  background-repeat: no-repeat, repeat;
-  background-size: auto, 160px 160px;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-size: 100% 140px, 100% 140px, auto, 160px 160px;
+  background-position: top, bottom, top, top;
 }
 
 /* ── Scroll-reveal (fade + rise on first intersection; see BaseLayout script) ── */
