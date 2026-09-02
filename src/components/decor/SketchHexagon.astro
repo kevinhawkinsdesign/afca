@@ -1,0 +1,27 @@
+---
+// A thin glowing hexagon outline — the circuit/HUD tech motif from the
+// TRON reference, redrawn in the site's cyan "circuit" accent rather
+// than duplicated wholesale.
+interface Props {
+  class?: string;
+  size?: number;
+}
+const { class: className = "", size = 44 } = Astro.props;
+---
+
+<svg class:list={["sketch-hexagon pointer-events-none", className]} width={size} height={size} viewBox="0 0 44 44" fill="none" aria-hidden="true">
+  <path
+    d="M22 2L39 12V32L22 42L5 32V12L22 2Z"
+    stroke="#5EEAFF"
+    stroke-width="1.4"
+    stroke-linejoin="round"
+    opacity="0.75"
+  />
+  <circle cx="22" cy="22" r="3" fill="#5EEAFF" opacity="0.8" />
+</svg>
+
+<style>
+  .sketch-hexagon {
+    filter: drop-shadow(0 0 4px rgba(94, 234, 255, 0.5));
+  }
+</style>
