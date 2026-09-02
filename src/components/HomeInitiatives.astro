@@ -13,6 +13,7 @@ const initiatives: Array<[string, string]> = [
   [t.init1Title, t.init1Body],
   [t.init2Title, t.init2Body],
   [t.init3Title, t.init3Body],
+  [t.init4Title, t.init4Body],
 ];
 ---
 
@@ -25,7 +26,7 @@ const initiatives: Array<[string, string]> = [
         <path d="M2 4C15 1 25 1 38 4C51 7 61 7 74 4C87 1 97 1 110 4" stroke="#E0924A" stroke-width="2" stroke-linecap="round" />
       </svg>
     </h2>
-    <div class="mt-8 grid gap-6 md:grid-cols-3">
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {initiatives.map(([title, body]) => (
         <div class="group rounded-lg border border-rule bg-paper p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-lg hover:shadow-accent/20">
           <h3 class="font-sans font-semibold text-ink">{title}</h3>
