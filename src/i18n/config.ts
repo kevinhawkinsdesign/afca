@@ -27,6 +27,7 @@ export const ui = {
     technicalEnglishNotice:
       "English is the language of record for technical material. This page is not translated.",
     nav: {
+      home: "Home",
       about: "About",
       intelligence: "Intelligence",
       standards: "Standards",
@@ -47,6 +48,7 @@ export const ui = {
     technicalEnglishNotice:
       "L'anglais est la langue de référence pour le contenu technique. Cette page n'est pas traduite.",
     nav: {
+      home: "Accueil",
       about: "À propos",
       intelligence: "Intelligence",
       standards: "Normes",
@@ -67,6 +69,7 @@ export const ui = {
     technicalEnglishNotice:
       "Icyongereza ni ururimi rw'ibanze ku bijyanye n'ibya tekiniki. Iyi paji ntiyahinduwe.",
     nav: {
+      home: "Ahabanza",
       about: "Abo turi bo",
       intelligence: "Ubushakashatsi",
       standards: "Amabwiriza",
@@ -87,6 +90,7 @@ export const ui = {
     technicalEnglishNotice:
       "Engelska är originalspråket för tekniskt material. Den här sidan är inte översatt.",
     nav: {
+      home: "Hem",
       about: "Om oss",
       intelligence: "Analys",
       standards: "Standarder",
