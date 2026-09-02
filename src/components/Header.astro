@@ -45,12 +45,6 @@ const navLinkClass =
       ))}
     </nav>
     <div class="flex items-center gap-4">
-      <a
-        href={localizePath("/contact", locale)}
-        class="hidden rounded-full bg-ink px-4 py-1.5 font-sans text-sm font-semibold text-paper no-underline transition-transform hover:-translate-y-0.5 hover:opacity-90 md:inline-block"
-      >
-        {t.nav.contact}
-      </a>
       <LanguageSwitcher locale={locale} pathname={pathname} technicalEnglishOnly={technicalEnglishOnly} />
     </div>
   </div>
@@ -58,6 +52,5 @@ const navLinkClass =
     {links.map(([label, href, englishOnly]) => (
       <a href={navHref(href, englishOnly)} class="inline-flex items-center px-3 py-3 text-text no-underline">{label}</a>
     ))}
-    <a href={localizePath("/contact", locale)} class="inline-flex items-center px-3 py-3 font-medium text-ink no-underline">{t.nav.contact}</a>
   </nav>
 </header>

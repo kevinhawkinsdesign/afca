@@ -32,7 +32,6 @@ export const ui = {
       standards: "Standards",
       summit: "Summit",
       community: "Community",
-      contact: "Contact",
     },
     footer: {
       tagline:
@@ -54,7 +53,6 @@ export const ui = {
       standards: "Normes",
       summit: "Sommet",
       community: "Communauté",
-      contact: "Contact",
     },
     footer: {
       tagline:
@@ -76,7 +74,6 @@ export const ui = {
       standards: "Amabwiriza",
       summit: "Inama",
       community: "Umuryango",
-      contact: "Twandikire",
     },
     footer: {
       tagline:
@@ -98,7 +95,6 @@ export const ui = {
       standards: "Standarder",
       summit: "Toppmöte",
       community: "Gemenskap",
-      contact: "Kontakt",
     },
     footer: {
       tagline:
