@@ -12,6 +12,17 @@ export interface StatsContent {
   heroEyebrow: string;
   heroTitle: string;
   heroIntro: string;
+  globalEyebrow: string;
+  globalHeading: string;
+  globalIntro: string;
+  g1Number: string;
+  g1Label: string;
+  g2Number: string;
+  g2Label: string;
+  g3Number: string;
+  g3Label: string;
+  globalSource: string;
+  globalNote: string;
   opportunityHeading: string;
   opp1Label: string;
   opp1Source: string;
@@ -56,6 +67,17 @@ export const statsContent: Record<Locale, StatsContent> = {
     heroEyebrow: "Public data, cited",
     heroTitle: "Africa's EV charging industry, in numbers",
     heroIntro: "A working collection of publicly reported statistics on electric vehicles and charging infrastructure across Africa, while AfCA's own Pan-African Interoperability and Reliability Index is still in development. Every figure below links back to its original source rather than being restated as AfCA's own finding.",
+    globalEyebrow: "Global context",
+    globalHeading: "Where the global EV market is headed",
+    globalIntro: "For context beyond Africa: the worldwide electric vehicle market, as tracked by one of the sector's most-cited research firms. This particular report doesn't break out African figures on its own — see the Africa-specific data below for that.",
+    g1Number: "$1.15T → $1.86T",
+    g1Label: "projected global EV market growth, 2025–2035",
+    g2Number: "5.0%",
+    g2Label: "global EV market CAGR, 2025–2035",
+    g3Number: "40%+",
+    g3Label: "share of the global EV market held by Asia Pacific, the largest region",
+    globalSource: "Source: MarketsandMarkets, \"Electric Vehicle Market Size, Share & Analysis\" (Report AT 4907, Oct 2025)",
+    globalNote: "BYD leads the global EV market, followed by Tesla.",
     opportunityHeading: "The opportunity",
     opp1Label: "of African countries have 10+ public EV charging stations today",
     opp1Source: "Source: iAfrikan Insights",
@@ -98,6 +120,17 @@ export const statsContent: Record<Locale, StatsContent> = {
     heroEyebrow: "Données publiques, sourcées",
     heroTitle: "L'industrie africaine de la recharge de véhicules électriques, en chiffres",
     heroIntro: "Une collection évolutive de statistiques publiées publiquement sur les véhicules électriques et l'infrastructure de recharge à travers l'Afrique, en attendant que le Pan-African Interoperability and Reliability Index d'AfCA soit finalisé. Chaque chiffre ci-dessous renvoie à sa source originale plutôt que d'être présenté comme une conclusion propre à AfCA.",
+    globalEyebrow: "Contexte mondial",
+    globalHeading: "Où va le marché mondial des véhicules électriques",
+    globalIntro: "Pour situer l'Afrique dans un contexte plus large : le marché mondial des véhicules électriques, suivi par l'un des cabinets de recherche les plus cités du secteur. Ce rapport en particulier ne détaille pas de chiffres propres à l'Afrique — voir les données spécifiques à l'Afrique ci-dessous pour cela.",
+    g1Number: "1,15 T$ → 1,86 T$",
+    g1Label: "croissance projetée du marché mondial des véhicules électriques, 2025-2035",
+    g2Number: "5,0 %",
+    g2Label: "TCAC du marché mondial des véhicules électriques, 2025-2035",
+    g3Number: "40 %+",
+    g3Label: "part du marché mondial des véhicules électriques détenue par l'Asie-Pacifique, la plus grande région",
+    globalSource: "Source : MarketsandMarkets, « Electric Vehicle Market Size, Share & Analysis » (rapport AT 4907, oct. 2025)",
+    globalNote: "BYD est en tête du marché mondial des véhicules électriques, suivi de Tesla.",
     opportunityHeading: "L'opportunité",
     opp1Label: "des pays africains disposent aujourd'hui d'au moins 10 stations de recharge publiques",
     opp1Source: "Source : iAfrikan Insights",
@@ -140,6 +173,17 @@ export const statsContent: Record<Locale, StatsContent> = {
     heroEyebrow: "Amakuru rusange, afite isoko",
     heroTitle: "Urusobe rw'icyuzuzo cy'amamodoka akoresha amashanyarazi muri Afurika, mu mibare",
     heroIntro: "Urutonde rukomeza kuvugururwa rw'imibare yatangajwe ku mugaragaro ku byerekeye amamodoka akoresha amashanyarazi n'ibikorwaremezo by'icyuzuzo muri Afurika, mu gihe Pan-African Interoperability and Reliability Index ya AfCA ikirimo gutegurwa. Buri mubare hano ufite isoko ryawo bwite aho kuba wagaragazwa nk'ubushakashatsi bwa AfCA ubwayo.",
+    globalEyebrow: "Uko isoko mpuzamahanga rimeze",
+    globalHeading: "Aho isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi rijya",
+    globalIntro: "Kugira ngo tumenye aho Afurika ihagaze ku rwego rw'isi: isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi, rikurikiranwa n'imwe mu bigo by'ubushakashatsi bikunze kuvugwa muri uru rwego. Iyi raporo ubwayo ntabwo itanga imibare yihariye ya Afurika — reba amakuru yihariye Afurika ari hepfo kuri ibyo.",
+    g1Number: "$1.15T → $1.86T",
+    g1Label: "iterambere riteganyijwe ry'isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi, 2025–2035",
+    g2Number: "5.0%",
+    g2Label: "igipimo cy'iterambere (CAGR) ry'isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi, 2025–2035",
+    g3Number: "40%+",
+    g3Label: "igice cy'isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi gifitwe na Aziya y'Ifasi ya Pasifika, akarere kanini",
+    globalSource: "Isoko: MarketsandMarkets, \"Electric Vehicle Market Size, Share & Analysis\" (Raporo AT 4907, Ukwakira 2025)",
+    globalNote: "BYD niyo iyoboye isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi, ikurikirwa na Tesla.",
     opportunityHeading: "Amahirwe ariho",
     opp1Label: "by'ibihugu bya Afurika bifite ubu sitasiyo z'icyuzuzo z'abaturage zirenga 10",
     opp1Source: "Isoko: iAfrikan Insights",
@@ -182,6 +226,17 @@ export const statsContent: Record<Locale, StatsContent> = {
     heroEyebrow: "Offentlig data, källbelagd",
     heroTitle: "Afrikas elbilsladdningsindustri, i siffror",
     heroIntro: "En växande samling offentligt rapporterad statistik om elfordon och laddinfrastruktur i hela Afrika, medan AfCA:s eget Pan-African Interoperability and Reliability Index fortfarande utvecklas. Varje siffra nedan länkar tillbaka till sin ursprungliga källa i stället för att presenteras som AfCA:s eget resultat.",
+    globalEyebrow: "Global kontext",
+    globalHeading: "Vart den globala elbilsmarknaden är på väg",
+    globalIntro: "För kontext utöver Afrika: den globala marknaden för elfordon, som följs av ett av branschens mest citerade researchbolag. Just den här rapporten bryter inte ut afrikanska siffror separat — se den Afrikaspecifika datan nedan för det.",
+    g1Number: "1,15 biljoner $ → 1,86 biljoner $",
+    g1Label: "förväntad tillväxt för den globala elbilsmarknaden, 2025–2035",
+    g2Number: "5,0 %",
+    g2Label: "global CAGR för elbilsmarknaden, 2025–2035",
+    g3Number: "40 %+",
+    g3Label: "andel av den globala elbilsmarknaden som innehas av Asien-Stillahavsregionen, den största regionen",
+    globalSource: "Källa: MarketsandMarkets, \"Electric Vehicle Market Size, Share & Analysis\" (rapport AT 4907, okt 2025)",
+    globalNote: "BYD leder den globala elbilsmarknaden, följt av Tesla.",
     opportunityHeading: "Möjligheten",
     opp1Label: "av Afrikas länder har idag 10 eller fler publika laddstationer",
     opp1Source: "Källa: iAfrikan Insights",

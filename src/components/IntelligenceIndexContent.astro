@@ -12,6 +12,12 @@ interface Props {
 const { locale } = Astro.props;
 const t = statsContent[locale];
 
+const global: Array<[string, string]> = [
+  [t.g1Number, t.g1Label],
+  [t.g2Number, t.g2Label],
+  [t.g3Number, t.g3Label],
+];
+
 const opportunity: Array<[string, string, string]> = [
   ["17%", t.opp1Label, t.opp1Source],
   ["53.9%", t.opp2Label, t.opp2Source],
@@ -35,6 +41,25 @@ const prices: Array<[string, string, number]> = [
 <FullBleedHero title={t.heroTitle} image="/hero/intelligence.jpg" imageAlt="A row of electric vehicles charging at a multi-bay public station" eyebrow={t.heroEyebrow}>
   <p class="text-lg text-text">{t.heroIntro}</p>
 </FullBleedHero>
+
+<section class="bg-paper-warm">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.globalEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.globalHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.globalIntro}</p>
+    <div class="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-6">
+      {global.map(([number, label]) => (
+        <div>
+          <p class="font-accentSerif text-4xl italic text-ink sm:text-5xl">{number}</p>
+          <span class="stat-bar mt-3 block h-0.5 w-12 bg-accent"></span>
+          <p class="mt-3 max-w-[22rem] text-text">{label}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 max-w-prose text-sm text-text-muted">{t.globalNote}</p>
+    <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.globalSource}</p>
+  </div>
+</section>
 
 <section>
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
