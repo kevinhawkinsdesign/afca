@@ -73,6 +73,9 @@ export interface StatsContent {
   tailwindsEyebrow: string;
   tailwindsHeading: string;
   tailwindsIntro: string;
+  d0Heading: string;
+  d0Geo: string;
+  d0Timeline: string;
   d1Heading: string;
   d1Geo: string;
   d1Timeline: string;
@@ -222,6 +225,9 @@ export const statsContent: Record<Locale, StatsContent> = {
     tailwindsEyebrow: "Tailwinds",
     tailwindsHeading: "What's pushing growth further",
     tailwindsIntro: "The same report's drivers analysis, ranked by estimated boost to the CAGR forecast above.",
+    d0Heading: "Zero-duty import incentives (+12.5%)",
+    d0Geo: "Ethiopia, Ghana, South Africa, Rwanda",
+    d0Timeline: "Short term (≤2 years)",
     d1Heading: "Cheaper batteries, mass-market models (+10.8%)",
     d1Geo: "Concentrated impact in Morocco, South Africa",
     d1Timeline: "Medium term (2–4 years)",
@@ -369,6 +375,9 @@ export const statsContent: Record<Locale, StatsContent> = {
     tailwindsEyebrow: "Vents favorables",
     tailwindsHeading: "Ce qui pousse la croissance plus loin",
     tailwindsIntro: "L'analyse des moteurs du même rapport, classés selon leur impact positif estimé sur les prévisions de TCAC ci-dessus.",
+    d0Heading: "Exonération des droits d'importation (+12,5 %)",
+    d0Geo: "Éthiopie, Ghana, Afrique du Sud, Rwanda",
+    d0Timeline: "Court terme (≤ 2 ans)",
     d1Heading: "Batteries moins chères, modèles grand public (+10,8 %)",
     d1Geo: "Impact concentré au Maroc, en Afrique du Sud",
     d1Timeline: "Moyen terme (2-4 ans)",
@@ -516,6 +525,9 @@ export const statsContent: Record<Locale, StatsContent> = {
     tailwindsEyebrow: "Inkunga",
     tailwindsHeading: "Ibitera iterambere kongera kwiyongera",
     tailwindsIntro: "Isesengura ry'ibitera iterambere ryo muri iyi raporo, rishyizwe ku rutonde hakurikijwe ingaruka nziza ziteganyijwe ku gipimo cya CAGR hejuru.",
+    d0Heading: "Kubura imisoro ku itumizwa (+12.5%)",
+    d0Geo: "Ethiopia, Ghana, Afurika y'Epfo, Rwanda",
+    d0Timeline: "Igihe gito (≤ imyaka 2)",
     d1Heading: "Bateri zihendutse, imodoka zigenewe abaguzi benshi (+10.8%)",
     d1Geo: "Ingaruka zibanze muri Maroc, Afurika y'Epfo",
     d1Timeline: "Igihe cyo hagati (imyaka 2-4)",
@@ -663,6 +675,9 @@ export const statsContent: Record<Locale, StatsContent> = {
     tailwindsEyebrow: "Medvindar",
     tailwindsHeading: "Vad som driver tillväxten längre",
     tailwindsIntro: "Samma rapports analys av drivkrafter, rankade efter uppskattad positiv effekt på CAGR-prognosen ovan.",
+    d0Heading: "Nolltull på import (+12,5 %)",
+    d0Geo: "Etiopien, Ghana, Sydafrika, Rwanda",
+    d0Timeline: "Kort sikt (≤ 2 år)",
     d1Heading: "Billigare batterier, massmarknadsmodeller (+10,8 %)",
     d1Geo: "Koncentrerad effekt i Marocko, Sydafrika",
     d1Timeline: "Medellång sikt (2–4 år)",
