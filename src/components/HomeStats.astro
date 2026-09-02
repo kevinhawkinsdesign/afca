@@ -1,0 +1,26 @@
+---
+// Every figure here carries a source, per AfCA's own sourcing standard
+// (BRIEF.md section 8) — these are placeholder-quality citations (no
+// access date tracked yet) pending the real Index data pipeline, but
+// the numbers themselves are real published figures, not invented.
+const stats: Array<[string, string, string]> = [
+  ["17%", "of African countries have 10+ public EV charging stations today", "Source: iAfrikan Insights"],
+  ["53.9%", "projected CAGR for Africa's EV market, 2026–2031", "Source: Mordor Intelligence"],
+  ["93", "public charging stations recorded in South Africa, the continent's largest network", "Source: iAfrikan Insights"],
+];
+---
+
+<section class="border-t border-rule">
+  <div class="mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">The opportunity</p>
+    <div class="mt-6 grid gap-8 sm:grid-cols-3 sm:gap-6">
+      {stats.map(([number, label, source]) => (
+        <div>
+          <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{number}</p>
+          <p class="mt-2 max-w-[22rem] text-text">{label}</p>
+          <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{source}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

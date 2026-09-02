@@ -35,7 +35,7 @@ const visible = allEntries
 
     <div class="mt-10 grid gap-6 md:grid-cols-2">
       {visible.map((entry) => (
-        <a href={withBase(`/intelligence/${entry.slug}`)} class="block rounded border border-rule bg-paper p-6 no-underline hover:border-ink">
+        <a href={withBase(`/intelligence/${entry.slug}`)} class="group block rounded border border-rule bg-paper p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-lg hover:shadow-black/20">
           <p class="font-sans text-xs font-medium uppercase tracking-wide text-text-muted">
             {entry.data.publishDate.toLocaleDateString("en-GB", { year: "numeric", month: "long" })}
             &middot; v{entry.data.methodologyVersion}
