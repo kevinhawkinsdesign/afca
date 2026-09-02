@@ -1,0 +1,35 @@
+---
+// Reading-progress indicator styled as a charging battery — fills as
+// the visitor scrolls down the page, on brand for a charging alliance.
+// Rendered inline in the header (next to the language switcher) rather
+// than as a floating overlay, so it never collides with header controls.
+---
+
+<div class="battery-indicator hidden shrink-0 items-center sm:flex" data-battery-indicator aria-hidden="true" title="Scroll progress">
+  <svg width="26" height="14" viewBox="0 0 26 14" fill="none">
+    <rect x="1" y="1" width="21" height="12" rx="2.2" stroke="#9C9384" stroke-width="1.1" />
+    <rect x="23" y="4.5" width="2" height="5" rx="0.8" fill="#9C9384" />
+    <rect x="2.6" y="2.6" width="0" height="8.8" rx="0.8" fill="#E0924A" data-battery-fill />
+  </svg>
+</div>
+
+<style>
+  [data-battery-fill] {
+    transition: width 0.08s linear;
+  }
+</style>
+
+<script>
+  const fill = document.querySelector<SVGRectElement>("[data-battery-fill]");
+  if (fill && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const maxWidth = 18.8;
+    const update = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = scrollable > 0 ? window.scrollY / scrollable : 0;
+      fill.setAttribute("width", String(Math.min(maxWidth, Math.max(0, pct * maxWidth))));
+    };
+    document.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+</script>

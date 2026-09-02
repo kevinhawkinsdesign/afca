@@ -1,0 +1,88 @@
+---
+// Decorative particle network — small moving dots that draw a connecting
+// line to nearby neighbours, echoing a charging/data network. Purely
+// decorative (aria-hidden), capped dot count for performance, and frozen
+// on a single static frame for prefers-reduced-motion rather than
+// animating indefinitely.
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<canvas class:list={["pointer-events-none absolute inset-0 h-full w-full", className]} aria-hidden="true" data-dot-grid></canvas>
+
+<script>
+  const canvases = document.querySelectorAll<HTMLCanvasElement>("[data-dot-grid]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  canvases.forEach((canvas) => {
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    type Dot = { x: number; y: number; vx: number; vy: number };
+    let dots: Dot[] = [];
+    let width = 0;
+    let height = 0;
+    let raf = 0;
+
+    function resize() {
+      const rect = canvas.parentElement!.getBoundingClientRect();
+      width = canvas.width = rect.width;
+      height = canvas.height = rect.height;
+      const count = Math.min(60, Math.max(18, Math.round((width * height) / 22000)));
+      dots = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+      }));
+    }
+
+    function draw() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, width, height);
+      const linkDist = Math.min(140, width / 6);
+
+      for (let i = 0; i < dots.length; i++) {
+        const a = dots[i];
+        if (!reduceMotion) {
+          a.x += a.vx;
+          a.y += a.vy;
+          if (a.x < 0 || a.x > width) a.vx *= -1;
+          if (a.y < 0 || a.y > height) a.vy *= -1;
+        }
+        for (let j = i + 1; j < dots.length; j++) {
+          const b = dots[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < linkDist) {
+            ctx.strokeStyle = `rgba(224, 146, 74, ${0.18 * (1 - dist / linkDist)})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+      for (const d of dots) {
+        ctx.fillStyle = "rgba(224, 146, 74, 0.55)";
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, 1.6, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (!reduceMotion) raf = requestAnimationFrame(draw);
+    }
+
+    resize();
+    draw();
+    window.addEventListener("resize", () => {
+      cancelAnimationFrame(raf);
+      resize();
+      draw();
+    });
+  });
+</script>

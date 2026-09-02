@@ -1,5 +1,6 @@
 ---
 import LanguageSwitcher from "./LanguageSwitcher.astro";
+import BatteryScrollIndicator from "./BatteryScrollIndicator.astro";
 import { ui, localizePath, type Locale } from "../i18n/config";
 import { withBase } from "../lib/url";
 
@@ -44,6 +45,7 @@ const navLinkClass =
       ))}
     </nav>
     <div class="flex items-center gap-4">
+      <BatteryScrollIndicator />
       <LanguageSwitcher locale={locale} pathname={pathname} technicalEnglishOnly={technicalEnglishOnly} />
     </div>
   </div>

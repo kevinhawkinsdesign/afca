@@ -29,8 +29,18 @@
   }
 
   body {
-    @apply bg-paper text-text font-serif text-[1.0625rem] leading-relaxed antialiased;
+    @apply text-text font-serif text-[1.0625rem] leading-relaxed antialiased;
     overflow-x: hidden;
+    /* Subtle ambient gradient rather than a flat fill — a soft accent
+       glow top-right and a cooler pool bottom-left, both fixed so they
+       don't repeat or shift oddly as the page scrolls. Kept dark and
+       low-contrast to stay inside the "restraint over energy" rule. */
+    background-color: #10201b;
+    background-image:
+      radial-gradient(ellipse 900px 600px at 90% -5%, rgba(224, 146, 74, 0.14), transparent 60%),
+      radial-gradient(ellipse 800px 700px at -10% 40%, rgba(22, 40, 31, 0.9), transparent 55%),
+      radial-gradient(ellipse 1000px 800px at 50% 120%, rgba(224, 146, 74, 0.06), transparent 60%);
+    background-attachment: fixed;
   }
 
   h1,
@@ -131,22 +141,11 @@
   }
 }
 
-/* ── Scroll progress bar (injected by a tiny inline script in BaseLayout) ── */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background: #e0924a;
-  z-index: 900;
-  pointer-events: none;
-  transition: width 0.08s linear;
-}
-@media (prefers-reduced-motion: reduce) {
-  .scroll-progress {
-    display: none;
-  }
+/* Every `bg-paper-warm` section band gets a faint accent glow layered on
+   top of its flat colour — reinforces the site's gradient direction
+   without touching each usage individually. */
+.bg-paper-warm {
+  background-image: radial-gradient(ellipse 640px 320px at 12% 0%, rgba(224, 146, 74, 0.07), transparent 70%);
 }
 
 /* ── Scroll-reveal (fade + rise on first intersection; see BaseLayout script) ── */
