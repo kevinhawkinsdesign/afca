@@ -1,0 +1,23 @@
+---
+import { withBase } from "../lib/url";
+
+interface Props {
+  src: string;
+  alt: string;
+  /** Compact rendering for detail-page side rails (guide/report pages). */
+  compact?: boolean;
+}
+const { src, alt, compact = false } = Astro.props;
+---
+
+<img
+  src={withBase(src)}
+  alt={alt}
+  width="1400"
+  height="933"
+  class:list={[
+    "w-full rounded-lg border border-rule object-cover",
+    compact ? "aspect-square" : "aspect-[4/3] sm:aspect-[16/10]",
+  ]}
+  loading="eager"
+/>

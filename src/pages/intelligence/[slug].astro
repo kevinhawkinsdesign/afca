@@ -5,7 +5,7 @@ import SupersededBanner from "../../components/SupersededBanner.astro";
 import SourceList from "../../components/SourceList.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { withBase } from "../../lib/url";
-import HeroVisual from "../../components/HeroVisual.astro";
+import PhotoHero from "../../components/PhotoHero.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("intelligence", (e) => e.data.locale === "en");
@@ -43,7 +43,7 @@ const locale = "en" as const;
         </p>
       </div>
       <div class="order-2 mx-auto w-full max-w-[12rem] sm:max-w-[14rem] lg:order-2 lg:mx-0 lg:max-w-xs lg:justify-self-end">
-        <HeroVisual title={`Stylised benchmarking chart illustration for: ${entry.data.title}`} variant="data" />
+        <PhotoHero src="/hero/intelligence.jpg" alt="A row of electric vehicles charging at a multi-bay public station" compact />
       </div>
     </div>
 

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import HeroVisual from "../components/HeroVisual.astro";
+import PhotoHero from "../components/PhotoHero.astro";
 import { withBase } from "../lib/url";
 
 interface Props {
@@ -21,7 +21,7 @@ const { title, description } = Astro.props;
         <p class="mt-4 text-lg text-text">{description}</p>
       </div>
       <div class="order-2 mx-auto w-full max-w-[12rem] sm:max-w-[14rem] lg:order-2 lg:mx-0 lg:max-w-xs lg:justify-self-end">
-        <HeroVisual title={`Stylised protocol handshake illustration for: ${title}`} variant="protocol" />
+        <PhotoHero src="/hero/standards.jpg" alt="A motorcycle taxi rider using a ROAM fast charger in Kenya" compact />
       </div>
     </div>
     <div class="mx-auto max-w-prose">

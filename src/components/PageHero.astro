@@ -1,16 +1,12 @@
 ---
-import HeroVisual from "./HeroVisual.astro";
+import PhotoHero from "./PhotoHero.astro";
 
 interface Props {
   title: string;
-  visualTitle?: string;
-  variant?: "network" | "protocol" | "data";
+  image: string;
+  imageAlt: string;
 }
-const {
-  title,
-  visualTitle = "Stylised network map of interoperable charging infrastructure across Africa",
-  variant = "network",
-} = Astro.props;
+const { title, image, imageAlt } = Astro.props;
 ---
 
 <div class="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
@@ -20,7 +16,7 @@ const {
       <slot />
     </div>
   </div>
-  <div class="order-1 mx-auto w-full max-w-xs sm:max-w-sm lg:order-2 lg:mx-0 lg:max-w-none">
-    <HeroVisual title={visualTitle} variant={variant} />
+  <div class="order-1 mx-auto w-full max-w-sm sm:max-w-md lg:order-2 lg:mx-0 lg:max-w-none">
+    <PhotoHero src={image} alt={imageAlt} />
   </div>
 </div>
