@@ -16,6 +16,7 @@ const global: Array<[string, string]> = [
   [t.g1Number, t.g1Label],
   [t.g2Number, t.g2Label],
   [t.g3Number, t.g3Label],
+  [t.g4Number, t.g4Label],
 ];
 
 const opportunity: Array<[string, string, string]> = [
@@ -47,7 +48,7 @@ const prices: Array<[string, string, number]> = [
     <p class="eyebrow">{t.globalEyebrow}</p>
     <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.globalHeading}</h2>
     <p class="mt-3 max-w-prose text-text">{t.globalIntro}</p>
-    <div class="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-6">
+    <div class="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
       {global.map(([number, label]) => (
         <div>
           <p class="font-accentSerif text-4xl italic text-ink sm:text-5xl">{number}</p>

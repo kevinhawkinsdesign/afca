@@ -21,6 +21,8 @@ export interface StatsContent {
   g2Label: string;
   g3Number: string;
   g3Label: string;
+  g4Number: string;
+  g4Label: string;
   globalSource: string;
   globalNote: string;
   opportunityHeading: string;
@@ -76,6 +78,8 @@ export const statsContent: Record<Locale, StatsContent> = {
     g2Label: "global EV market CAGR, 2025–2035",
     g3Number: "40%+",
     g3Label: "share of the global EV market held by Asia Pacific, the largest region",
+    g4Number: "15.1%",
+    g4Label: "CAGR for electric commercial vehicles, 2025–2035 — the fastest-growing vehicle segment",
     globalSource: "Source: MarketsandMarkets, \"Electric Vehicle Market Size, Share & Analysis\" (Report AT 4907, Oct 2025)",
     globalNote: "BYD leads the global EV market, followed by Tesla.",
     opportunityHeading: "The opportunity",
@@ -129,6 +133,8 @@ export const statsContent: Record<Locale, StatsContent> = {
     g2Label: "TCAC du marché mondial des véhicules électriques, 2025-2035",
     g3Number: "40 %+",
     g3Label: "part du marché mondial des véhicules électriques détenue par l'Asie-Pacifique, la plus grande région",
+    g4Number: "15,1 %",
+    g4Label: "TCAC des véhicules utilitaires électriques, 2025-2035 — le segment qui croît le plus vite",
     globalSource: "Source : MarketsandMarkets, « Electric Vehicle Market Size, Share & Analysis » (rapport AT 4907, oct. 2025)",
     globalNote: "BYD est en tête du marché mondial des véhicules électriques, suivi de Tesla.",
     opportunityHeading: "L'opportunité",
@@ -182,6 +188,8 @@ export const statsContent: Record<Locale, StatsContent> = {
     g2Label: "igipimo cy'iterambere (CAGR) ry'isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi, 2025–2035",
     g3Number: "40%+",
     g3Label: "igice cy'isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi gifitwe na Aziya y'Ifasi ya Pasifika, akarere kanini",
+    g4Number: "15.1%",
+    g4Label: "CAGR y'amamodoka y'ubucuruzi akoresha amashanyarazi, 2025–2035 — icyiciro gikura vuba kurusha ibindi",
     globalSource: "Isoko: MarketsandMarkets, \"Electric Vehicle Market Size, Share & Analysis\" (Raporo AT 4907, Ukwakira 2025)",
     globalNote: "BYD niyo iyoboye isoko mpuzamahanga ry'amamodoka akoresha amashanyarazi, ikurikirwa na Tesla.",
     opportunityHeading: "Amahirwe ariho",
@@ -235,6 +243,8 @@ export const statsContent: Record<Locale, StatsContent> = {
     g2Label: "global CAGR för elbilsmarknaden, 2025–2035",
     g3Number: "40 %+",
     g3Label: "andel av den globala elbilsmarknaden som innehas av Asien-Stillahavsregionen, den största regionen",
+    g4Number: "15,1 %",
+    g4Label: "CAGR för elektriska nyttofordon, 2025–2035 — det snabbast växande fordonssegmentet",
     globalSource: "Källa: MarketsandMarkets, \"Electric Vehicle Market Size, Share & Analysis\" (rapport AT 4907, okt 2025)",
     globalNote: "BYD leder den globala elbilsmarknaden, följt av Tesla.",
     opportunityHeading: "Möjligheten",
