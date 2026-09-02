@@ -2,70 +2,57 @@
 import FullBleedHero from "./FullBleedHero.astro";
 import FullBleedBreak from "./FullBleedBreak.astro";
 import { withBase } from "../lib/url";
+import { communityContent } from "../i18n/communityContent";
+import type { Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = communityContent[locale];
 ---
 
-<FullBleedHero title="Community" image="/hero/community.jpg" imageAlt="An electric bus charging at a depot in Kenya">
-  <p class="text-lg text-text">
-    AfCA convenes Charge Point Operators, Electromobility Service Providers, electric utilities,
-    fleet operators, hardware OEMs, and policymakers around shared, published standards — not
-    closed-door advisory relationships with individual companies.
-  </p>
+<FullBleedHero title={t.heroTitle} image="/hero/community.jpg" imageAlt="An electric bus charging at a depot in Kenya">
+  <p class="text-lg text-text">{t.heroIntro}</p>
 </FullBleedHero>
 
 <section class="mx-auto max-w-content px-6 py-10 md:py-16">
-  <h2 class="font-sans text-2xl font-semibold text-ink">Membership</h2>
+  <h2 class="font-sans text-2xl font-semibold text-ink">{t.membershipHeading}</h2>
   <p class="mt-4 max-w-prose text-text-muted">
     {/* TODO: membership tiers, fees, and eligibility criteria — pending governance sign-off. */}
-    Membership tiers, fees, and eligibility criteria are being finalised alongside AfCA's Rwanda
-    registration and will be published here once confirmed. Participation follows the open-call
-    principle described in the <a href={withBase("/about")} class="text-ink underline">operating principles</a>:
-    organisations self-select against published criteria rather than being hand-picked.
+    {t.membershipTextPre}{" "}
+    <a href={withBase("/about")} class="text-ink underline">{t.membershipLink}</a>{t.membershipTextPost}
   </p>
 
-  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">Working groups</h2>
+  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">{t.workingGroupsHeading}</h2>
   <p class="mt-4 max-w-prose text-text-muted">
     {/* TODO: list active working groups once formally constituted. */}
-    Working groups are formed around specific technical or policy questions — interoperability
-    testing, tariff harmonisation, or a country's regulatory framework, for example — and publish
-    their outputs openly rather than as member-only deliverables. The initial slate of working
-    groups will be announced alongside the first AfCA Summit.
+    {t.workingGroupsText}
   </p>
 
-  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">Participant directory</h2>
+  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">{t.directoryHeading}</h2>
   <p class="mt-4 max-w-prose text-text-muted">
     {/* TODO: populate with confirmed participants. No customer-showcase framing — factual data points only, per BRIEF.md section 8. */}
-    A directory of confirmed participating organisations will appear here. In keeping with AfCA's
-    vendor-neutral positioning, this will list organisations as factual participants — not as
-    testimonials or an implied endorsement.
+    {t.directoryText}
   </p>
 
-  <FullBleedBreak image="/hero/summit.jpg" imageAlt="Nairobi skyline at dusk" caption="Nairobi at dusk" />
+  <FullBleedBreak image="/hero/summit.jpg" imageAlt="Nairobi skyline at dusk" caption={t.breakCaption} />
 
-  <h2 id="summit" class="scroll-mt-24 font-sans text-2xl font-semibold text-ink">The AfCA Annual Summit</h2>
-  <p class="mt-4 max-w-prose text-lg text-text">
-    Curated representation across the value chain, action-oriented workshops rather than panels,
-    and a catalyst for regional initiatives, donor-funded corridor pilots, and harmonised policy
-    recommendations.
-  </p>
+  <h2 id="summit" class="scroll-mt-24 font-sans text-2xl font-semibold text-ink">{t.summitHeading}</h2>
+  <p class="mt-4 max-w-prose text-lg text-text">{t.summitIntro}</p>
 
-  <h3 class="mt-10 font-sans text-xl font-semibold text-ink">What the Summit is for</h3>
-  <p class="mt-4 max-w-prose text-text">
-    The Summit exists to produce outcomes, not to be attended. Every session is built around a
-    working deliverable — a draft standard, a corridor pilot proposal, a policy recommendation —
-    rather than a stage and an audience.
-  </p>
+  <h3 class="mt-10 font-sans text-xl font-semibold text-ink">{t.summitPurposeHeading}</h3>
+  <p class="mt-4 max-w-prose text-text">{t.summitPurposeText}</p>
 
-  <h3 class="mt-10 font-sans text-xl font-semibold text-ink">Dates and location</h3>
+  <h3 class="mt-10 font-sans text-xl font-semibold text-ink">{t.datesHeading}</h3>
   <p class="mt-4 max-w-prose text-text-muted">
     {/* TODO: confirm dates, city, and venue once finalised. */}
-    Dates and location for the first AfCA Summit will be announced here once confirmed.
+    {t.datesText}
   </p>
 
-  <h3 class="mt-10 font-sans text-xl font-semibold text-ink">Participation</h3>
+  <h3 class="mt-10 font-sans text-xl font-semibold text-ink">{t.participationHeading}</h3>
   <p class="mt-4 max-w-prose text-text-muted">
     {/* TODO: registration process and criteria. */}
-    Representation is curated across the value chain rather than open registration, consistent
-    with AfCA's open-call principle: organisations apply against published criteria. Details on
-    how to apply will be published ahead of the first Summit.
+    {t.participationText}
   </p>
 </section>

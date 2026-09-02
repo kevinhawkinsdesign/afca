@@ -2,68 +2,55 @@
 import FullBleedHero from "./FullBleedHero.astro";
 import FullBleedBreak from "./FullBleedBreak.astro";
 import { withBase } from "../lib/url";
+import { homeContent } from "../i18n/homeContent";
+import { aboutContent } from "../i18n/aboutContent";
+import type { Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const h = homeContent[locale];
+const t = aboutContent[locale];
 ---
 
-<FullBleedHero title="About African Charging Alliance" image="/hero/about.jpg" imageAlt="Kigali skyline at dusk">
+<FullBleedHero title={t.heroTitle} image="/hero/about.jpg" imageAlt="Kigali skyline at dusk">
   <div class="space-y-4 text-text">
-    <p>
-      African Charging Alliance is an independent, non-profit trade association and ecosystem
-      platform committed to accelerating the deployment of reliable, scalable, and interoperable
-      electric vehicle charging infrastructure across Africa.
-    </p>
-    <p>
-      Operating as an apolitical source of truth, AfCA bridges the gap between public policy and
-      ground-level technical implementation and operation. We bring together Charge Point
-      Operators, Electromobility Service Providers, electric utilities, fleet operators, hardware
-      OEMs, and policymakers to build a unified, sustainable charging market.
-    </p>
+    <p>{h.heroP1}</p>
+    <p>{h.heroP2}</p>
   </div>
 </FullBleedHero>
 
 <section class="mx-auto max-w-content px-6 py-10 md:py-16">
-  <h2 class="mt-0 font-sans text-2xl font-semibold text-ink">Mission</h2>
-  <p class="mt-4 max-w-prose text-lg text-text">
-    To advance a comprehensive, economically viable, and technically harmonised EV charging
-    ecosystem across Africa through collaborative leadership, open standards, and evidence-based
-    industry guidance.
-  </p>
-  <p class="mt-4 max-w-prose text-text">
-    Cross-border and cross-city corridors — Mombasa to Nairobi, Kigali to Nairobi — don't follow
-    operator boundaries. A driver on one of these routes shouldn't need three apps and three
-    accounts to complete a single journey. Interoperability between operators, built on open
-    protocols like OCPI and OCPP, is what makes corridor charging work at all; fragmentation is
-    the alternative, and it is expensive to unwind once it sets in.
-  </p>
+  <h2 class="mt-0 font-sans text-2xl font-semibold text-ink">{t.missionHeading}</h2>
+  <p class="mt-4 max-w-prose text-lg text-text">{t.missionText1}</p>
+  <p class="mt-4 max-w-prose text-text">{t.missionText2}</p>
 
-  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">Operating principles</h2>
+  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">{t.principlesHeading}</h2>
   <div class="mt-6 grid gap-6 md:grid-cols-2">
     <div class="rounded border border-rule bg-paper p-5">
-      <h3 class="font-sans font-semibold text-ink">Open access</h3>
-      <p class="mt-2 text-sm text-text-muted">Workshops and training are open to any qualified operator, not closed-door sessions with individual companies.</p>
+      <h3 class="font-sans font-semibold text-ink">{t.principle1Title}</h3>
+      <p class="mt-2 text-sm text-text-muted">{t.principle1Body}</p>
     </div>
     <div class="rounded border border-rule bg-paper p-5">
-      <h3 class="font-sans font-semibold text-ink">Published outputs</h3>
-      <p class="mt-2 text-sm text-text-muted">Deliverables are public guides and reference implementations, not company-specific recommendations.</p>
+      <h3 class="font-sans font-semibold text-ink">{t.principle2Title}</h3>
+      <p class="mt-2 text-sm text-text-muted">{t.principle2Body}</p>
     </div>
     <div class="rounded border border-rule bg-paper p-5">
-      <h3 class="font-sans font-semibold text-ink">Open call</h3>
-      <p class="mt-2 text-sm text-text-muted">Participants self-select against published criteria rather than being hand-picked.</p>
+      <h3 class="font-sans font-semibold text-ink">{t.principle3Title}</h3>
+      <p class="mt-2 text-sm text-text-muted">{t.principle3Body}</p>
     </div>
     <div class="rounded border border-rule bg-paper p-5">
-      <h3 class="font-sans font-semibold text-ink">Multi-party convening</h3>
-      <p class="mt-2 text-sm text-text-muted">We bring competitors together rather than advising one in isolation.</p>
+      <h3 class="font-sans font-semibold text-ink">{t.principle4Title}</h3>
+      <p class="mt-2 text-sm text-text-muted">{t.principle4Body}</p>
     </div>
   </div>
 
-  <p class="mt-8 max-w-prose text-text">
-    AfCA does not favour individual technologies or companies. Governance includes at least one
-    board member who is neither founder, so independence is structurally visible rather than
-    merely asserted.
-  </p>
+  <p class="mt-8 max-w-prose text-text">{t.independenceText}</p>
 
-  <FullBleedBreak image="/hero/summit.jpg" imageAlt="Nairobi skyline at dusk" caption="Nairobi — one of the corridor cities AfCA's guidance is built around" />
+  <FullBleedBreak image="/hero/summit.jpg" imageAlt="Nairobi skyline at dusk" caption={t.breakCaption} />
 
-  <h2 class="font-sans text-2xl font-semibold text-ink">Founders</h2>
+  <h2 class="font-sans text-2xl font-semibold text-ink">{t.foundersHeading}</h2>
   <div class="mt-6 grid gap-6 md:grid-cols-2">
     <div class="overflow-hidden rounded border border-rule bg-paper">
       <img
@@ -76,14 +63,8 @@ import { withBase } from "../lib/url";
       />
       <div class="p-5">
         <h3 class="font-sans font-semibold text-ink">Kevin Hawkins</h3>
-        <p class="mt-1 text-sm font-medium text-accent">Product design &amp; engineering specialist</p>
-        <p class="mt-2 text-sm text-text-muted">
-          Kevin led product design and research at Monta, the charging platform that built
-          Europe's largest CPO and eMSP network and an app with over 3 million charge sessions
-          monthly. Across 15+ years he has built and scaled digital products for Skyscanner,
-          Amenitiz, Glovo, Spotify, BookClub, Booking.com, Hilton, EY, PwC, Uber, Gap Inc., and
-          Capital One.
-        </p>
+        <p class="mt-1 text-sm font-medium text-accent">{h.founder1Role}</p>
+        <p class="mt-2 text-sm text-text-muted">{t.founder1Bio}</p>
       </div>
     </div>
     <div class="overflow-hidden rounded border border-rule bg-paper">
@@ -97,21 +78,15 @@ import { withBase } from "../lib/url";
       />
       <div class="p-5">
         <h3 class="font-sans font-semibold text-ink">Puya Neda</h3>
-        <p class="mt-1 text-sm font-medium text-accent">EV roaming &amp; OCPI specialist</p>
-        <p class="mt-2 text-sm text-text-muted">
-          Puya has built roaming products from the ground up, scaling Monta's CPO network from
-          zero and expanding its app offer to include over one million chargers across Europe and
-          North America. He has been a contributor to the OCPI protocol and has advised national
-          agencies and companies on implementing EU interoperability regulation.
-        </p>
+        <p class="mt-1 text-sm font-medium text-accent">{h.founder2Role}</p>
+        <p class="mt-2 text-sm text-text-muted">{t.founder2Bio}</p>
       </div>
     </div>
   </div>
 
-  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">Governance</h2>
+  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">{t.governanceHeading}</h2>
   <p class="mt-4 max-w-prose text-text-muted">
-    <!-- TODO: board composition, legal structure detail once Rwanda registration completes. -->
-    Full governance documentation, including board composition and bylaws, will be published once
-    AfCA's registration in Rwanda is complete.
+    {/* TODO: board composition, legal structure detail once Rwanda registration completes. */}
+    {t.governanceText}
   </p>
 </section>

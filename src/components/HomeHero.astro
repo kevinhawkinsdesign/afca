@@ -1,32 +1,29 @@
 ---
-// English-authored positioning copy (BRIEF.md section 7). This is the
-// canonical content; locale routes render it with a fallback notice
-// until a human translation exists as a sibling content file.
 import FullBleedHero from "./FullBleedHero.astro";
+import { homeContent } from "../i18n/homeContent";
+import type { Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = homeContent[locale];
 ---
 
 <FullBleedHero
-  title="African Charging Alliance"
+  title={t.heroTitle}
   image="/hero/home.jpg"
   imageAlt="Kigali Convention Centre lit at dusk, an aerial view of Rwanda's capital"
-  eyebrow="Registration pending in Rwanda"
+  eyebrow={t.heroEyebrow}
 >
-  <p class="text-lg text-text">
-    African Charging Alliance is an independent, non-profit trade association and ecosystem
-    platform committed to accelerating the deployment of reliable, scalable, and interoperable
-    electric vehicle charging infrastructure across Africa.
-  </p>
-  <p class="mt-4 text-text">
-    Operating as an apolitical source of truth, AfCA bridges the gap between public policy and
-    ground-level technical implementation and operation. We bring together Charge Point
-    Operators, Electromobility Service Providers, electric utilities, fleet operators, hardware
-    OEMs, and policymakers to build a unified, sustainable charging market.
-  </p>
+  <Fragment slot="title">African <em>Charging</em> Alliance</Fragment>
+  <p class="text-lg text-text">{t.heroP1}</p>
+  <p class="mt-4 text-text">{t.heroP2}</p>
 </FullBleedHero>
 
 <div class="mx-auto max-w-content px-6">
   <a href="#initiatives" class="mb-4 hidden items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-text-muted no-underline hover:text-accent md:flex md:w-fit">
-    Scroll
+    {t.scroll}
     <span class="scroll-cue-arrow flex h-6 w-6 items-center justify-center rounded-full border border-rule">
       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
         <path d="M1 3.5L5 7.5L9 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />

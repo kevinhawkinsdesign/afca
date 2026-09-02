@@ -14,7 +14,6 @@ const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
   locale={locale}
   title="About"
   description="AfCA's positioning, mission, operating principles, founders, and governance."
-  isFallback={true}
 >
-  <AboutContent />
+  <AboutContent locale={locale} />
 </BaseLayout>

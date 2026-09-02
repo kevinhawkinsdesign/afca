@@ -13,23 +13,17 @@ export function getStaticPaths() {
 }
 
 const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
-
-// No human-translated home content exists yet for any non-English locale.
-// Render the canonical English hero with the required fallback notice
-// rather than silently serving it untagged.
-const isFallback = true;
 ---
 
 <BaseLayout
   locale={locale}
   title="Home"
   description="African Charging Alliance is an independent, non-profit trade association and ecosystem platform accelerating interoperable EV charging infrastructure across Africa. Registration in Rwanda is in progress."
-  isFallback={isFallback}
 >
-  <HomeHero />
-  <HomeMission />
-  <HomeFounders />
-  <HomeStats />
-  <HomeInitiatives />
-  <HomeExplore />
+  <HomeHero locale={locale} />
+  <HomeMission locale={locale} />
+  <HomeFounders locale={locale} />
+  <HomeStats locale={locale} />
+  <HomeInitiatives locale={locale} />
+  <HomeExplore locale={locale} />
 </BaseLayout>

@@ -1,25 +1,23 @@
 ---
 import { withBase } from "../lib/url";
+import { homeContent } from "../i18n/homeContent";
+import { localizePath, type Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = homeContent[locale];
 
 const founders: Array<[string, string, string, string]> = [
-  [
-    "/founders/kevin-hawkins.jpg",
-    "Kevin Hawkins",
-    "Product design & engineering specialist",
-    "Led product design and research at Monta, the charging platform behind Europe's largest CPO and eMSP network.",
-  ],
-  [
-    "/founders/puya-neda.jpg",
-    "Puya Neda",
-    "EV roaming & OCPI specialist",
-    "Built roaming products from zero at Monta and has contributed directly to the OCPI protocol.",
-  ],
+  ["/founders/kevin-hawkins.jpg", "Kevin Hawkins", t.founder1Role, t.founder1Blurb],
+  ["/founders/puya-neda.jpg", "Puya Neda", t.founder2Role, t.founder2Blurb],
 ];
 ---
 
 <section class="border-t border-rule bg-paper-warm">
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
-    <p class="eyebrow">Who's behind AfCA</p>
+    <p class="eyebrow">{t.foundersEyebrow}</p>
     <div class="mt-6 grid gap-6 sm:grid-cols-2">
       {founders.map(([photo, name, role, blurb]) => (
         <div class="flex items-center gap-4 rounded border border-rule bg-paper p-5">
@@ -39,8 +37,8 @@ const founders: Array<[string, string, string, string]> = [
         </div>
       ))}
     </div>
-    <a href={withBase("/about")} class="eyebrow mt-6 inline-flex items-center gap-2 no-underline hover:text-ink">
-      Read more about our founders
+    <a href={localizePath("/about", locale)} class="eyebrow mt-6 inline-flex items-center gap-2 no-underline hover:text-ink">
+      {t.foundersCta}
       <span aria-hidden="true">&rarr;</span>
     </a>
   </div>

@@ -1,21 +1,29 @@
 ---
 import AnimatedBattery from "./decor/AnimatedBattery.astro";
+import { homeContent } from "../i18n/homeContent";
+import type { Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = homeContent[locale];
 
 // Every figure here carries a source, per AfCA's own sourcing standard
 // (BRIEF.md section 8) — these are placeholder-quality citations (no
 // access date tracked yet) pending the real Index data pipeline, but
 // the numbers themselves are real published figures, not invented.
 const stats: Array<[string, string, string]> = [
-  ["17%", "of African countries have 10+ public EV charging stations today", "Source: iAfrikan Insights"],
-  ["53.9%", "projected CAGR for Africa's EV market, 2026–2031", "Source: Mordor Intelligence"],
-  ["93", "public charging stations recorded in South Africa, the continent's largest network", "Source: iAfrikan Insights"],
+  ["17%", t.stat1Label, t.stat1Source],
+  ["53.9%", t.stat2Label, t.stat2Source],
+  ["93", t.stat3Label, t.stat3Source],
 ];
 ---
 
 <section class="border-t border-rule">
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
     <div class="flex items-center gap-3">
-      <p class="eyebrow">The opportunity</p>
+      <p class="eyebrow">{t.statsEyebrow}</p>
       <AnimatedBattery />
     </div>
     <div class="mt-6 grid gap-8 sm:grid-cols-3 sm:gap-6">

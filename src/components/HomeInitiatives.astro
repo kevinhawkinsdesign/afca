@@ -1,24 +1,24 @@
 ---
+import { homeContent } from "../i18n/homeContent";
+import type { Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = homeContent[locale];
+
 const initiatives: Array<[string, string]> = [
-  [
-    "Ecosystem intelligence and market mapping",
-    "Country-by-country overviews of active CPOs, grid capacity, real-world charging performance, and policy enforcement — plus the Pan-African Interoperability and Reliability Index, benchmarking charger uptime, hardware compliance, open protocol adoption (OCPI/OICP), and payment integration success.",
-  ],
-  [
-    "The AfCA Annual Summit",
-    "Curated representation across the value chain, action-oriented workshops rather than panels, and a catalyst for regional initiatives, donor-funded corridor pilots, and harmonised policy recommendations.",
-  ],
-  [
-    "Practical implementation and ecosystem support",
-    "Market entry and technical advisory delivered as open training and published guidance, plus harmonisation and standards advocacy to governments and regional economic communities (EAC, ECOWAS).",
-  ],
+  [t.init1Title, t.init1Body],
+  [t.init2Title, t.init2Body],
+  [t.init3Title, t.init3Body],
 ];
 ---
 
 <section id="initiatives" class="scroll-mt-20 border-t border-rule bg-paper-warm">
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
     <h2 class="inline-block font-sans text-2xl font-semibold text-ink">
-      Initiatives
+      {t.initiativesHeading}
       <svg class="mt-1 w-full" height="6" viewBox="0 0 120 6" fill="none" aria-hidden="true">
         <path d="M2 4C15 1 25 1 38 4C51 7 61 7 74 4C87 1 97 1 110 4" stroke="#E0924A" stroke-width="2" stroke-linecap="round" />
       </svg>

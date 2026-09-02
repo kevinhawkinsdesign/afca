@@ -16,6 +16,7 @@ interface Props {
   eyebrow?: string;
 }
 const { title, image, imageAlt, eyebrow } = Astro.props;
+const hasTitleSlot = Astro.slots.has("title");
 ---
 
 <section class="relative">
@@ -31,7 +32,9 @@ const { title, image, imageAlt, eyebrow } = Astro.props;
       <SketchSpark class="absolute -top-2 right-2 hidden opacity-70 sm:block md:right-8" size={30} />
       <SketchBolt class="absolute -right-2 top-10 hidden opacity-60 md:block lg:right-16" />
       {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
-      <h1 class="max-w-3xl font-sans text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl md:text-6xl">{title}</h1>
+      <h1 class="max-w-3xl font-sans text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl md:text-6xl">
+        {hasTitleSlot ? <slot name="title" /> : title}
+      </h1>
       <div class="mt-4 max-w-prose">
         <slot />
       </div>
