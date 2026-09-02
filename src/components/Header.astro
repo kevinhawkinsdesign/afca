@@ -24,16 +24,20 @@ function navHref(href: string, englishOnly: boolean): string {
   return englishOnly ? withBase(href) : localizePath(href, locale);
 }
 
+// Borderless "button" treatment: a generous pill hit area with a soft
+// background on hover/focus rather than an underline — bigger, easier
+// to land a tap or click on than a plain text link, with no visible
+// border to keep it light.
 const navLinkClass =
-  "relative text-text no-underline transition-colors hover:text-ink after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-[width] after:duration-300 hover:after:w-full";
+  "rounded-full px-4 py-3 text-text no-underline transition-colors hover:bg-paper-warm hover:text-ink focus-visible:bg-paper-warm";
 ---
 
 <header class="sticky top-0 z-50 border-b border-rule bg-paper/85 backdrop-blur-md">
-  <div class="mx-auto flex max-w-content items-center justify-between gap-6 px-6 py-4">
+  <div class="mx-auto flex max-w-content items-center justify-between gap-6 px-6 py-3">
     <a href={localizePath("/", locale)} class="font-sans text-base font-semibold tracking-tight text-ink no-underline">
       African Charging Alliance
     </a>
-    <nav aria-label="Primary" class="hidden items-center gap-7 font-sans text-sm md:flex">
+    <nav aria-label="Primary" class="hidden items-center gap-1 font-sans text-sm md:flex">
       {links.map(([label, href, englishOnly]) => (
         <a href={navHref(href, englishOnly)} class={navLinkClass}>
           {label}
@@ -45,9 +49,9 @@ const navLinkClass =
       <LanguageSwitcher locale={locale} pathname={pathname} technicalEnglishOnly={technicalEnglishOnly} />
     </div>
   </div>
-  <nav aria-label="Primary" class="flex flex-wrap border-t border-rule px-3 py-1 font-sans text-sm md:hidden">
+  <nav aria-label="Primary" class="flex flex-wrap gap-1 border-t border-rule px-3 py-2 font-sans text-sm md:hidden">
     {links.map(([label, href, englishOnly]) => (
-      <a href={navHref(href, englishOnly)} class="inline-flex items-center px-3 py-3 text-text no-underline">{label}</a>
+      <a href={navHref(href, englishOnly)} class={navLinkClass}>{label}</a>
     ))}
   </nav>
 </header>

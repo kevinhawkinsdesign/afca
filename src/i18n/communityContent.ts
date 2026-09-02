@@ -25,7 +25,7 @@ export interface CommunityContent {
 export const communityContent: Record<Locale, CommunityContent> = {
   en: {
     heroTitle: "Community",
-    heroIntro: "AfCA convenes Charge Point Operators, Electromobility Service Providers, electric utilities, fleet operators, hardware OEMs, and policymakers around shared, published standards — not closed-door advisory relationships with individual companies.",
+    heroIntro: "AfCA convenes Charge Point Operators, eMobility Service Providers, electric utilities, fleet operators, hardware OEMs, and policymakers around shared, published standards — not closed-door advisory relationships with individual companies.",
     membershipHeading: "Membership",
     membershipTextPre: "Membership tiers, fees, and eligibility criteria are being finalised alongside AfCA's Rwanda registration and will be published here once confirmed. Participation follows the open-call principle described in the",
     membershipLink: "operating principles",
@@ -46,7 +46,7 @@ export const communityContent: Record<Locale, CommunityContent> = {
   },
   fr: {
     heroTitle: "Communauté",
-    heroIntro: "AfCA réunit Charge Point Operators, Electromobility Service Providers, distributeurs d'électricité, opérateurs de flottes, fabricants de matériel et décideurs publics autour de standards partagés et publiés — et non de relations de conseil à huis clos avec des entreprises individuelles.",
+    heroIntro: "AfCA réunit Charge Point Operators, eMobility Service Providers, distributeurs d'électricité, opérateurs de flottes, fabricants de matériel et décideurs publics autour de standards partagés et publiés — et non de relations de conseil à huis clos avec des entreprises individuelles.",
     membershipHeading: "Adhésion",
     membershipTextPre: "Les niveaux d'adhésion, les frais et les critères d'éligibilité sont en cours de finalisation en parallèle de l'enregistrement d'AfCA au Rwanda et seront publiés ici une fois confirmés. La participation suit le principe d'appel ouvert décrit dans les",
     membershipLink: "principes de fonctionnement",
@@ -67,7 +67,7 @@ export const communityContent: Record<Locale, CommunityContent> = {
   },
   rw: {
     heroTitle: "Umuryango",
-    heroIntro: "AfCA ihuza Charge Point Operators, Electromobility Service Providers, ibigo by'amashanyarazi, abakoresha imodoka nyinshi, abakora ibikoresho, n'abafata ibyemezo hakurikijwe amabwiriza rusange yasohotse — ntabwo ari imikoranire y'ubujyanama y'ibanga na kimwe cy'ibigo.",
+    heroIntro: "AfCA ihuza Charge Point Operators, eMobility Service Providers, ibigo by'amashanyarazi, abakoresha imodoka nyinshi, abakora ibikoresho, n'abafata ibyemezo hakurikijwe amabwiriza rusange yasohotse — ntabwo ari imikoranire y'ubujyanama y'ibanga na kimwe cy'ibigo.",
     membershipHeading: "Ubunyamuryango",
     membershipTextPre: "Amasomo y'ubunyamuryango, amafaranga, n'ibipimo byo kwinjira birimo gushyirwaho hamwe n'iyandikwa rya AfCA mu Rwanda kandi bizasohoka hano nyuma yo kwemezwa. Ubwitabire bukurikiza ihame ry'itumira rifunguye risobanurwa mu",
     membershipLink: "mahame y'imikorere",
@@ -88,7 +88,7 @@ export const communityContent: Record<Locale, CommunityContent> = {
   },
   sv: {
     heroTitle: "Gemenskap",
-    heroIntro: "AfCA samlar Charge Point Operators, Electromobility Service Providers, elbolag, flottoperatörer, hårdvarutillverkare och beslutsfattare kring delade, publicerade standarder — inte slutna rådgivningsrelationer med enskilda företag.",
+    heroIntro: "AfCA samlar Charge Point Operators, eMobility Service Providers, elbolag, flottoperatörer, hårdvarutillverkare och beslutsfattare kring delade, publicerade standarder — inte slutna rådgivningsrelationer med enskilda företag.",
     membershipHeading: "Medlemskap",
     membershipTextPre: "Medlemsnivåer, avgifter och behörighetskriterier färdigställs i samband med AfCA:s registrering i Rwanda och publiceras här när de är bekräftade. Deltagande följer principen om öppen ansökan som beskrivs i",
     membershipLink: "arbetsprinciperna",
