@@ -70,6 +70,28 @@ export interface StatsContent {
   sig5Heading: string;
   sig5Text: string;
   signalsSource: string;
+  restraintsEyebrow: string;
+  restraintsHeading: string;
+  restraintsIntro: string;
+  r1Heading: string;
+  r1Impact: string;
+  r1Geo: string;
+  r1Timeline: string;
+  r2Heading: string;
+  r2Impact: string;
+  r2Geo: string;
+  r2Timeline: string;
+  r3Heading: string;
+  r3Impact: string;
+  r3Geo: string;
+  r3Timeline: string;
+  r4Heading: string;
+  r4Impact: string;
+  r4Geo: string;
+  r4Timeline: string;
+  restraintsSource: string;
+  restraintsGeoLabel: string;
+  restraintsTimelineLabel: string;
   leadersEyebrow: string;
   leadersHeading: string;
   leadersIntro: string;
@@ -178,6 +200,28 @@ export const statsContent: Record<Locale, StatsContent> = {
     sig5Heading: "Kenya's boda-boda opportunity",
     sig5Text: "Kenya's 2.2 million motorcycle taxis could cut transport emissions by up to 85% if electrified, running on the country's largely renewable grid.",
     signalsSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
+    restraintsEyebrow: "Headwinds",
+    restraintsHeading: "What could slow this down",
+    restraintsIntro: "The same report's restraints analysis, ranked by estimated drag on the CAGR forecast above.",
+    r1Heading: "Charging cap-ex burden (−8.4%)",
+    r1Impact: "−8.4% impact on CAGR forecast",
+    r1Geo: "Sub-Saharan Africa excluding South Africa",
+    r1Timeline: "Long term (≥4 years)",
+    r2Heading: "Fragile rural grids (−7.1%)",
+    r2Impact: "−7.1% impact on CAGR forecast",
+    r2Geo: "Rural areas across Nigeria, Kenya, Ghana, Tanzania",
+    r2Timeline: "Medium term (2–4 years)",
+    r3Heading: "Used ICE vehicle flood (−5.8%)",
+    r3Impact: "−5.8% impact on CAGR forecast",
+    r3Geo: "West and East Africa",
+    r3Timeline: "Short term (≤2 years)",
+    r4Heading: "Weak EV resale values (−4.3%)",
+    r4Impact: "−4.3% impact on CAGR forecast",
+    r4Geo: "South Africa, Morocco, Kenya",
+    r4Timeline: "Medium term (2–4 years)",
+    restraintsSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
+    restraintsGeoLabel: "Geographic relevance",
+    restraintsTimelineLabel: "Impact timeline",
     leadersEyebrow: "Who's active",
     leadersHeading: "Africa's EV industry leaders",
     leadersIntro: "Named in the same report as the leading manufacturers by revenue across the continent, in a market that sits between consolidated and fragmented — no single player dominates outright.",
@@ -284,6 +328,28 @@ export const statsContent: Record<Locale, StatsContent> = {
     sig5Heading: "L'opportunité des boda-boda au Kenya",
     sig5Text: "Les 2,2 millions de motos-taxis du Kenya pourraient réduire les émissions du secteur des transports jusqu'à 85 % si elles étaient électrifiées, sur un réseau électrique largement renouvelable.",
     signalsSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
+    restraintsEyebrow: "Vents contraires",
+    restraintsHeading: "Ce qui pourrait ralentir cette croissance",
+    restraintsIntro: "L'analyse des freins du même rapport, classés selon leur impact estimé sur les prévisions de TCAC ci-dessus.",
+    r1Heading: "Poids des investissements en recharge (−8,4 %)",
+    r1Impact: "−8,4 % d'impact sur la prévision de TCAC",
+    r1Geo: "Afrique subsaharienne hors Afrique du Sud",
+    r1Timeline: "Long terme (≥ 4 ans)",
+    r2Heading: "Fragilité des réseaux électriques ruraux (−7,1 %)",
+    r2Impact: "−7,1 % d'impact sur la prévision de TCAC",
+    r2Geo: "Zones rurales du Nigeria, du Kenya, du Ghana, de Tanzanie",
+    r2Timeline: "Moyen terme (2-4 ans)",
+    r3Heading: "Afflux de véhicules thermiques d'occasion (−5,8 %)",
+    r3Impact: "−5,8 % d'impact sur la prévision de TCAC",
+    r3Geo: "Afrique de l'Ouest et de l'Est",
+    r3Timeline: "Court terme (≤ 2 ans)",
+    r4Heading: "Faible valeur de revente des véhicules électriques (−4,3 %)",
+    r4Impact: "−4,3 % d'impact sur la prévision de TCAC",
+    r4Geo: "Afrique du Sud, Maroc, Kenya",
+    r4Timeline: "Moyen terme (2-4 ans)",
+    restraintsSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
+    restraintsGeoLabel: "Pertinence géographique",
+    restraintsTimelineLabel: "Échéance de l'impact",
     leadersEyebrow: "Qui est actif",
     leadersHeading: "Les leaders de l'industrie EV en Afrique",
     leadersIntro: "Cités dans le même rapport comme les principaux constructeurs par chiffre d'affaires sur le continent, sur un marché entre consolidation et fragmentation — aucun acteur ne domine à lui seul.",
@@ -390,6 +456,28 @@ export const statsContent: Record<Locale, StatsContent> = {
     sig5Heading: "Amahirwe y'amapikipiki (boda-boda) muri Kenya",
     sig5Text: "Amapikipiki 2.2 miliyoni akora boda-boda muri Kenya yashobora kugabanya ibyuka bihumanya ikirere biva mu bwikorezi kugera kuri 85% niba yahindurwa akoresha amashanyarazi, hakoreshejwe umuyoboro w'amashanyarazi ukomoka cyane ku ngufu zisubira.",
     signalsSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
+    restraintsEyebrow: "Inzitizi",
+    restraintsHeading: "Icyagabanya iyi terambere",
+    restraintsIntro: "Isesengura ry'inzitizi ryo muri iyi raporo, rishyizwe ku rutonde hakurikijwe ingaruka ziteganyijwe ku gipimo cya CAGR hejuru.",
+    r1Heading: "Ikiguzi kinini cyo kubaka icyuzuzo (−8.4%)",
+    r1Impact: "ingaruka ya −8.4% ku giteganyagihe cya CAGR",
+    r1Geo: "Afurika yo munsi ya Sahara uretse Afurika y'Epfo",
+    r1Timeline: "Igihe kirekire (≥ imyaka 4)",
+    r2Heading: "Umuyoboro w'amashanyarazi udakomeye mu byaro (−7.1%)",
+    r2Impact: "ingaruka ya −7.1% ku giteganyagihe cya CAGR",
+    r2Geo: "Ibyaro muri Nigeria, Kenya, Ghana, Tanzania",
+    r2Timeline: "Igihe cyo hagati (imyaka 2-4)",
+    r3Heading: "Kwinjira kw'imodoka za lisansi zikoreshejwe (−5.8%)",
+    r3Impact: "ingaruka ya −5.8% ku giteganyagihe cya CAGR",
+    r3Geo: "Afurika y'Uburengerazuba n'Iburasirazuba",
+    r3Timeline: "Igihe gito (≤ imyaka 2)",
+    r4Heading: "Igiciro gito cyo kongera kugurisha amamodoka akoresha amashanyarazi (−4.3%)",
+    r4Impact: "ingaruka ya −4.3% ku giteganyagihe cya CAGR",
+    r4Geo: "Afurika y'Epfo, Maroc, Kenya",
+    r4Timeline: "Igihe cyo hagati (imyaka 2-4)",
+    restraintsSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
+    restraintsGeoLabel: "Aho bikorerwa",
+    restraintsTimelineLabel: "Igihe cy'ingaruka",
     leadersEyebrow: "Abakinnyi bakomeye",
     leadersHeading: "Abayobozi mu nganda z'amamodoka akoresha amashanyarazi muri Afurika",
     leadersIntro: "Bavuzwe muri iyi raporo nk'abakora amamodoka bakomeye ku mafaranga yinjira ku mugabane, mu isoko riri hagati yo guhuzwa n'ubusabane — nta kigo kimwe kiganje ku giti cyacyo.",
@@ -496,6 +584,28 @@ export const statsContent: Record<Locale, StatsContent> = {
     sig5Heading: "Kenyas boda-boda-möjlighet",
     sig5Text: "Kenyas 2,2 miljoner motorcykeltaxin skulle kunna minska transportutsläppen med upp till 85 % om de elektrifierades, med drift på ett i huvudsak förnybart elnät.",
     signalsSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
+    restraintsEyebrow: "Motvindar",
+    restraintsHeading: "Vad som kan bromsa utvecklingen",
+    restraintsIntro: "Samma rapports analys av hinder, rankade efter uppskattad negativ effekt på CAGR-prognosen ovan.",
+    r1Heading: "Kapitalbördan för laddinfrastruktur (−8,4 %)",
+    r1Impact: "−8,4 % effekt på CAGR-prognosen",
+    r1Geo: "Afrika söder om Sahara, exklusive Sydafrika",
+    r1Timeline: "Lång sikt (≥ 4 år)",
+    r2Heading: "Sköra elnät på landsbygden (−7,1 %)",
+    r2Impact: "−7,1 % effekt på CAGR-prognosen",
+    r2Geo: "Landsbygdsområden i Nigeria, Kenya, Ghana, Tanzania",
+    r2Timeline: "Medellång sikt (2–4 år)",
+    r3Heading: "Inflöde av begagnade förbränningsfordon (−5,8 %)",
+    r3Impact: "−5,8 % effekt på CAGR-prognosen",
+    r3Geo: "Väst- och Östafrika",
+    r3Timeline: "Kort sikt (≤ 2 år)",
+    r4Heading: "Svaga andrahandsvärden för elfordon (−4,3 %)",
+    r4Impact: "−4,3 % effekt på CAGR-prognosen",
+    r4Geo: "Sydafrika, Marocko, Kenya",
+    r4Timeline: "Medellång sikt (2–4 år)",
+    restraintsSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
+    restraintsGeoLabel: "Geografisk relevans",
+    restraintsTimelineLabel: "Tidslinje för effekt",
     leadersEyebrow: "Vilka är aktiva",
     leadersHeading: "Afrikas ledande elbilsaktörer",
     leadersIntro: "Namngivna i samma rapport som de främsta tillverkarna efter intäkter på kontinenten, på en marknad som ligger mellan konsoliderad och fragmenterad — ingen enskild aktör dominerar helt.",

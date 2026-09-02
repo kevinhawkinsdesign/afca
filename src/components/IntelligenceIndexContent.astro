@@ -47,6 +47,13 @@ const signals: Array<[string, string]> = [
   [t.sig5Heading, t.sig5Text],
 ];
 
+const restraints: Array<[string, string, string]> = [
+  [t.r1Heading, t.r1Geo, t.r1Timeline],
+  [t.r2Heading, t.r2Geo, t.r2Timeline],
+  [t.r3Heading, t.r3Geo, t.r3Timeline],
+  [t.r4Heading, t.r4Geo, t.r4Timeline],
+];
+
 const leaders = ["Nissan Motor Co., Ltd.", "Volkswagen AG", "Tesla Inc.", "BYD Co. Ltd.", "Hyundai Motor Co."];
 
 const advice: Array<[string, string]> = [
@@ -184,6 +191,32 @@ const prices: Array<[string, string, number]> = [
 </section>
 
 <section class="bg-paper-warm">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.restraintsEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.restraintsHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.restraintsIntro}</p>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      {restraints.map(([heading, geo, timeline]) => (
+        <div class="rounded-lg border border-rule bg-paper p-5">
+          <p class="font-sans font-semibold text-ink">{heading}</p>
+          <dl class="mt-3 space-y-1.5 font-mono text-xs uppercase tracking-[0.08em] text-text-muted">
+            <div class="flex justify-between gap-4">
+              <dt>{t.restraintsGeoLabel}</dt>
+              <dd class="text-right normal-case tracking-normal text-text">{geo}</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt>{t.restraintsTimelineLabel}</dt>
+              <dd class="text-right normal-case tracking-normal text-text">{timeline}</dd>
+            </div>
+          </dl>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.restraintsSource}</p>
+  </div>
+</section>
+
+<section>
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
     <p class="eyebrow">{t.leadersEyebrow}</p>
     <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.leadersHeading}</h2>
