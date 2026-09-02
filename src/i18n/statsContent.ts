@@ -32,6 +32,18 @@ export interface StatsContent {
   opp2Source: string;
   opp3Label: string;
   opp3Source: string;
+  forecastEyebrow: string;
+  forecastHeading: string;
+  forecastIntro: string;
+  f1Number: string;
+  f1Label: string;
+  f2Number: string;
+  f2Label: string;
+  f3Number: string;
+  f3Label: string;
+  f4Number: string;
+  f4Label: string;
+  forecastSource: string;
   spotlightEyebrow: string;
   spotlightHeading: string;
   spotlightIntro: string;
@@ -89,6 +101,18 @@ export const statsContent: Record<Locale, StatsContent> = {
     opp2Source: "Source: Mordor Intelligence",
     opp3Label: "public charging stations recorded in South Africa, the continent's largest network",
     opp3Source: "Source: iAfrikan Insights",
+    forecastEyebrow: "Africa-specific forecast",
+    forecastHeading: "Africa's EV market, sized and forecast",
+    forecastIntro: "A dedicated Africa report from the same research firm behind the CAGR figure above, with country- and segment-level detail.",
+    f1Number: "$0.45B → $0.69B → $5.99B",
+    f1Label: "Africa EV market size, 2025 → 2026 → 2031",
+    f2Number: "29.05%",
+    f2Label: "of 2025 Africa EV market revenue, led by Ghana — the continent's largest single-country share",
+    f3Number: "56.90%",
+    f3Label: "CAGR through 2031 for Ethiopia, the fastest-growing country market",
+    f4Number: "78.7%",
+    f4Label: "of 2025 Africa EV market revenue from battery-electric vehicles",
+    forecastSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
     spotlightEyebrow: "Country spotlight",
     spotlightHeading: "Ghana, early 2024",
     spotlightIntro: "The most complete publicly sourced country-level snapshot available to us — reproduced here as an example of the granularity we hope to extend across the continent.",
@@ -144,6 +168,18 @@ export const statsContent: Record<Locale, StatsContent> = {
     opp2Source: "Source : Mordor Intelligence",
     opp3Label: "stations de recharge publiques recensées en Afrique du Sud, le plus grand réseau du continent",
     opp3Source: "Source : iAfrikan Insights",
+    forecastEyebrow: "Prévisions spécifiques à l'Afrique",
+    forecastHeading: "Le marché africain des véhicules électriques, chiffré et projeté",
+    forecastIntro: "Un rapport dédié à l'Afrique du même cabinet de recherche que le chiffre de TCAC ci-dessus, avec un détail par pays et par segment.",
+    f1Number: "0,45 Md$ → 0,69 Md$ → 5,99 Md$",
+    f1Label: "taille du marché africain des véhicules électriques, 2025 → 2026 → 2031",
+    f2Number: "29,05 %",
+    f2Label: "des revenus du marché africain des véhicules électriques en 2025, menés par le Ghana — la plus grande part parmi les pays du continent",
+    f3Number: "56,90 %",
+    f3Label: "TCAC jusqu'en 2031 pour l'Éthiopie, le marché national à la croissance la plus rapide",
+    f4Number: "78,7 %",
+    f4Label: "des revenus du marché africain des véhicules électriques en 2025 provenant des véhicules 100 % électriques",
+    forecastSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
     spotlightEyebrow: "Coup de projecteur pays",
     spotlightHeading: "Ghana, début 2026",
     spotlightIntro: "L'aperçu au niveau national le plus complet dont nous disposions à partir de sources publiques — reproduit ici comme exemple de la granularité que nous espérons étendre à l'ensemble du continent.",
@@ -199,6 +235,18 @@ export const statsContent: Record<Locale, StatsContent> = {
     opp2Source: "Isoko: Mordor Intelligence",
     opp3Label: "sitasiyo z'icyuzuzo z'abaturage zanditswe muri Afurika y'Epfo, urusobe runini ku mugabane",
     opp3Source: "Isoko: iAfrikan Insights",
+    forecastEyebrow: "Iteganyagihe ryihariye Afurika",
+    forecastHeading: "Isoko ry'amamodoka akoresha amashanyarazi muri Afurika, mu mibare n'iteganyagihe",
+    forecastIntro: "Raporo yihariye ya Afurika ikomoka ku kigo kimwe cy'ubushakashatsi cyatanze igipimo cya CAGR hejuru, ifite amakuru arambuye ku gihugu no ku cyiciro.",
+    f1Number: "$0.45B → $0.69B → $5.99B",
+    f1Label: "ubunini bw'isoko ry'amamodoka akoresha amashanyarazi muri Afurika, 2025 → 2026 → 2031",
+    f2Number: "29.05%",
+    f2Label: "by'amafaranga y'isoko ry'amamodoka akoresha amashanyarazi muri Afurika mu 2025, biyobowe na Ghana — igihugu gifite umugabane munini ku mugabane",
+    f3Number: "56.90%",
+    f3Label: "CAGR kugeza 2031 kuri Ethiopia, igihugu gikura vuba kurusha ibindi",
+    f4Number: "78.7%",
+    f4Label: "by'amafaranga y'isoko ry'amamodoka akoresha amashanyarazi muri Afurika mu 2025 aturuka ku modoka zikoresha amashanyarazi gusa",
+    forecastSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
     spotlightEyebrow: "Igihugu cyihariye",
     spotlightHeading: "Ghana, mu ntangiriro za 2026",
     spotlightIntro: "Incamake y'igihugu yuzuye kurusha izindi tubonye mu masoko rusange — yasubiwemo hano nk'urugero rw'ubunini bwose twifuza kwaguka muri Afurika hose.",
@@ -254,6 +302,18 @@ export const statsContent: Record<Locale, StatsContent> = {
     opp2Source: "Källa: Mordor Intelligence",
     opp3Label: "publika laddstationer registrerade i Sydafrika, kontinentens största nätverk",
     opp3Source: "Källa: iAfrikan Insights",
+    forecastEyebrow: "Afrikaspecifik prognos",
+    forecastHeading: "Afrikas elbilsmarknad, storlek och prognos",
+    forecastIntro: "En dedikerad Afrikarapport från samma researchbolag som CAGR-siffran ovan, med detaljer per land och segment.",
+    f1Number: "0,45 md$ → 0,69 md$ → 5,99 md$",
+    f1Label: "Afrikas elbilsmarknad, storlek 2025 → 2026 → 2031",
+    f2Number: "29,05 %",
+    f2Label: "av intäkterna på Afrikas elbilsmarknad 2025, ledd av Ghana — kontinentens största enskilda landsandel",
+    f3Number: "56,90 %",
+    f3Label: "CAGR fram till 2031 för Etiopien, den snabbast växande landsmarknaden",
+    f4Number: "78,7 %",
+    f4Label: "av intäkterna på Afrikas elbilsmarknad 2025 från renodlade elfordon",
+    forecastSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
     spotlightEyebrow: "Landet i fokus",
     spotlightHeading: "Ghana, i början av 2026",
     spotlightIntro: "Den mest kompletta offentligt källbelagda landsöversikten vi haft tillgång till — återgiven här som ett exempel på den detaljnivå vi hoppas kunna utvidga till hela kontinenten.",

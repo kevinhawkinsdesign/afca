@@ -9,11 +9,14 @@ interface Props {
   image: string;
   imageAlt: string;
   caption?: string;
+  /** Set when the section immediately above this break uses bg-paper-warm,
+   * so the top fade blends into that tone instead of the default paper. */
+  fromWarm?: boolean;
   /** Set when the section immediately below this break uses bg-paper-warm,
    * so the bottom fade blends into that tone instead of the default paper. */
   toWarm?: boolean;
 }
-const { image, imageAlt, caption, toWarm = false } = Astro.props;
+const { image, imageAlt, caption, fromWarm = false, toWarm = false } = Astro.props;
 ---
 
 <figure class="reveal relative my-14 ml-[50%] w-screen -translate-x-1/2 sm:mx-auto sm:w-full sm:max-w-content sm:translate-x-0 sm:px-6 md:my-20">
@@ -24,7 +27,13 @@ const { image, imageAlt, caption, toWarm = false } = Astro.props;
       class="h-[32vh] min-h-[200px] w-full object-cover sm:h-[42vh] md:h-[48vh]"
       loading="lazy"
     />
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-paper to-transparent sm:h-20" aria-hidden="true"></div>
+    <div
+      class:list={[
+        "pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b to-transparent sm:h-20",
+        fromWarm ? "from-paper-warm" : "from-paper",
+      ]}
+      aria-hidden="true"
+    ></div>
     <div
       class:list={[
         "pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t to-transparent sm:h-20",
