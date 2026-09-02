@@ -32,6 +32,29 @@ const forecast: Array<[string, string]> = [
   [t.f4Number, t.f4Label],
 ];
 
+const segment: Array<[string, string]> = [
+  [t.sg1Number, t.sg1Label],
+  [t.sg2Number, t.sg2Label],
+  [t.sg3Number, t.sg3Label],
+  [t.sg4Number, t.sg4Label],
+];
+
+const signals: Array<[string, string]> = [
+  [t.sig1Heading, t.sig1Text],
+  [t.sig2Heading, t.sig2Text],
+  [t.sig3Heading, t.sig3Text],
+  [t.sig4Heading, t.sig4Text],
+  [t.sig5Heading, t.sig5Text],
+];
+
+const leaders = ["Nissan Motor Co., Ltd.", "Volkswagen AG", "Tesla Inc.", "BYD Co. Ltd.", "Hyundai Motor Co."];
+
+const advice: Array<[string, string]> = [
+  [t.adv1Heading, t.adv1Text],
+  [t.adv2Heading, t.adv2Text],
+  [t.adv3Heading, t.adv3Text],
+];
+
 const spotlight: Array<[string, string]> = [
   ["17,000", t.sp1Label],
   ["7", t.sp2Label],
@@ -106,7 +129,25 @@ const prices: Array<[string, string, number]> = [
   </div>
 </section>
 
-<FullBleedBreak image="/hero/standards.jpg" imageAlt="A motorcycle taxi rider using a ROAM fast charger in Kenya" fromWarm toWarm />
+<section>
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.segmentEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.segmentHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.segmentIntro}</p>
+    <div class="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+      {segment.map(([number, label]) => (
+        <div>
+          <p class="font-accentSerif text-4xl italic text-ink sm:text-5xl">{number}</p>
+          <span class="stat-bar mt-3 block h-0.5 w-12 bg-accent"></span>
+          <p class="mt-3 max-w-[22rem] text-text">{label}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.segmentSource}</p>
+  </div>
+</section>
+
+<FullBleedBreak image="/hero/standards.jpg" imageAlt="A motorcycle taxi rider using a ROAM fast charger in Kenya" toWarm />
 
 <section class="bg-paper-warm">
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
@@ -122,6 +163,40 @@ const prices: Array<[string, string, number]> = [
       ))}
     </div>
     <p class="mt-4 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.spotlightSource}</p>
+  </div>
+</section>
+
+<section>
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.signalsEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.signalsHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.signalsIntro}</p>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      {signals.map(([heading, text]) => (
+        <div class="rounded-lg border border-rule bg-paper-warm p-5">
+          <p class="font-sans font-semibold text-ink">{heading}</p>
+          <p class="mt-2 text-sm text-text">{text}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.signalsSource}</p>
+  </div>
+</section>
+
+<section class="bg-paper-warm">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.leadersEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.leadersHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.leadersIntro}</p>
+    <ol class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      {leaders.map((name, i) => (
+        <li class="flex items-center gap-3 rounded-lg border border-rule bg-paper px-4 py-3">
+          <span class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent/15 font-mono text-xs text-accent">{i + 1}</span>
+          <span class="font-sans text-sm text-ink">{name}</span>
+        </li>
+      ))}
+    </ol>
+    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.leadersSource}</p>
   </div>
 </section>
 
@@ -168,6 +243,23 @@ const prices: Array<[string, string, number]> = [
       ))}
     </div>
     <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.pricesSource}</p>
+  </div>
+</section>
+
+<section>
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.adviceEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.adviceHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.adviceIntro}</p>
+    <div class="mt-8 grid gap-6 sm:grid-cols-3">
+      {advice.map(([heading, text], i) => (
+        <div class="rounded-lg border border-accent/30 bg-paper-warm p-5">
+          <span class="font-accentSerif text-2xl italic text-accent">{i + 1}</span>
+          <p class="mt-2 font-sans font-semibold text-ink">{heading}</p>
+          <p class="mt-2 text-sm text-text">{text}</p>
+        </div>
+      ))}
+    </div>
   </div>
 </section>
 

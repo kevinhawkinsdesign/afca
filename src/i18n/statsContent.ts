@@ -44,6 +44,45 @@ export interface StatsContent {
   f4Number: string;
   f4Label: string;
   forecastSource: string;
+  segmentEyebrow: string;
+  segmentHeading: string;
+  segmentIntro: string;
+  sg1Number: string;
+  sg1Label: string;
+  sg2Number: string;
+  sg2Label: string;
+  sg3Number: string;
+  sg3Label: string;
+  sg4Number: string;
+  sg4Label: string;
+  segmentSource: string;
+  signalsEyebrow: string;
+  signalsHeading: string;
+  signalsIntro: string;
+  sig1Heading: string;
+  sig1Text: string;
+  sig2Heading: string;
+  sig2Text: string;
+  sig3Heading: string;
+  sig3Text: string;
+  sig4Heading: string;
+  sig4Text: string;
+  sig5Heading: string;
+  sig5Text: string;
+  signalsSource: string;
+  leadersEyebrow: string;
+  leadersHeading: string;
+  leadersIntro: string;
+  leadersSource: string;
+  adviceEyebrow: string;
+  adviceHeading: string;
+  adviceIntro: string;
+  adv1Heading: string;
+  adv1Text: string;
+  adv2Heading: string;
+  adv2Text: string;
+  adv3Heading: string;
+  adv3Text: string;
   spotlightEyebrow: string;
   spotlightHeading: string;
   spotlightIntro: string;
@@ -113,6 +152,45 @@ export const statsContent: Record<Locale, StatsContent> = {
     f4Number: "78.7%",
     f4Label: "of 2025 Africa EV market revenue from battery-electric vehicles",
     forecastSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
+    segmentEyebrow: "Segment shifts",
+    segmentHeading: "Where the growth is inside the market",
+    segmentIntro: "The same Africa-specific forecast, broken down by vehicle type, battery chemistry, and charging method.",
+    sg1Number: "61.25%",
+    sg1Label: "share of 2025 Africa EV market revenue held by passenger cars, the largest vehicle-type segment",
+    sg2Number: "57.90%",
+    sg2Label: "CAGR for two- and three-wheelers through 2031, the fastest-growing vehicle type",
+    sg3Number: "50.88%",
+    sg3Label: "share of 2025 battery chemistry held by nickel-manganese-cobalt (NMC)",
+    sg4Number: "67.95%",
+    sg4Label: "share of 2025 charging done via AC slow charging, while DC fast charging grows faster (55.40% CAGR to 2031)",
+    segmentSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
+    signalsEyebrow: "Signals to watch",
+    signalsHeading: "What's driving the numbers",
+    signalsIntro: "Five developments the same forecast report calls out as reasons behind the growth above.",
+    sig1Heading: "Ghana's zero-tariff window",
+    sig1Text: "An eight-year exemption on import tariffs for EVs, in effect since early 2025, is designed to remove the single biggest cost barrier to adoption.",
+    sig2Heading: "Battery manufacturing arrives in Africa",
+    sig2Text: "Morocco's USD 6.5 billion Gotion gigafactory and BTR's USD 366 million cathode plant point to the first stages of local battery-cell production, rather than importing finished packs.",
+    sig3Heading: "South Africa's green-hydrogen bet",
+    sig3Text: "A EUR 4.7 billion program leveraging the country's platinum reserves is the basis for a parallel fuel-cell pathway alongside battery-electric vehicles.",
+    sig4Heading: "Battery-swap fintech at scale",
+    sig4Text: "Spiro's network has logged 9 million battery swaps and pairs 22,000 e-bikes with 600 swap stations, funding expansion through pay-per-swap revenue rather than upfront vehicle financing.",
+    sig5Heading: "Kenya's boda-boda opportunity",
+    sig5Text: "Kenya's 2.2 million motorcycle taxis could cut transport emissions by up to 85% if electrified, running on the country's largely renewable grid.",
+    signalsSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
+    leadersEyebrow: "Who's active",
+    leadersHeading: "Africa's EV industry leaders",
+    leadersIntro: "Named in the same report as the leading manufacturers by revenue across the continent, in a market that sits between consolidated and fragmented — no single player dominates outright.",
+    leadersSource: "Source: Mordor Intelligence, \"Africa Electric Vehicle Market\" report (2026–2031)",
+    adviceEyebrow: "AfCA's take",
+    adviceHeading: "What this means for operators, cities, and investors",
+    adviceIntro: "Our own reading of the data above — interpretation, not a new source, and worth weighing against local context before acting on it.",
+    adv1Heading: "Back two- and three-wheelers first",
+    adv1Text: "It's the fastest-growing vehicle segment and needs the least charging infrastructure to reach meaningful scale — a lower-risk entry point than passenger-car fleets.",
+    adv2Heading: "Design for AC today, DC tomorrow",
+    adv2Text: "Most charging happening now is AC slow charging. DC fast charging is growing faster off a smaller base — plan sites and standards so today's AC network can accept DC upgrades later without a rebuild.",
+    adv3Heading: "Set interoperability standards before battery localization lands",
+    adv3Text: "Domestic battery-cell investment is still early. Agreeing on charging and battery-swap standards now is easier than retrofitting them once local manufacturing capacity is built out.",
     spotlightEyebrow: "Country spotlight",
     spotlightHeading: "Ghana, early 2024",
     spotlightIntro: "The most complete publicly sourced country-level snapshot available to us — reproduced here as an example of the granularity we hope to extend across the continent.",
@@ -180,6 +258,45 @@ export const statsContent: Record<Locale, StatsContent> = {
     f4Number: "78,7 %",
     f4Label: "des revenus du marché africain des véhicules électriques en 2025 provenant des véhicules 100 % électriques",
     forecastSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
+    segmentEyebrow: "Évolution des segments",
+    segmentHeading: "Où se trouve la croissance à l'intérieur du marché",
+    segmentIntro: "Les mêmes prévisions spécifiques à l'Afrique, ventilées par type de véhicule, chimie de batterie et mode de recharge.",
+    sg1Number: "61,25 %",
+    sg1Label: "part des revenus du marché africain des véhicules électriques en 2025 détenue par les voitures particulières, le plus grand segment par type de véhicule",
+    sg2Number: "57,90 %",
+    sg2Label: "TCAC des deux et trois-roues jusqu'en 2031, le type de véhicule à la croissance la plus rapide",
+    sg3Number: "50,88 %",
+    sg3Label: "part de la chimie des batteries en 2025 détenue par le nickel-manganèse-cobalt (NMC)",
+    sg4Number: "67,95 %",
+    sg4Label: "part de la recharge en 2025 assurée par la recharge lente en courant alternatif (AC), la recharge rapide DC croissant plus vite (TCAC de 55,40 % jusqu'en 2031)",
+    segmentSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
+    signalsEyebrow: "Signaux à suivre",
+    signalsHeading: "Ce qui explique ces chiffres",
+    signalsIntro: "Cinq développements cités dans le même rapport de prévision comme moteurs de la croissance ci-dessus.",
+    sig1Heading: "L'exonération tarifaire du Ghana",
+    sig1Text: "Une exonération de huit ans sur les droits de douane à l'importation des véhicules électriques, en vigueur depuis début 2025, vise à lever le principal frein financier à l'adoption.",
+    sig2Heading: "La fabrication de batteries arrive en Afrique",
+    sig2Text: "La giga-usine Gotion de 6,5 milliards de dollars au Maroc et l'usine de cathodes de 366 millions de dollars de BTR marquent les premières étapes d'une production locale de cellules de batterie, plutôt que l'importation de blocs finis.",
+    sig3Heading: "Le pari de l'hydrogène vert sud-africain",
+    sig3Text: "Un programme de 4,7 milliards d'euros s'appuyant sur les réserves de platine du pays constitue la base d'une filière pile à combustible parallèle aux véhicules 100 % électriques.",
+    sig4Heading: "L'échange de batteries porté par la fintech, à grande échelle",
+    sig4Text: "Le réseau de Spiro a enregistré 9 millions d'échanges de batteries et associe 22 000 vélos électriques à 600 stations d'échange, finançant son expansion par les revenus à l'échange plutôt que par le financement initial du véhicule.",
+    sig5Heading: "L'opportunité des boda-boda au Kenya",
+    sig5Text: "Les 2,2 millions de motos-taxis du Kenya pourraient réduire les émissions du secteur des transports jusqu'à 85 % si elles étaient électrifiées, sur un réseau électrique largement renouvelable.",
+    signalsSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
+    leadersEyebrow: "Qui est actif",
+    leadersHeading: "Les leaders de l'industrie EV en Afrique",
+    leadersIntro: "Cités dans le même rapport comme les principaux constructeurs par chiffre d'affaires sur le continent, sur un marché entre consolidation et fragmentation — aucun acteur ne domine à lui seul.",
+    leadersSource: "Source : Mordor Intelligence, rapport « Africa Electric Vehicle Market » (2026-2031)",
+    adviceEyebrow: "L'avis d'AfCA",
+    adviceHeading: "Ce que cela signifie pour les opérateurs, les villes et les investisseurs",
+    adviceIntro: "Notre propre lecture des données ci-dessus — une interprétation, pas une nouvelle source, à confronter au contexte local avant d'agir.",
+    adv1Heading: "Miser d'abord sur les deux et trois-roues",
+    adv1Text: "C'est le segment à la croissance la plus rapide, et celui qui nécessite le moins d'infrastructure de recharge pour atteindre une échelle significative — un point d'entrée moins risqué que les flottes de véhicules particuliers.",
+    adv2Heading: "Concevoir pour l'AC aujourd'hui, le DC demain",
+    adv2Text: "L'essentiel de la recharge actuelle se fait en courant alternatif lent. La recharge rapide DC croît plus vite à partir d'une base plus petite — prévoyez des sites et des normes permettant au réseau AC actuel d'accueillir des mises à niveau DC sans tout reconstruire.",
+    adv3Heading: "Fixer les normes d'interopérabilité avant l'arrivée de la fabrication locale de batteries",
+    adv3Text: "L'investissement domestique dans les cellules de batterie n'en est qu'à ses débuts. S'accorder maintenant sur des normes de recharge et d'échange de batteries est plus simple que de les adapter une fois la capacité de fabrication locale en place.",
     spotlightEyebrow: "Coup de projecteur pays",
     spotlightHeading: "Ghana, début 2026",
     spotlightIntro: "L'aperçu au niveau national le plus complet dont nous disposions à partir de sources publiques — reproduit ici comme exemple de la granularité que nous espérons étendre à l'ensemble du continent.",
@@ -247,6 +364,45 @@ export const statsContent: Record<Locale, StatsContent> = {
     f4Number: "78.7%",
     f4Label: "by'amafaranga y'isoko ry'amamodoka akoresha amashanyarazi muri Afurika mu 2025 aturuka ku modoka zikoresha amashanyarazi gusa",
     forecastSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
+    segmentEyebrow: "Impinduka mu byiciro",
+    segmentHeading: "Aho ubukungu bw'isoko bukura cyane",
+    segmentIntro: "Iteganyagihe rimwe ryihariye Afurika, ritandukanyijwe hakurikijwe ubwoko bw'imodoka, ubwoko bwa bateri, n'uburyo bwo kwuzuza amashanyarazi.",
+    sg1Number: "61.25%",
+    sg1Label: "by'amafaranga y'isoko ry'amamodoka akoresha amashanyarazi muri Afurika mu 2025 aturuka ku modoka z'abantu ku giti cyabo, icyiciro kinini ku bwoko bw'imodoka",
+    sg2Number: "57.90%",
+    sg2Label: "CAGR y'amapikipiki n'amamodoka atatu amagare kugeza 2031, ubwoko bw'imodoka bukura vuba kurusha ubundi",
+    sg3Number: "50.88%",
+    sg3Label: "igice cy'ubwoko bwa bateri mu 2025 gifitwe na nickel-manganese-cobalt (NMC)",
+    sg4Number: "67.95%",
+    sg4Label: "igice cy'icyuzuzo mu 2025 gikorwa n'icyuzuzo gitinda cya AC, mu gihe icyuzuzo cyihuse cya DC gikura vuba (CAGR ya 55.40% kugeza 2031)",
+    segmentSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
+    signalsEyebrow: "Ibimenyetso byo gukurikirana",
+    signalsHeading: "Icyatumye iyi mibare igera aho iri",
+    signalsIntro: "Ibintu bitanu byavuzwe muri iyi raporo nk'impamvu z'iterambere riri hejuru.",
+    sig1Heading: "Igihe cy'imisoro 0% muri Ghana",
+    sig1Text: "Kubura imisoro y'ikoreshwa ry'amamodoka akoresha amashanyarazi mu myaka umunani, gukurikiza kuva mu ntangiriro za 2025, bigamije gukuraho inzitizi nyamukuru y'amafaranga ku bantu bashaka kuyagura.",
+    sig2Heading: "Gukora bateri byatangiye muri Afurika",
+    sig2Text: "Uruganda runini rwa Gotion rwa miliyari 6.5 z'amadolari muri Maroc n'uruganda rwa BTR rwa miliyoni 366 z'amadolari zikora cathode, byerekana intangiriro yo gukora selire za bateri mu gihugu, aho gutumiza ibice byuzuye biva hanze.",
+    sig3Heading: "Ubushakashatsi bwa hydrogen nziza muri Afurika y'Epfo",
+    sig3Text: "Gahunda ya miliyari 4.7 z'ama euro ikoresheje ubukungu bw'igihugu muri platine ni ishingiro ry'inzira ya bateri za hydrogen zishobora kongera ku modoka zikoresha amashanyarazi gusa.",
+    sig4Heading: "Guhererekanya bateri ku rwego rwo hejuru",
+    sig4Text: "Urusobe rwa Spiro rwageze ku guhererekanya bateri miliyoni 9, rufite amagare y'amashanyarazi 22,000 na sitasiyo z'guhererekanya 600, rutera imbere binyuze mu mafaranga akomoka ku guhererekanya aho kuba imisanzu y'imodoka mbere y'igihe.",
+    sig5Heading: "Amahirwe y'amapikipiki (boda-boda) muri Kenya",
+    sig5Text: "Amapikipiki 2.2 miliyoni akora boda-boda muri Kenya yashobora kugabanya ibyuka bihumanya ikirere biva mu bwikorezi kugera kuri 85% niba yahindurwa akoresha amashanyarazi, hakoreshejwe umuyoboro w'amashanyarazi ukomoka cyane ku ngufu zisubira.",
+    signalsSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
+    leadersEyebrow: "Abakinnyi bakomeye",
+    leadersHeading: "Abayobozi mu nganda z'amamodoka akoresha amashanyarazi muri Afurika",
+    leadersIntro: "Bavuzwe muri iyi raporo nk'abakora amamodoka bakomeye ku mafaranga yinjira ku mugabane, mu isoko riri hagati yo guhuzwa n'ubusabane — nta kigo kimwe kiganje ku giti cyacyo.",
+    leadersSource: "Isoko: Mordor Intelligence, raporo \"Africa Electric Vehicle Market\" (2026–2031)",
+    adviceEyebrow: "Icyo AfCA ibitekerezaho",
+    adviceHeading: "Icyo ibi bisobanura ku bakora imirimo, imijyi, n'abashoramari",
+    adviceIntro: "Uko twumva iyi mibare — ni ibitekerezo byacu, ntabwo ari isoko rishya, kandi bikwiye kugereranywa n'imiterere y'aho uri mbere yo gukora icyemezo.",
+    adv1Heading: "Banza ushyigikire amapikipiki n'amamodoka atatu amagare",
+    adv1Text: "Ni cyo cyiciro kikura vuba kurusha ibindi kandi gisaba ibikorwaremezo bike by'icyuzuzo kugira ngo kigere ku rugero rufatika — inzira ifite ibyago bike kuruta gushora mu modoka z'abantu ku giti cyabo.",
+    adv2Heading: "Tegura ku bwa AC uyu munsi, DC ejo",
+    adv2Text: "Igice kinini cy'icyuzuzo kiba ubu ni icya AC gitinda. Icyuzuzo cyihuse cya DC gikura vuba kikiva ku rwego ruto — tegura ahantu n'amabwiriza bituma urusobe rwa AC rwo muri iki gihe rwakira ivugurura rya DC nta kongera kubaka byose.",
+    adv3Heading: "Shyiraho amabwiriza y'imikoranire mbere y'uko ikora bateri mu gihugu igera kure",
+    adv3Text: "Ishoramari mu gukora selire za bateri mu gihugu rikiri intangiriro. Kwumvikana ku mabwiriza y'icyuzuzo no guhererekanya bateri ubu biroroshye kuruta kubihindura nyuma y'uko ubushobozi bwo gukora mu gihugu bwubatswe.",
     spotlightEyebrow: "Igihugu cyihariye",
     spotlightHeading: "Ghana, mu ntangiriro za 2026",
     spotlightIntro: "Incamake y'igihugu yuzuye kurusha izindi tubonye mu masoko rusange — yasubiwemo hano nk'urugero rw'ubunini bwose twifuza kwaguka muri Afurika hose.",
@@ -314,6 +470,45 @@ export const statsContent: Record<Locale, StatsContent> = {
     f4Number: "78,7 %",
     f4Label: "av intäkterna på Afrikas elbilsmarknad 2025 från renodlade elfordon",
     forecastSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
+    segmentEyebrow: "Segmentförskjutningar",
+    segmentHeading: "Var tillväxten finns inom marknaden",
+    segmentIntro: "Samma Afrikaspecifika prognos, uppdelad efter fordonstyp, battericell-kemi och laddningsmetod.",
+    sg1Number: "61,25 %",
+    sg1Label: "andel av 2025 års intäkter på Afrikas elbilsmarknad från personbilar, det största fordonstypssegmentet",
+    sg2Number: "57,90 %",
+    sg2Label: "CAGR för två- och trehjulingar fram till 2031, den snabbast växande fordonstypen",
+    sg3Number: "50,88 %",
+    sg3Label: "andel av 2025 års batterikemi som utgörs av nickel-mangan-kobolt (NMC)",
+    sg4Number: "67,95 %",
+    sg4Label: "andel av 2025 års laddning som utgörs av långsam AC-laddning, medan DC-snabbladdning växer snabbare (55,40 % CAGR till 2031)",
+    segmentSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
+    signalsEyebrow: "Signaler att bevaka",
+    signalsHeading: "Vad som driver siffrorna",
+    signalsIntro: "Fem utvecklingar som lyfts fram i samma prognosrapport som orsaker till tillväxten ovan.",
+    sig1Heading: "Ghanas nolltariff-fönster",
+    sig1Text: "Ett åtta år långt undantag från importtullar på elfordon, i kraft sedan tidigt 2025, är utformat för att ta bort det största kostnadshindret för adoption.",
+    sig2Heading: "Batteritillverkning etableras i Afrika",
+    sig2Text: "Marockos gigafabrik från Gotion på 6,5 miljarder dollar och BTR:s katodfabrik på 366 miljoner dollar pekar mot de första stegen mot lokal battericellsproduktion, snarare än import av färdiga batteripaket.",
+    sig3Heading: "Sydafrikas satsning på grön vätgas",
+    sig3Text: "Ett program på 4,7 miljarder euro som utnyttjar landets platinareserver ligger till grund för en parallell bränslecellsväg vid sidan av renodlade elfordon.",
+    sig4Heading: "Batteribyte via fintech, i stor skala",
+    sig4Text: "Spiros nätverk har loggat 9 miljoner batteribyten och kopplar samman 22 000 elcyklar med 600 bytesstationer, och finansierar expansionen med intäkter per byte i stället för förskottsfinansiering av fordon.",
+    sig5Heading: "Kenyas boda-boda-möjlighet",
+    sig5Text: "Kenyas 2,2 miljoner motorcykeltaxin skulle kunna minska transportutsläppen med upp till 85 % om de elektrifierades, med drift på ett i huvudsak förnybart elnät.",
+    signalsSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
+    leadersEyebrow: "Vilka är aktiva",
+    leadersHeading: "Afrikas ledande elbilsaktörer",
+    leadersIntro: "Namngivna i samma rapport som de främsta tillverkarna efter intäkter på kontinenten, på en marknad som ligger mellan konsoliderad och fragmenterad — ingen enskild aktör dominerar helt.",
+    leadersSource: "Källa: Mordor Intelligence, rapporten \"Africa Electric Vehicle Market\" (2026–2031)",
+    adviceEyebrow: "AfCA:s syn",
+    adviceHeading: "Vad detta betyder för aktörer, städer och investerare",
+    adviceIntro: "Vår egen tolkning av datan ovan — en tolkning, inte en ny källa, och bör vägas mot lokal kontext innan den ligger till grund för beslut.",
+    adv1Heading: "Satsa på två- och trehjulingar först",
+    adv1Text: "Det är det snabbast växande fordonssegmentet och kräver minst laddinfrastruktur för att nå meningsfull skala — en mindre riskfylld startpunkt än personbilsflottor.",
+    adv2Heading: "Designa för AC idag, DC imorgon",
+    adv2Text: "Det mesta av dagens laddning är långsam AC-laddning. DC-snabbladdning växer snabbare från en mindre bas — planera platser och standarder så att dagens AC-nätverk kan ta emot DC-uppgraderingar senare utan en ombyggnad från grunden.",
+    adv3Heading: "Få interoperabilitetsstandarder på plats innan lokal batteritillverkning etableras",
+    adv3Text: "Inhemska investeringar i battericeller är fortfarande i ett tidigt skede. Att enas om laddnings- och batteribytesstandarder nu är enklare än att anpassa dem i efterhand när lokal tillverkningskapacitet väl finns på plats.",
     spotlightEyebrow: "Landet i fokus",
     spotlightHeading: "Ghana, i början av 2026",
     spotlightIntro: "Den mest kompletta offentligt källbelagda landsöversikten vi haft tillgång till — återgiven här som ett exempel på den detaljnivå vi hoppas kunna utvidga till hela kontinenten.",
