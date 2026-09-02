@@ -16,23 +16,25 @@ interface Props {
 const { image, imageAlt, caption, toWarm = false } = Astro.props;
 ---
 
-<figure class="reveal relative my-14 ml-[50%] w-screen -translate-x-1/2 md:my-20">
-  <img
-    src={withBase(image)}
-    alt={imageAlt}
-    class="h-[32vh] min-h-[200px] w-full object-cover sm:h-[42vh] md:h-[48vh]"
-    loading="lazy"
-  />
-  <div class="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-paper to-transparent sm:h-20" aria-hidden="true"></div>
-  <div
-    class:list={[
-      "pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t to-transparent sm:h-20",
-      toWarm ? "from-paper-warm" : "from-paper",
-    ]}
-    aria-hidden="true"
-  ></div>
+<figure class="reveal relative my-14 ml-[50%] w-screen -translate-x-1/2 sm:mx-auto sm:w-full sm:max-w-content sm:translate-x-0 sm:px-6 md:my-20">
+  <div class="relative overflow-hidden sm:rounded-lg">
+    <img
+      src={withBase(image)}
+      alt={imageAlt}
+      class="h-[32vh] min-h-[200px] w-full object-cover sm:h-[42vh] md:h-[48vh]"
+      loading="lazy"
+    />
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-paper to-transparent sm:h-20" aria-hidden="true"></div>
+    <div
+      class:list={[
+        "pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t to-transparent sm:h-20",
+        toWarm ? "from-paper-warm" : "from-paper",
+      ]}
+      aria-hidden="true"
+    ></div>
+  </div>
   {caption && (
-    <figcaption class="mx-auto max-w-content px-6 pt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">
+    <figcaption class="mx-auto max-w-content px-6 pt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted sm:px-0">
       {caption}
     </figcaption>
   )}
