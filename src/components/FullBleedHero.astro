@@ -2,13 +2,11 @@
 // Full-bleed hero used at the top of every primary page — a large,
 // edge-to-edge photo with the title overlapping its bottom edge, in the
 // vein of the annual-report layouts (Parker Institute, etc.) the site
-// took inspiration from. Replaces the earlier two-column PageHero.
+// took inspiration from. Plain rectangular photo, no corner ornaments
+// or border — those read as cold/tactical; the network animation and
+// scanline glow carry the "energy/connectivity" motif instead.
 import { withBase } from "../lib/url";
 import DotGridCanvas from "./DotGridCanvas.astro";
-import SketchBolt from "./decor/SketchBolt.astro";
-import SketchSpark from "./decor/SketchSpark.astro";
-import SketchHexagon from "./decor/SketchHexagon.astro";
-import HudFrame from "./decor/HudFrame.astro";
 
 interface Props {
   title: string;
@@ -21,19 +19,14 @@ const hasTitleSlot = Astro.slots.has("title");
 ---
 
 <section class="relative">
-  <div class="hero-panel relative h-[42vh] min-h-[280px] w-full overflow-hidden sm:h-[54vh] md:h-[62vh]">
+  <div class="relative h-[42vh] min-h-[280px] w-full overflow-hidden sm:h-[54vh] md:h-[62vh]">
     <img src={withBase(image)} alt={imageAlt} class="h-full w-full object-cover" loading="eager" />
     <div class="absolute inset-0 bg-gradient-to-t from-paper via-paper/10 to-transparent"></div>
     <DotGridCanvas class="opacity-70" />
-    <HudFrame />
     <div class="hero-scanline pointer-events-none absolute inset-x-0 h-24 opacity-0 mix-blend-screen" aria-hidden="true"></div>
-    <div class="hero-panel__edge pointer-events-none absolute inset-0" aria-hidden="true"></div>
   </div>
   <div class="mx-auto max-w-content px-6">
     <div class="relative -mt-16 pb-8 sm:-mt-24 md:-mt-28">
-      <SketchSpark class="absolute -top-2 right-2 hidden opacity-70 sm:block md:right-8" size={30} />
-      <SketchBolt class="absolute -right-2 top-10 hidden opacity-60 md:block lg:right-16" />
-      <SketchHexagon class="absolute -right-24 -top-6 hidden opacity-80 lg:block" size={40} />
       {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
       <h1 class="max-w-3xl font-sans text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl md:text-6xl">
         {hasTitleSlot ? <slot name="title" /> : title}
@@ -46,39 +39,6 @@ const hasTitleSlot = Astro.slots.has("title");
 </section>
 
 <style>
-  /* Chamfered top-left / bottom-right corners, like a beveled HUD panel
-     rather than a plain photo crop — the strongest single cue for the
-     TRON-panel reference. Chamfer size scales down on small screens so
-     it never eats noticeably into the image. */
-  .hero-panel {
-    --chamfer: 56px;
-    clip-path: polygon(
-      var(--chamfer) 0,
-      100% 0,
-      100% calc(100% - var(--chamfer)),
-      calc(100% - var(--chamfer)) 100%,
-      0 100%,
-      0 var(--chamfer)
-    );
-  }
-  @media (max-width: 640px) {
-    .hero-panel {
-      --chamfer: 28px;
-    }
-  }
-  /* A glowing cyan seam tracing the chamfered edge, drawn as a second
-     copy of the same clip-path with only its border visible. */
-  .hero-panel__edge {
-    clip-path: polygon(
-      var(--chamfer) 0,
-      100% 0,
-      100% calc(100% - var(--chamfer)),
-      calc(100% - var(--chamfer)) 100%,
-      0 100%,
-      0 var(--chamfer)
-    );
-    box-shadow: inset 0 0 0 1.5px rgba(94, 234, 255, 0.45);
-  }
   .hero-scanline {
     background: linear-gradient(180deg, transparent, rgba(94, 234, 255, 0.16), transparent);
   }

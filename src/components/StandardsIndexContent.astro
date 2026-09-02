@@ -19,7 +19,7 @@ function guideHref(slug: string): string {
 <FullBleedHero title={t.heroTitle} image="/hero/standards.jpg" imageAlt="A motorcycle taxi rider using a ROAM fast charger in Kenya">
   <p class="text-text">{t.intro}</p>
 
-  <div class="mt-4 rounded border border-rule bg-paper-warm px-4 py-3 font-sans text-sm text-text-muted">
+  <div class="mt-4 rounded-lg border border-rule bg-paper-warm px-4 py-3 font-sans text-sm text-text-muted">
     {t.disclaimerPre} <a href="https://evroaming.org" class="text-ink underline">{t.disclaimerEvroaming}</a>{t.disclaimerMid} <a href="https://openchargealliance.org" class="text-ink underline">{t.disclaimerOca}</a>{t.disclaimerPost}
   </div>
 </FullBleedHero>
@@ -27,7 +27,7 @@ function guideHref(slug: string): string {
 <section class="mx-auto max-w-content px-6 py-10 md:py-16">
   <div class="grid gap-6 md:grid-cols-2">
     {t.guides.map(([slug, title, summary]) => (
-      <a href={guideHref(slug)} class="group block rounded border border-rule bg-paper p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-lg hover:shadow-accent/20">
+      <a href={guideHref(slug)} class="group block rounded-lg border border-rule bg-paper p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-lg hover:shadow-accent/20">
         <h2 class="font-sans text-lg font-semibold text-ink">{title}</h2>
         <p class="mt-2 text-sm text-text-muted">{summary}</p>
       </a>

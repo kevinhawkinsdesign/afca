@@ -20,7 +20,7 @@ const founders: Array<[string, string, string, string]> = [
     <p class="eyebrow">{t.foundersEyebrow}</p>
     <div class="mt-6 grid gap-6 sm:grid-cols-2">
       {founders.map(([photo, name, role, blurb]) => (
-        <div class="flex items-center gap-4 rounded border border-rule bg-paper p-5">
+        <div class="flex items-center gap-4 rounded-lg border border-rule bg-paper p-5">
           <img
             src={withBase(photo)}
             alt={name}

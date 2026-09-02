@@ -124,15 +124,15 @@
   }
 
   .locale-notice {
-    @apply mb-8 rounded border border-accent/40 bg-accent/10 px-4 py-3 font-sans text-sm text-ink;
+    @apply mb-8 rounded-lg border border-accent/40 bg-accent/10 px-4 py-3 font-sans text-sm text-ink;
   }
 
   .scope-note {
-    @apply mb-10 rounded border border-rule bg-paper-warm px-5 py-4 font-sans text-sm text-text-muted;
+    @apply mb-10 rounded-lg border border-rule bg-paper-warm px-5 py-4 font-sans text-sm text-text-muted;
   }
 
   .superseded-banner {
-    @apply mb-10 rounded border border-accent bg-accent/10 px-5 py-4 font-sans text-sm text-ink;
+    @apply mb-10 rounded-lg border border-accent bg-accent/10 px-5 py-4 font-sans text-sm text-ink;
   }
 
   .prose-guide h2 {

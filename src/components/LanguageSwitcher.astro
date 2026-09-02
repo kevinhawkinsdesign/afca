@@ -20,7 +20,7 @@ const t = ui[locale];
 
 {technicalEnglishOnly ? (
   <span
-    class="flex items-center gap-1.5 rounded border border-rule bg-paper px-3 py-1.5 font-sans text-sm font-medium text-text-muted"
+    class="flex items-center gap-1.5 rounded-lg border border-rule bg-paper px-3 py-1.5 font-sans text-sm font-medium text-text-muted"
     title="This section is English-only technical content"
   >
     EN
@@ -29,7 +29,7 @@ const t = ui[locale];
 <div class="relative" data-lang-switcher>
   <button
     type="button"
-    class="flex items-center gap-1.5 rounded border border-rule bg-paper px-3 py-1.5 font-sans text-sm font-medium text-ink hover:border-ink"
+    class="flex items-center gap-1.5 rounded-lg border border-rule bg-paper px-3 py-1.5 font-sans text-sm font-medium text-ink hover:border-ink"
     aria-haspopup="listbox"
     aria-expanded="false"
     data-lang-trigger
@@ -43,7 +43,7 @@ const t = ui[locale];
   <ul
     role="listbox"
     aria-label={t.languageLabel}
-    class="absolute right-0 z-10 mt-1 hidden min-w-[10rem] rounded border border-rule bg-paper py-1 shadow-md"
+    class="absolute right-0 z-10 mt-1 hidden min-w-[10rem] rounded-lg border border-rule bg-paper py-1 shadow-md"
     data-lang-list
   >
     {locales.map((code) => (
