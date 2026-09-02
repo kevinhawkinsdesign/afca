@@ -1,5 +1,6 @@
 ---
 import DotField from "./DotField.astro";
+import ElectricDivider from "./decor/ElectricDivider.astro";
 import { withBase } from "../lib/url";
 
 const sections: Array<[string, string, string]> = [
@@ -21,7 +22,8 @@ const sections: Array<[string, string, string]> = [
 ];
 ---
 
-<section class="border-t border-rule">
+<ElectricDivider />
+<section>
   <div class="mx-auto max-w-content px-6 py-10 md:py-16">
     <p class="reveal eyebrow text-center">Explore AfCA</p>
     <DotField class="reveal mt-4" />

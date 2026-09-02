@@ -5,6 +5,8 @@
 // took inspiration from. Replaces the earlier two-column PageHero.
 import { withBase } from "../lib/url";
 import DotGridCanvas from "./DotGridCanvas.astro";
+import SketchBolt from "./decor/SketchBolt.astro";
+import SketchSpark from "./decor/SketchSpark.astro";
 
 interface Props {
   title: string;
@@ -23,6 +25,8 @@ const { title, image, imageAlt, eyebrow } = Astro.props;
   </div>
   <div class="mx-auto max-w-content px-6">
     <div class="relative -mt-16 pb-8 sm:-mt-24 md:-mt-28">
+      <SketchSpark class="absolute -top-2 right-2 hidden opacity-70 sm:block md:right-8" size={30} />
+      <SketchBolt class="absolute -right-2 top-10 hidden opacity-60 md:block lg:right-16" />
       {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
       <h1 class="max-w-3xl font-sans text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl md:text-6xl">{title}</h1>
       <div class="mt-4 max-w-prose">

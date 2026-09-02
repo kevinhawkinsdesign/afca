@@ -1,0 +1,20 @@
+---
+// Hand-drawn lightning bolt — the electric/charging motif, sketched
+// rather than a flat icon so it reads as a doodle accent alongside the
+// other SketchX components.
+interface Props {
+  class?: string;
+  color?: string;
+}
+const { class: className = "", color = "#E0924A" } = Astro.props;
+---
+
+<svg class:list={["pointer-events-none", className]} width="34" height="52" viewBox="0 0 34 52" fill="none" aria-hidden="true">
+  <path
+    d="M20 2L4 29H16L13 50L31 21H18L20 2Z"
+    stroke={color}
+    stroke-width="2.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+</svg>

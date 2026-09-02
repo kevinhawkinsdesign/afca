@@ -1,0 +1,40 @@
+---
+// A thin glowing line with a pulse of light travelling along it, like
+// current moving through a circuit trace — the "TRON meets Tesla"
+// electric motif, used sparingly as a section divider instead of a
+// plain border on a couple of key transitions.
+---
+
+<div class="electric-divider" aria-hidden="true">
+  <span class="electric-divider__pulse"></span>
+</div>
+
+<style>
+  .electric-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(224, 146, 74, 0.35) 15%, rgba(224, 146, 74, 0.35) 85%, transparent);
+    overflow: hidden;
+  }
+  .electric-divider__pulse {
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #e0924a, transparent);
+    box-shadow: 0 0 8px 1px rgba(224, 146, 74, 0.8);
+    animation: electric-travel 4.5s ease-in-out infinite;
+  }
+  @keyframes electric-travel {
+    0% { left: -10%; }
+    45%, 55% { left: 100%; }
+    100% { left: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .electric-divider__pulse {
+      animation: none;
+      display: none;
+    }
+  }
+</style>

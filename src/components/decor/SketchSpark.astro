@@ -1,0 +1,18 @@
+---
+// Hand-drawn spark/asterisk burst — echoes the reference brief's asterisk
+// accent, redrawn as a charge-spark rather than a flat shape.
+interface Props {
+  class?: string;
+  color?: string;
+  size?: number;
+}
+const { class: className = "", color = "#E0924A", size = 40 } = Astro.props;
+---
+
+<svg class:list={["pointer-events-none", className]} width={size} height={size} viewBox="0 0 40 40" fill="none" aria-hidden="true">
+  <g stroke={color} stroke-width="2.5" stroke-linecap="round">
+    <path d="M20 3V37" />
+    <path d="M5 11L35 29" />
+    <path d="M35 11L5 29" />
+  </g>
+</svg>

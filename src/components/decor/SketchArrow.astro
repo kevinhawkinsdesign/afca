@@ -1,0 +1,33 @@
+---
+// Hand-drawn "sharpie" style curved arrow — a doodle accent, not a UI
+// control. Kept in the site's own accent/ink colours rather than the
+// purple/lime of the reference brief (purple is reserved for the Open
+// Charge Alliance under AfCA's own naming rules; lime would be a new,
+// unestablished colour on a site that has held a deliberately narrow
+// palette throughout).
+interface Props {
+  class?: string;
+  color?: string;
+  rotate?: number;
+}
+const { class: className = "", color = "#E0924A", rotate = 0 } = Astro.props;
+---
+
+<svg
+  class:list={["pointer-events-none", className]}
+  style={rotate ? `transform: rotate(${rotate}deg)` : undefined}
+  width="72"
+  height="64"
+  viewBox="0 0 72 64"
+  fill="none"
+  aria-hidden="true"
+>
+  <path
+    d="M8 10C22 8 40 9 54 21C61 27 63 34 60 41"
+    stroke={color}
+    stroke-width="2.5"
+    stroke-linecap="round"
+    opacity="0.9"
+  />
+  <path d="M52 33L61 42L69 31" stroke={color} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+</svg>
