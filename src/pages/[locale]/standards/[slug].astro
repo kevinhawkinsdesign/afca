@@ -1,0 +1,24 @@
+---
+import GuideLayout from "../../../layouts/GuideLayout.astro";
+import { prefixedLocales } from "../../../i18n/config";
+import { standardsGuides } from "../../../i18n/standardsGuides";
+import { standardsIndex } from "../../../i18n/standardsIndex";
+
+export function getStaticPaths() {
+  const paths: Array<{ params: { locale: string; slug: string } }> = [];
+  for (const locale of prefixedLocales) {
+    for (const slug of Object.keys(standardsGuides)) {
+      paths.push({ params: { locale, slug } });
+    }
+  }
+  return paths;
+}
+
+const { locale, slug } = Astro.params as { locale: (typeof prefixedLocales)[number]; slug: string };
+const guide = standardsGuides[slug][locale];
+const standardsLabel = standardsIndex[locale].heroTitle;
+---
+
+<GuideLayout title={guide.title} description={guide.description} locale={locale} standardsLabel={standardsLabel}>
+  <Fragment set:html={guide.bodyHtml} />
+</GuideLayout>

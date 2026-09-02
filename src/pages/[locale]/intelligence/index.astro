@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import IntelligenceIndexContent from "../../../components/IntelligenceIndexContent.astro";
+import { prefixedLocales } from "../../../i18n/config";
+
+export function getStaticPaths() {
+  return prefixedLocales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
+---
+
+<BaseLayout
+  locale={locale}
+  title="Intelligence"
+  description="Ecosystem intelligence, country overviews, and the Pan-African Interoperability and Reliability Index."
+>
+  <IntelligenceIndexContent locale={locale} />
+</BaseLayout>

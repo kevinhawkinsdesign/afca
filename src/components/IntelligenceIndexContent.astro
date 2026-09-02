@@ -1,0 +1,55 @@
+---
+import FullBleedHero from "./FullBleedHero.astro";
+import { getCollection } from "astro:content";
+import { withBase } from "../lib/url";
+import { localizePath, type Locale } from "../i18n/config";
+import { intelligenceUi } from "../i18n/intelligenceContent";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = intelligenceUi[locale];
+
+const allEntries = await getCollection("intelligence", (e) => e.data.locale === locale);
+// Hide superseded entries from the index — they stay reachable at their
+// own URL with a banner pointing to the current version, per BRIEF.md
+// section 6, but the landing page should surface only current guidance.
+const supersededSlugs = new Set(allEntries.filter((e) => e.data.supersededBy).map((e) => e.slug));
+const visible = allEntries
+  .filter((e) => !supersededSlugs.has(e.slug))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+// Non-English entries live in a locale subfolder (src/content/intelligence/fr/…)
+// so Astro's default slug is locale-prefixed (e.g. "fr/kenya-overview") —
+// strip that prefix before building the URL, which gets its locale
+// segment from localizePath instead.
+function bareSlug(slug: string): string {
+  return locale === "en" ? slug : slug.replace(new RegExp(`^${locale}/`), "");
+}
+function entryHref(slug: string): string {
+  const clean = bareSlug(slug);
+  return locale === "en" ? withBase(`/intelligence/${clean}`) : localizePath(`/intelligence/${clean}`, locale);
+}
+
+const dateLocale = locale === "en" ? "en-GB" : locale === "fr" ? "fr-FR" : locale === "sv" ? "sv-SE" : "en-GB";
+---
+
+<FullBleedHero title={t.heroTitle} image="/hero/intelligence.jpg" imageAlt="A row of electric vehicles charging at a multi-bay public station">
+  <p class="text-lg text-text">{t.intro}</p>
+</FullBleedHero>
+
+<section class="mx-auto max-w-content px-6 py-10 md:py-16">
+  <div class="grid gap-6 md:grid-cols-2">
+    {visible.map((entry) => (
+      <a href={entryHref(entry.slug)} class="group block rounded border border-rule bg-paper p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-lg hover:shadow-accent/20">
+        <p class="font-sans text-xs font-medium uppercase tracking-wide text-text-muted">
+          {entry.data.publishDate.toLocaleDateString(dateLocale, { year: "numeric", month: "long" })}
+          &middot; v{entry.data.methodologyVersion}
+        </p>
+        <h2 class="mt-2 font-sans text-lg font-semibold text-ink">{entry.data.title}</h2>
+        <p class="mt-2 text-sm text-text-muted">{entry.data.summary}</p>
+      </a>
+    ))}
+  </div>
+</section>

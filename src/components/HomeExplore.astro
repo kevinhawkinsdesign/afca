@@ -11,12 +11,9 @@ interface Props {
 const { locale } = Astro.props;
 const t = homeContent[locale];
 
-// Standards and Intelligence are deliberately English-only technical
-// content (see the matching comment in Header.astro) — link straight to
-// the English URL. Community is fully translated, so localize it.
 const sections: Array<[string, string, string, boolean]> = [
-  ["/standards", t.explore1Title, t.explore1Body, true],
-  ["/intelligence", t.explore2Title, t.explore2Body, true],
+  ["/standards", t.explore1Title, t.explore1Body, false],
+  ["/intelligence", t.explore2Title, t.explore2Body, false],
   ["/community", t.explore3Title, t.explore3Body, false],
 ];
 ---

@@ -1,13 +1,18 @@
 ---
 import { withBase } from "../lib/url";
+import { localizePath, type Locale } from "../i18n/config";
+import { reportUi } from "../i18n/intelligenceContent";
 
 interface Props {
   currentSlug: string;
+  locale?: Locale;
 }
-const { currentSlug } = Astro.props;
+const { currentSlug, locale = "en" } = Astro.props;
+const t = reportUi[locale];
+const href = locale === "en" ? withBase(`/intelligence/${currentSlug}`) : localizePath(`/intelligence/${currentSlug}`, locale);
 ---
 
 <div class="superseded-banner" role="note">
-  This report has been superseded by a newer version.
-  <a href={withBase(`/intelligence/${currentSlug}`)} class="font-semibold underline">View the current version &rarr;</a>
+  {t.supersededNotice}
+  <a href={href} class="font-semibold underline">{t.viewCurrent} &rarr;</a>
 </div>

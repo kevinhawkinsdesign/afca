@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ScopeNote from "../../../components/ScopeNote.astro";
+import SupersededBanner from "../../../components/SupersededBanner.astro";
+import SourceList from "../../../components/SourceList.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { localizePath, prefixedLocales } from "../../../i18n/config";
+import PhotoHero from "../../../components/PhotoHero.astro";
+import { intelligenceUi } from "../../../i18n/intelligenceContent";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("intelligence", (e) => prefixedLocales.includes(e.data.locale as (typeof prefixedLocales)[number]));
+  // Non-English entries live in a locale subfolder (src/content/intelligence/fr/…),
+  // so Astro's default slug is locale-prefixed (e.g. "fr/kenya-overview") —
+  // strip that prefix for the route's :slug param.
+  return entries.map((entry) => ({
+    params: { locale: entry.data.locale, slug: entry.slug.replace(new RegExp(`^${entry.data.locale}/`), "") },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"intelligence">;
+}
+
+const { entry } = Astro.props;
+const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
+const { Content } = await entry.render();
+
+const intelligenceHref = localizePath("/intelligence", locale);
+const dateLocale = locale === "fr" ? "fr-FR" : locale === "sv" ? "sv-SE" : "en-GB";
+const intelligenceLabel = intelligenceUi[locale].heroTitle;
+---
+
+<BaseLayout locale={locale} title={entry.data.title} description={entry.data.summary}>
+  <article class="px-6 py-10 md:py-16">
+    <div class="mx-auto grid max-w-content items-start gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:gap-10">
+      <div class="order-1 max-w-prose">
+        <p class="mb-2 eyebrow">
+          <a href={intelligenceHref} class="no-underline text-accent">{intelligenceLabel}</a>
+        </p>
+        <h1 class="font-sans text-3xl font-semibold text-ink">{entry.data.title}</h1>
+        <p class="mt-2 font-sans text-sm text-text-muted">
+          {entry.data.publishDate.toLocaleDateString(dateLocale, { year: "numeric", month: "long", day: "numeric" })}
+          &middot; v{entry.data.methodologyVersion}
+        </p>
+      </div>
+      <div class="order-2 mx-auto w-full max-w-[12rem] sm:max-w-[14rem] lg:order-2 lg:mx-0 lg:max-w-xs lg:justify-self-end">
+        <PhotoHero src="/hero/intelligence.jpg" alt="A row of electric vehicles charging at a multi-bay public station" compact />
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-prose">
+      {entry.data.supersededBy && (
+        <div class="mt-6">
+          <SupersededBanner currentSlug={entry.data.supersededBy.replace(new RegExp(`^${locale}/`), "")} locale={locale} />
+        </div>
+      )}
+
+      <div class="mt-6">
+        <ScopeNote scopeNote={entry.data.scopeNote} methodologyVersion={entry.data.methodologyVersion} locale={locale} />
+      </div>
+
+      <div class="prose-guide">
+        <Content />
+      </div>
+
+      <SourceList sources={entry.data.sources} locale={locale} />
+    </div>
+  </article>
+</BaseLayout>

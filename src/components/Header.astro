@@ -13,14 +13,10 @@ interface Props {
 const { locale, pathname, technicalEnglishOnly = false } = Astro.props;
 const t = ui[locale];
 
-// Intelligence and Standards are intentionally English-only technical
-// content (BRIEF.md section 5) with no locale-prefixed routes — link them
-// straight to their English URL rather than through localizePath, which
-// would point at a non-existent /fr/intelligence, /fr/standards, etc.
 const links: Array<[string, string, boolean]> = [
   [t.nav.about, "/about", false],
-  [t.nav.intelligence, "/intelligence", true],
-  [t.nav.standards, "/standards", true],
+  [t.nav.intelligence, "/intelligence", false],
+  [t.nav.standards, "/standards", false],
   [t.nav.community, "/community", false],
 ];
 

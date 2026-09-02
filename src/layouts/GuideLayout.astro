@@ -2,20 +2,24 @@
 import BaseLayout from "./BaseLayout.astro";
 import PhotoHero from "../components/PhotoHero.astro";
 import { withBase } from "../lib/url";
+import { localizePath, type Locale } from "../i18n/config";
 
 interface Props {
   title: string;
   description: string;
+  locale?: Locale;
+  standardsLabel?: string;
 }
-const { title, description } = Astro.props;
+const { title, description, locale = "en", standardsLabel = "Standards & Implementation Guidance" } = Astro.props;
+const standardsHref = locale === "en" ? withBase("/standards") : localizePath("/standards", locale);
 ---
 
-<BaseLayout locale="en" title={title} description={description} technicalEnglishOnly={true}>
+<BaseLayout locale={locale} title={title} description={description}>
   <article class="px-6 py-10 md:py-16">
     <div class="mx-auto grid max-w-content items-start gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:gap-10">
       <div class="order-1 max-w-prose">
         <p class="mb-2 eyebrow">
-          <a href={withBase("/standards")} class="no-underline text-accent">Standards &amp; Implementation Guidance</a>
+          <a href={standardsHref} class="no-underline text-accent">{standardsLabel}</a>
         </p>
         <h1 class="font-sans text-3xl font-semibold text-ink">{title}</h1>
         <p class="mt-4 text-lg text-text">{description}</p>
