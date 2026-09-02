@@ -1,0 +1,52 @@
+---
+import DotField from "./DotField.astro";
+import { withBase } from "../lib/url";
+
+const sections: Array<[string, string, string]> = [
+  [
+    "/standards",
+    "Standards & implementation guidance",
+    "Vendor-neutral guides for building a CPMS, a driver app, selecting hardware, and testing OCPI/OCPP connectivity — grounded in open protocols AfCA doesn't own.",
+  ],
+  [
+    "/intelligence",
+    "Intelligence",
+    "Country-by-country market mapping and the Pan-African Interoperability and Reliability Index. Every figure carries a source; superseded reports stay published, not deleted.",
+  ],
+  [
+    "/summit",
+    "The AfCA Annual Summit",
+    "Action-oriented workshops rather than panels — a catalyst for corridor pilots, working-group deliverables, and harmonised policy recommendations.",
+  ],
+  [
+    "/community",
+    "Community",
+    "How Charge Point Operators, eMSPs, utilities, fleets, OEMs, and policymakers participate — membership, working groups, and the open-call principle.",
+  ],
+];
+---
+
+<section class="border-t border-rule">
+  <div class="mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="reveal eyebrow text-center">Explore AfCA</p>
+    <DotField class="reveal mt-4" />
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      {sections.map(([href, title, summary], i) => (
+        <a
+          href={withBase(href)}
+          class:list={[
+            "reveal group block rounded border border-rule bg-paper p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-lg hover:shadow-black/20",
+            i % 2 === 1 ? "reveal-delay-1" : "",
+          ]}
+        >
+          <h3 class="font-sans text-lg font-semibold text-ink">{title}</h3>
+          <p class="mt-2 text-sm text-text-muted">{summary}</p>
+          <span class="eyebrow mt-4 inline-flex items-center gap-2 text-text-muted group-hover:text-accent">
+            Visit
+            <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+import { withBase } from "../lib/url";
+---
+
+<section class="border-t border-rule bg-paper-warm">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">Our mission</p>
+    <h2 class="mt-3 max-w-2xl font-sans text-2xl font-semibold text-ink sm:text-3xl">
+      A comprehensive, economically viable, and technically harmonised EV charging ecosystem
+      across Africa.
+    </h2>
+    <p class="mt-5 max-w-prose text-text">
+      Cross-border and cross-city corridors — Mombasa to Nairobi, Kigali to Nairobi — don't follow
+      operator boundaries. A driver on one of these routes shouldn't need three apps and three
+      accounts to complete a single journey. AfCA is the apolitical, vendor-neutral body bringing
+      Charge Point Operators, Electromobility Service Providers, utilities, fleet operators,
+      hardware OEMs, and policymakers together to build that interoperability through open
+      standards and collaborative leadership — not by favouring any one company or technology.
+    </p>
+    <a href={withBase("/about")} class="eyebrow mt-6 inline-flex items-center gap-2 no-underline hover:text-ink">
+      Read our full story and founders
+      <span aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>

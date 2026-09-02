@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HomeHero from "../components/HomeHero.astro";
+import HomeMission from "../components/HomeMission.astro";
 import HomeStats from "../components/HomeStats.astro";
 import HomeInitiatives from "../components/HomeInitiatives.astro";
+import HomeExplore from "../components/HomeExplore.astro";
 
 const locale = "en" as const;
 ---
@@ -13,6 +15,8 @@ const locale = "en" as const;
   description="African Charging Alliance is an independent, non-profit trade association and ecosystem platform accelerating interoperable EV charging infrastructure across Africa. Registration in Rwanda is in progress."
 >
   <HomeHero />
+  <HomeMission />
   <HomeStats />
   <HomeInitiatives />
+  <HomeExplore />
 </BaseLayout>

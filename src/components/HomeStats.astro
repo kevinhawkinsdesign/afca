@@ -11,13 +11,14 @@ const stats: Array<[string, string, string]> = [
 ---
 
 <section class="border-t border-rule">
-  <div class="mx-auto max-w-content px-6 py-10 md:py-16">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
     <p class="eyebrow">The opportunity</p>
     <div class="mt-6 grid gap-8 sm:grid-cols-3 sm:gap-6">
       {stats.map(([number, label, source]) => (
         <div>
           <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{number}</p>
-          <p class="mt-2 max-w-[22rem] text-text">{label}</p>
+          <span class="stat-bar mt-3 block h-0.5 w-12 bg-accent"></span>
+          <p class="mt-3 max-w-[22rem] text-text">{label}</p>
           <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{source}</p>
         </div>
       ))}
