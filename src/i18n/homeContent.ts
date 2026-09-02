@@ -37,6 +37,7 @@ export interface HomeContent {
   init3Body: string;
   init4Title: string;
   init4Body: string;
+  init4Footnote: string;
   exploreEyebrow: string;
   explore1Title: string;
   explore1Body: string;
@@ -81,7 +82,8 @@ export const homeContent: Record<Locale, HomeContent> = {
     init3Title: "Practical implementation and ecosystem support",
     init3Body: "Market entry and technical advisory delivered as open training and published guidance, plus harmonisation and standards advocacy to governments and regional economic communities (EAC, ECOWAS).",
     init4Title: "Business model advisory & market facilitation",
-    init4Body: "Advising CPOs, eMSPs, and fleet operators on monetisation and business-model strategy — grounded in established frameworks for how business models actually develop and change (Christensen, Bartman & van Bever, Harvard Business School / MIT Sloan Management Review, 2016) — plus hands-on facilitation: introductions, coalition-building, roaming agreements, multi-operator corridors, and cross-border trade-route collaboration with regional economic communities.",
+    init4Body: "Advising CPOs, eMSPs, and fleet operators on monetisation and business-model strategy — grounded in established frameworks for how business models actually develop and change¹ — plus hands-on facilitation: introductions, coalition-building, roaming agreements, multi-operator corridors, and cross-border trade-route collaboration with regional economic communities.",
+    init4Footnote: "1. Christensen, Bartman & van Bever, \"The Hard Truth About Business Model Innovation,\" Harvard Business School / MIT Sloan Management Review, 2016.",
     exploreEyebrow: "Explore AfCA",
     explore1Title: "Standards & implementation guidance",
     explore1Body: "Vendor-neutral guides for building a CPMS, a driver app, selecting hardware, and testing OCPI/OCPP connectivity — plus a searchable glossary of the acronyms this guidance leans on.",
@@ -124,7 +126,8 @@ export const homeContent: Record<Locale, HomeContent> = {
     init3Title: "Mise en œuvre pratique et soutien à l'écosystème",
     init3Body: "Conseil technique et d'entrée sur le marché sous forme de formations ouvertes et de guides publiés, ainsi qu'un plaidoyer en faveur de l'harmonisation et des standards auprès des gouvernements et des communautés économiques régionales (EAC, ECOWAS).",
     init4Title: "Conseil en modèle économique et facilitation de marché",
-    init4Body: "Conseil aux CPO, eMSP et opérateurs de flottes sur la monétisation et la stratégie de modèle économique — fondé sur des cadres établis sur la façon dont les modèles économiques se développent et évoluent réellement (Christensen, Bartman et van Bever, Harvard Business School / MIT Sloan Management Review, 2016) — ainsi qu'une facilitation concrète : mises en relation, construction de coalitions, accords d'itinérance, corridors multi-opérateurs, et collaboration sur les routes commerciales transfrontalières avec les communautés économiques régionales.",
+    init4Body: "Conseil aux CPO, eMSP et opérateurs de flottes sur la monétisation et la stratégie de modèle économique — fondé sur des cadres établis sur la façon dont les modèles économiques se développent et évoluent réellement¹ — ainsi qu'une facilitation concrète : mises en relation, construction de coalitions, accords d'itinérance, corridors multi-opérateurs, et collaboration sur les routes commerciales transfrontalières avec les communautés économiques régionales.",
+    init4Footnote: "1. Christensen, Bartman et van Bever, « The Hard Truth About Business Model Innovation », Harvard Business School / MIT Sloan Management Review, 2016.",
     exploreEyebrow: "Explorer AfCA",
     explore1Title: "Standards et guides de mise en œuvre",
     explore1Body: "Des guides neutres vis-à-vis des fournisseurs pour construire un CPMS, une application conducteur, choisir du matériel et tester la connectivité OCPI/OCPP — avec un glossaire consultable des sigles utilisés dans ces guides.",
@@ -167,7 +170,8 @@ export const homeContent: Record<Locale, HomeContent> = {
     init3Title: "Ishyirwa mu bikorwa n'ubufasha ku rusobe",
     init3Body: "Ubufasha bwa tekiniki n'ubw'kwinjira ku isoko butangwa mu mahugurwa afunguye n'amabwiriza asohotse, hiyongereyeho gushishikariza guhuza amabwiriza n'ibipimo ku miryango ya Leta n'imiryango y'ubukungu y'akarere (EAC, ECOWAS).",
     init4Title: "Inama ku bucuruzi n'ubwunganizi ku isoko",
-    init4Body: "Gutanga inama ku ba CPO, eMSP, n'abakoresha amakipe y'imodoka ku bijyanye no kwinjiza amafaranga n'uburyo bw'ubucuruzi — bishingiye ku miterere yemejwe y'uko ubucuruzi butera imbere kandi buhinduka mu by'ukuri (Christensen, Bartman na van Bever, Harvard Business School / MIT Sloan Management Review, 2016) — hiyongereyeho ubwunganizi nyabwo: guhuza abantu, kubaka amasezerano, amasezerano y'imikoranire, imihanda ihuza ibigo byinshi, n'imikoranire mu bucuruzi hakurikijwe imipaka hamwe n'imiryango y'ubukungu y'akarere.",
+    init4Body: "Gutanga inama ku ba CPO, eMSP, n'abakoresha amakipe y'imodoka ku bijyanye no kwinjiza amafaranga n'uburyo bw'ubucuruzi — bishingiye ku miterere yemejwe y'uko ubucuruzi butera imbere kandi buhinduka mu by'ukuri¹ — hiyongereyeho ubwunganizi nyabwo: guhuza abantu, kubaka amasezerano, amasezerano y'imikoranire, imihanda ihuza ibigo byinshi, n'imikoranire mu bucuruzi hakurikijwe imipaka hamwe n'imiryango y'ubukungu y'akarere.",
+    init4Footnote: "1. Christensen, Bartman na van Bever, \"The Hard Truth About Business Model Innovation,\" Harvard Business School / MIT Sloan Management Review, 2016.",
     exploreEyebrow: "Reba AfCA",
     explore1Title: "Amabwiriza n'ubuyobozi bw'ishyirwa mu bikorwa",
     explore1Body: "Amabwiriza adashyigikiye ikigo runaka yo kubaka CPMS, porogaramu y'umushoferi, guhitamo ibikoresho, no kugerageza imikoranire ya OCPI/OCPP — hiyongereyeho inkoranya-magambo ishakishwamo ibinyuranyo bikoreshwa muri aya mabwiriza.",
@@ -210,7 +214,8 @@ export const homeContent: Record<Locale, HomeContent> = {
     init3Title: "Praktiskt genomförande och ekosystemstöd",
     init3Body: "Marknadsinträdes- och tekniskt rådgivning i form av öppen utbildning och publicerad vägledning, samt påverkansarbete för harmonisering och standarder gentemot regeringar och regionala ekonomiska gemenskaper (EAC, ECOWAS).",
     init4Title: "Rådgivning om affärsmodeller och marknadsfacilitering",
-    init4Body: "Rådgivning till CPO:er, eMSP:er och flottoperatörer om monetisering och affärsmodellsstrategi — grundad i etablerade ramverk för hur affärsmodeller faktiskt utvecklas och förändras (Christensen, Bartman & van Bever, Harvard Business School / MIT Sloan Management Review, 2016) — samt praktisk facilitering: kontaktförmedling, koalitionsbyggande, roamingavtal, korridorer med flera operatörer, och gränsöverskridande handelsvägssamarbete med regionala ekonomiska gemenskaper.",
+    init4Body: "Rådgivning till CPO:er, eMSP:er och flottoperatörer om monetisering och affärsmodellsstrategi — grundad i etablerade ramverk för hur affärsmodeller faktiskt utvecklas och förändras¹ — samt praktisk facilitering: kontaktförmedling, koalitionsbyggande, roamingavtal, korridorer med flera operatörer, och gränsöverskridande handelsvägssamarbete med regionala ekonomiska gemenskaper.",
+    init4Footnote: "1. Christensen, Bartman & van Bever, \"The Hard Truth About Business Model Innovation\", Harvard Business School / MIT Sloan Management Review, 2016.",
     exploreEyebrow: "Utforska AfCA",
     explore1Title: "Standarder och implementeringsvägledning",
     explore1Body: "Leverantörsneutral vägledning för att bygga ett CPMS, en förarapp, välja hårdvara och testa OCPI/OCPP-anslutning — plus en sökbar ordlista över förkortningarna som används.",
