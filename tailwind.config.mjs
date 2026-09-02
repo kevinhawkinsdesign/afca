@@ -9,19 +9,23 @@ export default {
       // is now the dark page background, "ink" is now the light
       // foreground/heading color.
       colors: {
+        // Black-and-white base — accent stays as the site's one deliberate
+        // color, a warm bronze against the monochrome rest (see BRIEF.md's
+        // "restraint over energy" rule; this is the same discipline
+        // applied to a black-and-white palette instead of a green one).
         ink: {
-          DEFAULT: "#F5F1E8",
-          soft: "#D8CFC0",
+          DEFAULT: "#F7F7F4",
+          soft: "#C9C9C5",
         },
         accent: "#E0924A",
         paper: {
-          DEFAULT: "#10201B",
-          warm: "#16281F",
+          DEFAULT: "#0A0A0A",
+          warm: "#161616",
         },
-        rule: "#2A3F35",
+        rule: "#2E2E2E",
         text: {
-          DEFAULT: "#E5E0D5",
-          muted: "#9C9384",
+          DEFAULT: "#D9D9D6",
+          muted: "#8C8C89",
         },
       },
       fontFamily: {
