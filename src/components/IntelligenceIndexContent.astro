@@ -71,6 +71,25 @@ const advice: Array<[string, string]> = [
   [t.adv3Heading, t.adv3Text],
 ];
 
+interface Player {
+  name: string;
+  location: string;
+  url: string;
+  desc: string;
+}
+
+const homegrownPlayers: Player[] = [
+  { name: "Roam", location: "Kenya", url: "https://roam.africa", desc: t.p1Desc },
+  { name: "BasiGo", location: "Kenya & Rwanda", url: "https://basigo.co", desc: t.p2Desc },
+  { name: "Ampersand", location: "Rwanda & Kenya", url: "https://ampersand.solar", desc: t.p3Desc },
+];
+
+const globalPlayers: Player[] = [
+  { name: "BYD", location: "China", url: "https://www.byd.com", desc: t.p4Desc },
+  { name: "Tesla", location: "USA", url: "https://www.tesla.com", desc: t.p5Desc },
+  { name: "Hyundai & Volkswagen", location: "Global", url: "https://www.hyundai.com", desc: t.p6Desc },
+];
+
 const spotlight: Array<[string, string]> = [
   ["17,000", t.sp1Label],
   ["7", t.sp2Label],
@@ -325,6 +344,58 @@ const prices: Array<[string, string, number]> = [
           <span class="font-accentSerif text-2xl italic text-accent">{i + 1}</span>
           <p class="mt-2 font-sans font-semibold text-ink">{heading}</p>
           <p class="mt-2 text-sm text-text">{text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper-warm">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.playersEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.playersHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.playersIntro}</p>
+
+    <h3 class="mt-10 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-text-muted">{t.playersHomegrownLabel}</h3>
+    <div class="mt-4 grid gap-5 sm:grid-cols-3">
+      {homegrownPlayers.map((p) => (
+        <div class="rounded-lg border border-rule bg-paper p-5" itemscope itemtype="https://schema.org/Organization">
+          <div class="flex items-baseline justify-between gap-2">
+            <p class="font-sans text-lg font-semibold text-ink" itemprop="name">{p.name}</p>
+            <span class="font-mono text-[11px] uppercase tracking-[0.08em] text-text-muted">{p.location}</span>
+          </div>
+          <p class="mt-2 text-sm text-text">{p.desc}</p>
+          <a
+            href={p.url}
+            itemprop="url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-3 inline-block font-mono text-xs uppercase tracking-[0.08em] text-accent hover:underline"
+          >
+            {t.visitSiteLabel}: {p.name} →
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <h3 class="mt-10 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-text-muted">{t.playersGlobalLabel}</h3>
+    <div class="mt-4 grid gap-5 sm:grid-cols-3">
+      {globalPlayers.map((p) => (
+        <div class="rounded-lg border border-rule bg-paper p-5" itemscope itemtype="https://schema.org/Organization">
+          <div class="flex items-baseline justify-between gap-2">
+            <p class="font-sans text-lg font-semibold text-ink" itemprop="name">{p.name}</p>
+            <span class="font-mono text-[11px] uppercase tracking-[0.08em] text-text-muted">{p.location}</span>
+          </div>
+          <p class="mt-2 text-sm text-text">{p.desc}</p>
+          <a
+            href={p.url}
+            itemprop="url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-3 inline-block font-mono text-xs uppercase tracking-[0.08em] text-accent hover:underline"
+          >
+            {t.visitSiteLabel}: {p.name} →
+          </a>
         </div>
       ))}
     </div>

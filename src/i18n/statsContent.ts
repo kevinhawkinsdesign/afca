@@ -157,6 +157,18 @@ export interface StatsContent {
   pricesSource: string;
   methodologyHeading: string;
   methodologyText: string;
+  playersEyebrow: string;
+  playersHeading: string;
+  playersIntro: string;
+  playersHomegrownLabel: string;
+  playersGlobalLabel: string;
+  p1Desc: string;
+  p2Desc: string;
+  p3Desc: string;
+  p4Desc: string;
+  p5Desc: string;
+  p6Desc: string;
+  visitSiteLabel: string;
 }
 
 export const statsContent: Record<Locale, StatsContent> = {
@@ -309,6 +321,18 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Ghana market. Source: EV24.africa",
     methodologyHeading: "About this page",
     methodologyText: "These figures are drawn from public reporting by third parties — iAfrikan Insights, Mordor Intelligence, EV24.africa, and UNDP — not from AfCA's own primary research. We cite each source rather than present the numbers as our own findings, and we'll retire this page in favour of AfCA's own Pan-African Interoperability and Reliability Index once that methodology and dataset exist.",
+    playersEyebrow: "Who's building it",
+    playersHeading: "The companies behind the numbers",
+    playersIntro: "Africa's EV market splits between homegrown e-mobility innovators — mostly buses, motorcycles, and commercial fleets — and global automakers expanding their passenger-vehicle footprint on the continent. General industry context, not tied to a single cited report.",
+    playersHomegrownLabel: "Homegrown pioneers",
+    playersGlobalLabel: "Global players in Africa",
+    p1Desc: "Kenyan manufacturer of locally tailored electric motorcycles, including the Roam Air, alongside mass-transit electric buses.",
+    p2Desc: "Accelerating clean public transit across East Africa with accessible electric buses in Kenya and Rwanda.",
+    p3Desc: "One of Africa's leading commercial electric-motorcycle manufacturers, known for its large-scale battery-swapping network in Rwanda and Kenya.",
+    p4Desc: "The world's largest new-energy-vehicle manufacturer, expanding across Africa through partnerships with local startups and investment in South Africa's charging network.",
+    p5Desc: "Leads premium consumer EV awareness, with parts of its manufacturing supply chain integrated into North African hubs including Morocco.",
+    p6Desc: "Major legacy automakers anchoring commercial and passenger EV lineups across regional markets such as South Africa, Egypt, and Ghana.",
+    visitSiteLabel: "Visit official site",
   },
   fr: {
     heroEyebrow: "Données publiques, sourcées",
@@ -459,6 +483,18 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Marché ghanéen. Source : EV24.africa",
     methodologyHeading: "À propos de cette page",
     methodologyText: "Ces chiffres proviennent de rapports publics de tiers — iAfrikan Insights, Mordor Intelligence, EV24.africa et le PNUD — et non de la recherche propre d'AfCA. Nous citons chaque source plutôt que de présenter ces chiffres comme nos propres conclusions, et nous retirerons cette page au profit du Pan-African Interoperability and Reliability Index d'AfCA une fois cette méthodologie et ce jeu de données disponibles.",
+    playersEyebrow: "Qui construit ce marché",
+    playersHeading: "Les entreprises derrière ces chiffres",
+    playersIntro: "Le marché africain des véhicules électriques se partage entre des innovateurs locaux de l'e-mobilité — surtout bus, motos et flottes commerciales — et des constructeurs mondiaux qui étendent leur présence en véhicules particuliers sur le continent. Contexte général du secteur, non rattaché à un rapport cité en particulier.",
+    playersHomegrownLabel: "Pionniers africains",
+    playersGlobalLabel: "Acteurs mondiaux en Afrique",
+    p1Desc: "Fabricant kényan de motos électriques adaptées au marché local, dont la Roam Air, ainsi que de bus électriques de transport en commun.",
+    p2Desc: "Accélère le transport public propre en Afrique de l'Est avec des bus électriques accessibles au Kenya et au Rwanda.",
+    p3Desc: "L'un des principaux fabricants africains de motos électriques commerciales, connu pour son vaste réseau d'échange de batteries au Rwanda et au Kenya.",
+    p4Desc: "Le plus grand constructeur mondial de véhicules à énergies nouvelles, en expansion en Afrique via des partenariats avec des startups locales et des investissements dans le réseau de recharge sud-africain.",
+    p5Desc: "Leader de la notoriété des véhicules électriques premium, avec une partie de sa chaîne d'approvisionnement intégrée à des sites nord-africains, dont le Maroc.",
+    p6Desc: "Grands constructeurs historiques qui ancrent leurs gammes de véhicules électriques commerciaux et particuliers sur des marchés régionaux comme l'Afrique du Sud, l'Égypte et le Ghana.",
+    visitSiteLabel: "Visiter le site officiel",
   },
   rw: {
     heroEyebrow: "Amakuru rusange, afite isoko",
@@ -609,6 +645,18 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Isoko rya Ghana. Isoko: EV24.africa",
     methodologyHeading: "Ibyerekeye iyi paji",
     methodologyText: "Iyi mibare ikomoka ku makuru rusange yatanzwe n'izindi nzego — iAfrikan Insights, Mordor Intelligence, EV24.africa, na UNDP — ntabwo ari ubushakashatsi bwa AfCA ubwayo. Dukoresha isoko rya buri mubare aho kuwugaragaza nk'ibyavuye mu bushakashatsi bwacu, kandi tuzavana iyi paji igihe Pan-African Interoperability and Reliability Index ya AfCA izaba yuzuye.",
+    playersEyebrow: "Abubaka iri soko",
+    playersHeading: "Ibigo biri inyuma y'iyi mibare",
+    playersIntro: "Isoko ry'amamodoka akoresha amashanyarazi muri Afurika rigabanyijemo abavumbuzi bo mu gihugu ba e-mobility — cyane cyane bisi, amapikipiki, n'imodoka z'ubucuruzi — n'abakora amamodoka b'isi yose baguka ku mugabane. Amakuru rusange y'urwego, atari afitanye isano na raporo imwe yihariye.",
+    playersHomegrownLabel: "Abavumbuzi b'Abanyafurika",
+    playersGlobalLabel: "Abakinnyi b'isi yose muri Afurika",
+    p1Desc: "Ikigo cyo muri Kenya gikora amapikipiki akoresha amashanyarazi agenewe isoko ry'aho, harimo Roam Air, hamwe na bisi z'amashanyarazi z'ubwikorezi bw'abaturage.",
+    p2Desc: "Kongera ubwikorezi bw'abaturage butanduza mu Burasirazuba bwa Afurika binyuze muri bisi z'amashanyarazi zoroshye kubona muri Kenya na Rwanda.",
+    p3Desc: "Kimwe mu bigo bikomeye bikora amapikipiki y'ubucuruzi akoresha amashanyarazi muri Afurika, kizwi cyane ku rusobe rwacyo runini rwo guhererekanya bateri muri Rwanda na Kenya.",
+    p4Desc: "Ikigo kinini ku isi gikora amamodoka akoresha ingufu nshya, kiragura ubukorikori muri Afurika binyuze mu bufatanye n'ibigo bito byo mu gihugu no gushora imari mu rusobe rw'icyuzuzo muri Afurika y'Epfo.",
+    p5Desc: "Iyoboye ubumenyi bw'abaguzi ku modoka z'amashanyarazi zo hejuru, hamwe n'igice cy'urunigi rwacyo rw'ubukorikori rushyizwe mu turere two muri Afurika y'Amajyaruguru harimo Maroc.",
+    p6Desc: "Ibigo bikomeye by'imyaka myinshi bishyigikira imirongo y'amamodoka akoresha amashanyarazi y'ubucuruzi n'ay'abantu ku giti cyabo mu masoko y'uturere nka Afurika y'Epfo, Egiputa, na Ghana.",
+    visitSiteLabel: "Sura urubuga rwemewe",
   },
   sv: {
     heroEyebrow: "Offentlig data, källbelagd",
@@ -759,5 +807,17 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Ghanas marknad. Källa: EV24.africa",
     methodologyHeading: "Om den här sidan",
     methodologyText: "Dessa siffror kommer från offentlig rapportering av tredje part — iAfrikan Insights, Mordor Intelligence, EV24.africa och UNDP — inte från AfCA:s egen primärforskning. Vi anger källan för varje siffra i stället för att presentera dem som våra egna resultat, och vi kommer att fasa ut den här sidan till förmån för AfCA:s eget Pan-African Interoperability and Reliability Index när den metodiken och datamängden finns.",
+    playersEyebrow: "Vilka som bygger det",
+    playersHeading: "Företagen bakom siffrorna",
+    playersIntro: "Afrikas elbilsmarknad delas mellan inhemska e-mobilitetsinnovatörer — mestadels bussar, motorcyklar och kommersiella flottor — och globala biltillverkare som utökar sin närvaro inom personbilar på kontinenten. Allmän branschkontext, inte kopplad till en enskild citerad rapport.",
+    playersHomegrownLabel: "Inhemska pionjärer",
+    playersGlobalLabel: "Globala aktörer i Afrika",
+    p1Desc: "Kenyansk tillverkare av lokalt anpassade elmotorcyklar, inklusive Roam Air, samt elbussar för kollektivtrafik.",
+    p2Desc: "Snabbar på ren kollektivtrafik i Östafrika med tillgängliga elbussar i Kenya och Rwanda.",
+    p3Desc: "En av Afrikas ledande tillverkare av kommersiella elmotorcyklar, känd för sitt storskaliga batteribytesnätverk i Rwanda och Kenya.",
+    p4Desc: "Världens största tillverkare av nyenergifordon, som expanderar i Afrika genom partnerskap med lokala startupbolag och investeringar i Sydafrikas laddnätverk.",
+    p5Desc: "Leder medvetenheten kring premiumelfordon för konsumenter, med delar av sin tillverkningskedja integrerad i nordafrikanska nav, däribland Marocko.",
+    p6Desc: "Stora etablerade biltillverkare som förankrar sina kommersiella och personbilsbaserade elfordonsserier på regionala marknader som Sydafrika, Egypten och Ghana.",
+    visitSiteLabel: "Besök officiell webbplats",
   },
 };

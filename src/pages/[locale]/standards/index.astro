@@ -10,6 +10,7 @@ export function getStaticPaths() {
 const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
 ---
 
-<BaseLayout locale={locale} title="Standards">
+<BaseLayout
+  image="/hero/standards.jpg" locale={locale} title="Standards">
   <StandardsIndexContent locale={locale} />
 </BaseLayout>

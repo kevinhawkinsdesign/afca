@@ -5,6 +5,7 @@ import CommunityContent from "../components/CommunityContent.astro";
 const locale = "en" as const;
 ---
 
-<BaseLayout locale={locale} title="Community" description="Membership, working groups, the AfCA participant directory, and the AfCA Annual Summit.">
+<BaseLayout
+  image="/hero/community.jpg" locale={locale} title="Community" description="Membership, working groups, the AfCA participant directory, and the AfCA Annual Summit.">
   <CommunityContent locale={locale} />
 </BaseLayout>

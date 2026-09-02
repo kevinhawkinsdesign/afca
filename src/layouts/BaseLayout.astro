@@ -2,7 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CustomCursor from "../components/CustomCursor.astro";
-import { ui, localeNames, type Locale } from "../i18n/config";
+import { ui, localeNames, locales, defaultLocale, localizePath, stripLocale, type Locale } from "../i18n/config";
 import { withBase } from "../lib/url";
 import "../styles/global.css";
 
@@ -18,11 +18,46 @@ interface Props {
   isFallback?: boolean;
   /** Set for English-only technical pages (Index methodology, standards guidance). */
   technicalEnglishOnly?: boolean;
+  /** Absolute-app-path (e.g. "/hero/intelligence.jpg") used for social share previews. */
+  image?: string;
 }
 
-const { locale, title, description, isFallback = false, technicalEnglishOnly = false } = Astro.props;
+const {
+  locale,
+  title,
+  description,
+  isFallback = false,
+  technicalEnglishOnly = false,
+  image = "/hero/home.jpg",
+} = Astro.props;
 const t = ui[locale];
 const pathname = Astro.url.pathname;
+const barePath = stripLocale(pathname);
+const canonicalURL = new URL(localizePath(barePath, locale), Astro.site);
+const ogImageURL = new URL(withBase(image), Astro.site);
+const siteName = "African Charging Alliance";
+const fullTitle = `${title} — ${siteName}`;
+const pageDescription =
+  description ?? "African Charging Alliance (AfCA) is an independent, non-profit trade association advancing interoperable EV charging infrastructure across Africa.";
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteName,
+  alternateName: "AfCA",
+  url: "https://africancharging.org",
+  logo: new URL(withBase("/favicon.svg"), Astro.site).toString(),
+  description:
+    "African Charging Alliance is an independent, non-profit trade association and ecosystem platform for interoperable EV charging infrastructure across Africa.",
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: "https://africancharging.org",
+  inLanguage: locale,
+};
 ---
 
 <!doctype html>
@@ -31,10 +66,36 @@ const pathname = Astro.url.pathname;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#10201B" />
-    <title>{title} — African Charging Alliance</title>
-    {description && <meta name="description" content={description} />}
+    <meta name="theme-color" content="#0A0A0A" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+
+    {/* Hreflang alternates — one per locale plus x-default, so crawlers and LLMs can find every translation of this page. */}
+    {locales.map((l) => (
+      <link rel="alternate" hreflang={l} href={new URL(localizePath(barePath, l), Astro.site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(localizePath(barePath, defaultLocale), Astro.site)} />
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content={locale} />
+
+    {/* Twitter card */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    {/* Structured data — helps search engines and LLM crawlers identify the organization and site unambiguously. */}
+    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} is:inline />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} is:inline />
   </head>
   <body>
     <CustomCursor />
