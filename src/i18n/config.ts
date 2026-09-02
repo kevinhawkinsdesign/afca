@@ -26,6 +26,7 @@ export const ui = {
       `This page is not yet available in ${lang}. You are reading the English version.`,
     technicalEnglishNotice:
       "English is the language of record for technical material. This page is not translated.",
+    eventsBanner: "AfCA will be at ICNC in Berlin and the Nordic Africa EV Summit in Ethiopia — come say hello.",
     nav: {
       home: "Home",
       about: "About",
@@ -47,6 +48,7 @@ export const ui = {
       `Cette page n'est pas encore disponible en ${lang}. Vous lisez la version anglaise.`,
     technicalEnglishNotice:
       "L'anglais est la langue de référence pour le contenu technique. Cette page n'est pas traduite.",
+    eventsBanner: "AfCA sera présente à l'ICNC à Berlin et au Nordic Africa EV Summit en Éthiopie — venez nous saluer.",
     nav: {
       home: "Accueil",
       about: "À propos",
@@ -68,6 +70,7 @@ export const ui = {
       `Iyi paji ntiraboneka mu ${lang}. Urimo gusoma verisiyo y'Icyongereza.`,
     technicalEnglishNotice:
       "Icyongereza ni ururimi rw'ibanze ku bijyanye n'ibya tekiniki. Iyi paji ntiyahinduwe.",
+    eventsBanner: "AfCA izitabira ICNC i Berlin n'Inama Nkuru ya Nordic Africa EV Summit muri Etiyopiya — nimuze mudusuhuze.",
     nav: {
       home: "Ahabanza",
       about: "Abo turi bo",
@@ -89,6 +92,7 @@ export const ui = {
       `Den här sidan finns ännu inte på ${lang}. Du läser den engelska versionen.`,
     technicalEnglishNotice:
       "Engelska är originalspråket för tekniskt material. Den här sidan är inte översatt.",
+    eventsBanner: "AfCA kommer att delta på ICNC i Berlin och Nordic Africa EV Summit i Etiopien — kom och säg hej.",
     nav: {
       home: "Hem",
       about: "Om oss",

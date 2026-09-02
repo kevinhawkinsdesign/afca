@@ -1,0 +1,43 @@
+---
+// Slim announcement ticker above the header — currently used to flag
+// upcoming conference appearances. Marquee scroll for motion-ok users,
+// static centered text under prefers-reduced-motion (see global.css).
+import { ui, type Locale } from "../i18n/config";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = ui[locale];
+---
+
+<div class="events-banner overflow-hidden border-b border-rule bg-paper-warm py-2 font-mono text-xs uppercase tracking-[0.08em] text-accent">
+  <div class="events-banner__track flex w-max items-center gap-16 whitespace-nowrap px-6">
+    <span>{t.eventsBanner}</span>
+    <span aria-hidden="true">{t.eventsBanner}</span>
+  </div>
+</div>
+
+<style>
+  .events-banner__track {
+    animation: events-banner-scroll 24s linear infinite;
+  }
+  @keyframes events-banner-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .events-banner__track {
+      animation: none;
+      width: 100%;
+      justify-content: center;
+    }
+    .events-banner__track span[aria-hidden] {
+      display: none;
+    }
+  }
+</style>
