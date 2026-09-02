@@ -42,6 +42,8 @@ export interface HomeContent {
   explore2Body: string;
   explore3Title: string;
   explore3Body: string;
+  explore4Title: string;
+  explore4Body: string;
   visit: string;
 }
 
@@ -83,6 +85,8 @@ export const homeContent: Record<Locale, HomeContent> = {
     explore2Body: "A curated, sourced collection of public EV and charging stats for Africa — market growth, running costs, and country data — while AfCA's own Index is in development.",
     explore3Title: "Community & the AfCA Summit",
     explore3Body: "How Charge Point Operators, eMSPs, utilities, fleets, OEMs, and policymakers participate — membership, working groups, and the action-oriented Annual Summit.",
+    explore4Title: "Glossary",
+    explore4Body: "A searchable, vendor-neutral glossary of charging and interoperability terminology — standards-sourced definitions, not marketing language.",
     visit: "Visit",
   },
   fr: {
@@ -122,6 +126,8 @@ export const homeContent: Record<Locale, HomeContent> = {
     explore2Body: "Une collection sourcée de statistiques publiques sur les véhicules électriques et la recharge en Afrique — croissance du marché, coûts d'usage, données par pays — en attendant l'Index propre d'AfCA.",
     explore3Title: "Communauté et le Sommet AfCA",
     explore3Body: "Comment les Charge Point Operators, eMSP, distributeurs, flottes, fabricants et décideurs participent — adhésion, groupes de travail et le Sommet annuel orienté vers l'action.",
+    explore4Title: "Glossaire",
+    explore4Body: "Un glossaire consultable et neutre vis-à-vis des fournisseurs sur la terminologie de la recharge et de l'interopérabilité — des définitions sourcées sur les standards, pas un langage marketing.",
     visit: "Visiter",
   },
   rw: {
@@ -161,6 +167,8 @@ export const homeContent: Record<Locale, HomeContent> = {
     explore2Body: "Urutonde rw'imibare rusange y'amamodoka akoresha amashanyarazi n'icyuzuzo muri Afurika, ifite isoko — iterambere ry'isoko, ikoreshwa ry'amafaranga, n'amakuru y'ibihugu — mu gihe Index ya AfCA ikirimo gutegurwa.",
     explore3Title: "Umuryango n'Inama Nkuru ya AfCA",
     explore3Body: "Uburyo Charge Point Operators, eMSP, ibigo by'amashanyarazi, abakoresha imodoka nyinshi, abakora ibikoresho, n'abafata ibyemezo bagira uruhare — ubunyamuryango, amatsinda y'akazi, n'Inama Nkuru y'Umwaka ishingiye ku bikorwa.",
+    explore4Title: "Inkoranya-magambo",
+    explore4Body: "Inkoranya-magambo ishakishwa, itarobanura ikigo runaka, y'amagambo y'icyuzuzo n'imikoranire — ibisobanuro bikomoka ku mabwiriza mbonezamubano, ntabwo ari ururimi rw'ubucuruzi.",
     visit: "Sura",
   },
   sv: {
@@ -200,6 +208,8 @@ export const homeContent: Record<Locale, HomeContent> = {
     explore2Body: "En källbelagd samling offentlig statistik om elfordon och laddning i Afrika — marknadstillväxt, driftskostnader och landsdata — medan AfCA:s eget Index utvecklas.",
     explore3Title: "Gemenskap och AfCA:s toppmöte",
     explore3Body: "Hur Charge Point Operators, eMSP:er, elbolag, flottor, tillverkare och beslutsfattare deltar — medlemskap, arbetsgrupper och det handlingsinriktade årliga toppmötet.",
+    explore4Title: "Ordlista",
+    explore4Body: "En sökbar, leverantörsneutral ordlista över ladd- och interoperabilitetsterminologi — standardbaserade definitioner, inte marknadsföringsspråk.",
     visit: "Besök",
   },
 };
