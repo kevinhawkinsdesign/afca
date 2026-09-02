@@ -1,55 +1,144 @@
 ---
 import FullBleedHero from "./FullBleedHero.astro";
-import { getCollection } from "astro:content";
-import { withBase } from "../lib/url";
-import { localizePath, type Locale } from "../i18n/config";
-import { intelligenceUi } from "../i18n/intelligenceContent";
+import FullBleedBreak from "./FullBleedBreak.astro";
+import ElectricDivider from "./decor/ElectricDivider.astro";
+import AnimatedBattery from "./decor/AnimatedBattery.astro";
+import { statsContent } from "../i18n/statsContent";
+import type { Locale } from "../i18n/config";
 
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
-const t = intelligenceUi[locale];
+const t = statsContent[locale];
 
-const allEntries = await getCollection("intelligence", (e) => e.data.locale === locale);
-// Hide superseded entries from the index — they stay reachable at their
-// own URL with a banner pointing to the current version, per BRIEF.md
-// section 6, but the landing page should surface only current guidance.
-const supersededSlugs = new Set(allEntries.filter((e) => e.data.supersededBy).map((e) => e.slug));
-const visible = allEntries
-  .filter((e) => !supersededSlugs.has(e.slug))
-  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+const opportunity: Array<[string, string, string]> = [
+  ["17%", t.opp1Label, t.opp1Source],
+  ["53.9%", t.opp2Label, t.opp2Source],
+  ["93", t.opp3Label, t.opp3Source],
+];
 
-// Non-English entries live in a locale subfolder (src/content/intelligence/fr/…)
-// so Astro's default slug is locale-prefixed (e.g. "fr/kenya-overview") —
-// strip that prefix before building the URL, which gets its locale
-// segment from localizePath instead.
-function bareSlug(slug: string): string {
-  return locale === "en" ? slug : slug.replace(new RegExp(`^${locale}/`), "");
-}
-function entryHref(slug: string): string {
-  const clean = bareSlug(slug);
-  return locale === "en" ? withBase(`/intelligence/${clean}`) : localizePath(`/intelligence/${clean}`, locale);
-}
+const spotlight: Array<[string, string]> = [
+  ["17,000", t.sp1Label],
+  ["7", t.sp2Label],
+  ["100", t.sp3Label],
+  ["200+", t.sp4Label],
+];
 
-const dateLocale = locale === "en" ? "en-GB" : locale === "fr" ? "fr-FR" : locale === "sv" ? "sv-SE" : "en-GB";
+const prices: Array<[string, string, number]> = [
+  [t.priceEntryLabel, t.priceEntryRange, 45],
+  [t.priceMidLabel, t.priceMidRange, 67],
+  [t.pricePremiumLabel, t.pricePremiumRange, 100],
+];
 ---
 
-<FullBleedHero title={t.heroTitle} image="/hero/intelligence.jpg" imageAlt="A row of electric vehicles charging at a multi-bay public station">
-  <p class="text-lg text-text">{t.intro}</p>
+<FullBleedHero title={t.heroTitle} image="/hero/intelligence.jpg" imageAlt="A row of electric vehicles charging at a multi-bay public station" eyebrow={t.heroEyebrow}>
+  <p class="text-lg text-text">{t.heroIntro}</p>
 </FullBleedHero>
 
-<section class="mx-auto max-w-content px-6 py-10 md:py-16">
-  <div class="grid gap-6 md:grid-cols-2">
-    {visible.map((entry) => (
-      <a href={entryHref(entry.slug)} class="group block rounded border border-rule bg-paper p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-lg hover:shadow-accent/20">
-        <p class="font-sans text-xs font-medium uppercase tracking-wide text-text-muted">
-          {entry.data.publishDate.toLocaleDateString(dateLocale, { year: "numeric", month: "long" })}
-          &middot; v{entry.data.methodologyVersion}
-        </p>
-        <h2 class="mt-2 font-sans text-lg font-semibold text-ink">{entry.data.title}</h2>
-        <p class="mt-2 text-sm text-text-muted">{entry.data.summary}</p>
-      </a>
-    ))}
+<section class="border-t border-rule">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <div class="flex items-center gap-3">
+      <p class="eyebrow">{t.opportunityHeading}</p>
+      <AnimatedBattery />
+    </div>
+    <div class="mt-6 grid gap-8 sm:grid-cols-3 sm:gap-6">
+      {opportunity.map(([number, label, source]) => (
+        <div>
+          <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{number}</p>
+          <span class="stat-bar mt-3 block h-0.5 w-12 bg-accent"></span>
+          <p class="mt-3 max-w-[22rem] text-text">{label}</p>
+          <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{source}</p>
+        </div>
+      ))}
+    </div>
   </div>
 </section>
+
+<FullBleedBreak image="/hero/standards.jpg" imageAlt="A motorcycle taxi rider using a ROAM fast charger in Kenya" />
+
+<section class="border-t border-rule bg-paper-warm">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.spotlightEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.spotlightHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.spotlightIntro}</p>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {spotlight.map(([number, label]) => (
+        <div class="rounded border border-rule bg-paper p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-lg hover:shadow-accent/20">
+          <p class="font-accentSerif text-3xl italic text-ink">{number}</p>
+          <p class="mt-2 text-sm text-text-muted">{label}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-4 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.spotlightSource}</p>
+  </div>
+</section>
+
+<ElectricDivider />
+<section>
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.costsEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.costsHeading}</h2>
+    <div class="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-6">
+      <div>
+        <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{t.cost1Number}</p>
+        <p class="mt-3 max-w-[22rem] text-text">{t.cost1Label}</p>
+        <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.cost1Source}</p>
+      </div>
+      <div>
+        <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{t.cost2Number}</p>
+        <p class="mt-3 max-w-[22rem] text-text">{t.cost2Label}</p>
+        <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.cost2Source}</p>
+      </div>
+      <div>
+        <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{t.cost3Number}</p>
+        <p class="mt-3 max-w-[22rem] text-text">{t.cost3Label}</p>
+        <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.cost3Source}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="border-t border-rule bg-paper-warm">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.pricesEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.pricesHeading}</h2>
+    <div class="mt-8 max-w-2xl space-y-6">
+      {prices.map(([label, range, pct]) => (
+        <div>
+          <div class="flex items-baseline justify-between font-sans text-sm">
+            <span class="font-semibold text-ink">{label}</span>
+            <span class="text-text-muted">{range}</span>
+          </div>
+          <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-paper">
+            <div class="price-bar h-full rounded-full bg-accent" style={`--bar-width: ${pct}%`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.pricesSource}</p>
+  </div>
+</section>
+
+<section class="mx-auto max-w-content px-6 py-10 md:py-16">
+  <aside class="scope-note">
+    <p class="mb-1 font-sans font-semibold text-ink">{t.methodologyHeading}</p>
+    <p>{t.methodologyText}</p>
+  </aside>
+</section>
+
+<style>
+  .price-bar {
+    width: 0;
+    transition: width 0.9s ease 0.15s;
+  }
+  .reveal.is-visible .price-bar {
+    width: var(--bar-width);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .price-bar {
+      width: var(--bar-width);
+      transition: none;
+    }
+  }
+</style>
