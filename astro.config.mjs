@@ -3,8 +3,7 @@ import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://kevinhawkinsdesign.github.io",
-  base: "/afca",
+  site: "https://africancharging.org",
   output: "static",
   integrations: [mdx(), tailwind({ applyBaseStyles: false })],
 });
