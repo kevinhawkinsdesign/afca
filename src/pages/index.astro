@@ -6,8 +6,25 @@ import HomeFounders from "../components/HomeFounders.astro";
 import HomeStats from "../components/HomeStats.astro";
 import HomeInitiatives from "../components/HomeInitiatives.astro";
 import HomeExplore from "../components/HomeExplore.astro";
+import PageFootnotes from "../components/PageFootnotes.astro";
+import { homeContent } from "../i18n/homeContent";
 
 const locale = "en" as const;
+const t = homeContent[locale];
+
+// Shared citation registry for this page: every citing component below
+// (HomeStats, HomeInitiatives) calls this same cite() function, so a
+// source used more than once collapses to a single footnote number,
+// numbered in the order sections actually render on the page.
+const footnotes: Array<{ text: string; href?: string }> = [];
+const footnoteIndex = new Map<string, number>();
+function cite(text: string, href?: string): number {
+  if (!footnoteIndex.has(text)) {
+    footnotes.push({ text, href });
+    footnoteIndex.set(text, footnotes.length);
+  }
+  return footnoteIndex.get(text)!;
+}
 ---
 
 <BaseLayout
@@ -18,7 +35,8 @@ const locale = "en" as const;
   <HomeHero locale={locale} />
   <HomeMission locale={locale} />
   <HomeFounders locale={locale} />
-  <HomeStats locale={locale} />
-  <HomeInitiatives locale={locale} />
+  <HomeStats locale={locale} cite={cite} />
+  <HomeInitiatives locale={locale} cite={cite} />
   <HomeExplore locale={locale} />
+  <PageFootnotes footnotes={footnotes} heading={t.sourcesHeading} idPrefix="page-src" />
 </BaseLayout>

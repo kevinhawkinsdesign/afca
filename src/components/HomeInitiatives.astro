@@ -5,15 +5,16 @@ import type { Locale } from "../i18n/config";
 
 interface Props {
   locale: Locale;
+  /** Shared page-level citation registry — see index.astro. */
+  cite: (text: string, href?: string) => number;
 }
-const { locale } = Astro.props;
+const { locale, cite } = Astro.props;
 const t = homeContent[locale];
 
 const initiatives: Array<[string, string]> = [
   [t.init1Title, t.init1Body],
   [t.init2Title, t.init2Body],
   [t.init3Title, t.init3Body],
-  [t.init4Title, t.init4Body],
 ];
 ---
 
@@ -33,6 +34,12 @@ const initiatives: Array<[string, string]> = [
           <p class="mt-2 text-sm text-text-muted">{body}</p>
         </div>
       ))}
+      <div class="group rounded-lg border border-rule bg-paper p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/70 hover:shadow-lg hover:shadow-accent/20">
+        <h3 class="font-sans font-semibold text-ink">{t.init4Title}</h3>
+        <p class="mt-2 text-sm text-text-muted">
+          {t.init4BodyPre}<sup><a href={`#page-src-${cite(t.init4Citation)}`} class="text-accent no-underline hover:underline">[{cite(t.init4Citation)}]</a></sup>{t.init4BodyPost}
+        </p>
+      </div>
     </div>
   </div>
 </section>

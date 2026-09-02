@@ -6,6 +6,8 @@ import HomeFounders from "../../components/HomeFounders.astro";
 import HomeStats from "../../components/HomeStats.astro";
 import HomeInitiatives from "../../components/HomeInitiatives.astro";
 import HomeExplore from "../../components/HomeExplore.astro";
+import PageFootnotes from "../../components/PageFootnotes.astro";
+import { homeContent } from "../../i18n/homeContent";
 import { prefixedLocales } from "../../i18n/config";
 
 export function getStaticPaths() {
@@ -13,6 +15,19 @@ export function getStaticPaths() {
 }
 
 const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
+const t = homeContent[locale];
+
+// Shared citation registry for this page — see the English index.astro
+// for the full explanation.
+const footnotes: Array<{ text: string; href?: string }> = [];
+const footnoteIndex = new Map<string, number>();
+function cite(text: string, href?: string): number {
+  if (!footnoteIndex.has(text)) {
+    footnotes.push({ text, href });
+    footnoteIndex.set(text, footnotes.length);
+  }
+  return footnoteIndex.get(text)!;
+}
 ---
 
 <BaseLayout
@@ -23,7 +38,8 @@ const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
   <HomeHero locale={locale} />
   <HomeMission locale={locale} />
   <HomeFounders locale={locale} />
-  <HomeStats locale={locale} />
-  <HomeInitiatives locale={locale} />
+  <HomeStats locale={locale} cite={cite} />
+  <HomeInitiatives locale={locale} cite={cite} />
   <HomeExplore locale={locale} />
+  <PageFootnotes footnotes={footnotes} heading={t.sourcesHeading} idPrefix="page-src" />
 </BaseLayout>

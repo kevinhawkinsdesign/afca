@@ -1,0 +1,32 @@
+---
+// Renders a page's collected citations as a numbered fine-print list.
+// Deliberately page-local (not part of the shared Footer component) —
+// place this as the last element inside a page's <BaseLayout>, so it
+// lands at the bottom of that page's own content, above the footer.
+interface Props {
+  footnotes: Array<{ text: string; href?: string }>;
+  heading?: string;
+  idPrefix?: string;
+}
+const { footnotes, heading, idPrefix = "src" } = Astro.props;
+---
+
+{footnotes.length > 0 && (
+  <section class="mx-auto max-w-content px-6 pb-10 md:pb-16">
+    <div class="border-t border-rule pt-6">
+      {heading && <p class="font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{heading}</p>}
+      <ol class="mt-3 space-y-1.5 font-mono text-xs text-text-muted">
+        {footnotes.map((f, i) => (
+          <li id={`${idPrefix}-${i + 1}`} class="scroll-mt-32">
+            {i + 1}.{" "}
+            {f.href ? (
+              <a href={f.href} target="_blank" rel="noopener noreferrer" class="hover:text-accent hover:underline">{f.text}</a>
+            ) : (
+              f.text
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+)}

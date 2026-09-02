@@ -5,8 +5,12 @@ import type { Locale } from "../i18n/config";
 
 interface Props {
   locale: Locale;
+  /** Shared page-level citation registry — see index.astro. Returns the
+   * footnote number for a given source, assigning the next number the
+   * first time a given source text is seen. */
+  cite: (text: string, href?: string) => number;
 }
-const { locale } = Astro.props;
+const { locale, cite } = Astro.props;
 const t = homeContent[locale];
 
 // Every figure here carries a source, per AfCA's own sourcing standard
@@ -18,20 +22,6 @@ const stats: Array<[string, string, string]> = [
   ["53.9%", t.stat2Label, t.stat2Source],
   ["93", t.stat3Label, t.stat3Source],
 ];
-
-// Same page-local numbered-footnote pattern as the Intelligence page: a
-// small marker in place of each inline "Source:" line, with the full
-// citations collapsed (by identical text) and listed once as fine print
-// at the end of this section.
-const footnoteIndex = new Map<string, number>();
-const footnotes: string[] = [];
-function cite(text: string): number {
-  if (!footnoteIndex.has(text)) {
-    footnotes.push(text);
-    footnoteIndex.set(text, footnotes.length);
-  }
-  return footnoteIndex.get(text)!;
-}
 ---
 
 <section>
@@ -46,14 +36,9 @@ function cite(text: string): number {
           <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{number}</p>
           <span class="stat-bar mt-3 block h-0.5 w-12 bg-accent"></span>
           <p class="mt-3 max-w-[22rem] text-text">{label}</p>
-          <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#home-src-${cite(source)}`} class="text-accent hover:underline">[{cite(source)}]</a></p>
+          <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#page-src-${cite(source)}`} class="text-accent hover:underline">[{cite(source)}]</a></p>
         </div>
       ))}
     </div>
-    <ol class="mt-8 space-y-1 font-mono text-xs text-text-muted">
-      {footnotes.map((text, i) => (
-        <li id={`home-src-${i + 1}`} class="scroll-mt-32">{i + 1}. {text}</li>
-      ))}
-    </ol>
   </div>
 </section>
