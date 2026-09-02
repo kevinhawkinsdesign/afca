@@ -18,6 +18,20 @@ const stats: Array<[string, string, string]> = [
   ["53.9%", t.stat2Label, t.stat2Source],
   ["93", t.stat3Label, t.stat3Source],
 ];
+
+// Same page-local numbered-footnote pattern as the Intelligence page: a
+// small marker in place of each inline "Source:" line, with the full
+// citations collapsed (by identical text) and listed once as fine print
+// at the end of this section.
+const footnoteIndex = new Map<string, number>();
+const footnotes: string[] = [];
+function cite(text: string): number {
+  if (!footnoteIndex.has(text)) {
+    footnotes.push(text);
+    footnoteIndex.set(text, footnotes.length);
+  }
+  return footnoteIndex.get(text)!;
+}
 ---
 
 <section>
@@ -32,9 +46,14 @@ const stats: Array<[string, string, string]> = [
           <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{number}</p>
           <span class="stat-bar mt-3 block h-0.5 w-12 bg-accent"></span>
           <p class="mt-3 max-w-[22rem] text-text">{label}</p>
-          <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{source}</p>
+          <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#home-src-${cite(source)}`} class="text-accent hover:underline">[{cite(source)}]</a></p>
         </div>
       ))}
     </div>
+    <ol class="mt-8 space-y-1 font-mono text-xs text-text-muted">
+      {footnotes.map((text, i) => (
+        <li id={`home-src-${i + 1}`} class="scroll-mt-32">{i + 1}. {text}</li>
+      ))}
+    </ol>
   </div>
 </section>

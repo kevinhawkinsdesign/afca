@@ -48,6 +48,7 @@ export interface HomeContent {
   explore4Title: string;
   explore4Body: string;
   visit: string;
+  sourcesHeading: string;
 }
 
 export const homeContent: Record<Locale, HomeContent> = {
@@ -94,6 +95,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     explore4Title: "Glossary",
     explore4Body: "A searchable, vendor-neutral glossary of charging and interoperability terminology — standards-sourced definitions, not marketing language.",
     visit: "Visit",
+    sourcesHeading: "Sources",
   },
   fr: {
     heroEyebrow: "Enregistrement en cours au Rwanda",
@@ -138,6 +140,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     explore4Title: "Glossaire",
     explore4Body: "Un glossaire consultable et neutre vis-à-vis des fournisseurs sur la terminologie de la recharge et de l'interopérabilité — des définitions sourcées sur les standards, pas un langage marketing.",
     visit: "Visiter",
+    sourcesHeading: "Sources",
   },
   rw: {
     heroEyebrow: "Iyandikwa riracyategerejwe mu Rwanda",
@@ -182,6 +185,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     explore4Title: "Inkoranya-magambo",
     explore4Body: "Inkoranya-magambo ishakishwa, itarobanura ikigo runaka, y'amagambo y'icyuzuzo n'imikoranire — ibisobanuro bikomoka ku mabwiriza mbonezamubano, ntabwo ari ururimi rw'ubucuruzi.",
     visit: "Sura",
+    sourcesHeading: "Amasoko",
   },
   sv: {
     heroEyebrow: "Registrering pågår i Rwanda",
@@ -226,5 +230,6 @@ export const homeContent: Record<Locale, HomeContent> = {
     explore4Title: "Ordlista",
     explore4Body: "En sökbar, leverantörsneutral ordlista över ladd- och interoperabilitetsterminologi — standardbaserade definitioner, inte marknadsföringsspråk.",
     visit: "Besök",
+    sourcesHeading: "Källor",
   },
 };

@@ -157,6 +157,7 @@ export interface StatsContent {
   pricesSource: string;
   methodologyHeading: string;
   methodologyText: string;
+  sourcesHeading: string;
   rwandaEyebrow: string;
   rwandaHeading: string;
   rwandaIntro: string;
@@ -354,6 +355,7 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Ghana market. Source: EV24.africa",
     methodologyHeading: "About this page",
     methodologyText: "These figures are drawn from public reporting by third parties — iAfrikan Insights, Mordor Intelligence, EV24.africa, and UNDP — not from AfCA's own primary research. We cite each source rather than present the numbers as our own findings, and we'll retire this page in favour of AfCA's own Pan-African Interoperability and Reliability Index once that methodology and dataset exist.",
+    sourcesHeading: "Sources",
     rwandaEyebrow: "Grid readiness — Rwanda",
     rwandaHeading: "What powering the buses actually takes",
     rwandaIntro: "Charging infrastructure doesn't run on vehicle stats alone — it runs on the power grid underneath it. A World Bank study on Rwanda's Urban Mobility Improvement (RUMI) Project maps out what that grid needs to look like.",
@@ -549,6 +551,7 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Marché ghanéen. Source : EV24.africa",
     methodologyHeading: "À propos de cette page",
     methodologyText: "Ces chiffres proviennent de rapports publics de tiers — iAfrikan Insights, Mordor Intelligence, EV24.africa et le PNUD — et non de la recherche propre d'AfCA. Nous citons chaque source plutôt que de présenter ces chiffres comme nos propres conclusions, et nous retirerons cette page au profit du Pan-African Interoperability and Reliability Index d'AfCA une fois cette méthodologie et ce jeu de données disponibles.",
+    sourcesHeading: "Sources",
     rwandaEyebrow: "Préparation du réseau — Rwanda",
     rwandaHeading: "Ce qu'il faut réellement pour alimenter les bus",
     rwandaIntro: "L'infrastructure de recharge ne repose pas uniquement sur les statistiques de véhicules — elle repose sur le réseau électrique en dessous. Une étude de la Banque mondiale sur le projet d'amélioration de la mobilité urbaine (RUMI) du Rwanda détaille à quoi ce réseau doit ressembler.",
@@ -744,6 +747,7 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Isoko rya Ghana. Isoko: EV24.africa",
     methodologyHeading: "Ibyerekeye iyi paji",
     methodologyText: "Iyi mibare ikomoka ku makuru rusange yatanzwe n'izindi nzego — iAfrikan Insights, Mordor Intelligence, EV24.africa, na UNDP — ntabwo ari ubushakashatsi bwa AfCA ubwayo. Dukoresha isoko rya buri mubare aho kuwugaragaza nk'ibyavuye mu bushakashatsi bwacu, kandi tuzavana iyi paji igihe Pan-African Interoperability and Reliability Index ya AfCA izaba yuzuye.",
+    sourcesHeading: "Amasoko",
     rwandaEyebrow: "Kwiteguza kw'umuyoboro — u Rwanda",
     rwandaHeading: "Icyo gutanga amashanyarazi ku bisi bisaba by'ukuri",
     rwandaIntro: "Ibikorwaremezo by'icyuzuzo ntibishingira ku mibare y'amamodoka gusa — bishingira ku muyoboro w'amashanyarazi uri hasi yayo. Ubushakashatsi bwa Banki y'Isi ku mushinga wo Kunoza Ubwikorezi mu Mijyi (RUMI) mu Rwanda busobanura uko uwo muyoboro ugomba kumera.",
@@ -939,6 +943,7 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Ghanas marknad. Källa: EV24.africa",
     methodologyHeading: "Om den här sidan",
     methodologyText: "Dessa siffror kommer från offentlig rapportering av tredje part — iAfrikan Insights, Mordor Intelligence, EV24.africa och UNDP — inte från AfCA:s egen primärforskning. Vi anger källan för varje siffra i stället för att presentera dem som våra egna resultat, och vi kommer att fasa ut den här sidan till förmån för AfCA:s eget Pan-African Interoperability and Reliability Index när den metodiken och datamängden finns.",
+    sourcesHeading: "Källor",
     rwandaEyebrow: "Nätberedskap — Rwanda",
     rwandaHeading: "Vad det faktiskt krävs för att driva bussarna",
     rwandaIntro: "Laddinfrastruktur drivs inte bara av fordonsstatistik — den drivs av elnätet under den. En Världsbanksstudie om Rwandas Urban Mobility Improvement-projekt (RUMI) kartlägger hur det nätet behöver se ut.",

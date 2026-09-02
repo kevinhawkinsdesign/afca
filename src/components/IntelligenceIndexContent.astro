@@ -119,6 +119,23 @@ const prices: Array<[string, string, number]> = [
   [t.priceMidLabel, t.priceMidRange, 67],
   [t.pricePremiumLabel, t.pricePremiumRange, 100],
 ];
+
+// Every "Source:" line on this page is replaced with a small numbered
+// citation marker, in first-appearance order; the same source cited more
+// than once (e.g. the Mordor Intelligence Africa report, cited across six
+// sections) collapses to one footnote number. Full citations render once,
+// as fine print, at the bottom of the page — same pattern as the site
+// footer's footnote treatment, kept page-local here since these citations
+// are meaningless on any other page.
+const footnoteIndex = new Map<string, number>();
+const footnotes: Array<{ text: string; href?: string }> = [];
+function cite(text: string, href?: string): number {
+  if (!footnoteIndex.has(text)) {
+    footnotes.push({ text, href });
+    footnoteIndex.set(text, footnotes.length);
+  }
+  return footnoteIndex.get(text)!;
+}
 ---
 
 <FullBleedHero title={t.heroTitle} image="/hero/intelligence.jpg" imageAlt="A row of electric vehicles charging at a multi-bay public station" eyebrow={t.heroEyebrow}>
@@ -140,7 +157,7 @@ const prices: Array<[string, string, number]> = [
       ))}
     </div>
     <p class="mt-6 max-w-prose text-sm text-text-muted">{t.globalNote}</p>
-    <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.globalSource}</p>
+    <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.globalSource)}`} class="text-accent hover:underline">[{cite(t.globalSource)}]</a></p>
   </div>
 </section>
 
@@ -156,7 +173,7 @@ const prices: Array<[string, string, number]> = [
           <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{number}</p>
           <span class="stat-bar mt-3 block h-0.5 w-12 bg-accent"></span>
           <p class="mt-3 max-w-[22rem] text-text">{label}</p>
-          <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{source}</p>
+          <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#src-${cite(source)}`} class="text-accent hover:underline">[{cite(source)}]</a></p>
         </div>
       ))}
     </div>
@@ -177,7 +194,7 @@ const prices: Array<[string, string, number]> = [
         </div>
       ))}
     </div>
-    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.forecastSource}</p>
+    <p class="mt-6 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.forecastSource)}`} class="text-accent hover:underline">[{cite(t.forecastSource)}]</a></p>
   </div>
 </section>
 
@@ -195,7 +212,7 @@ const prices: Array<[string, string, number]> = [
         </div>
       ))}
     </div>
-    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.segmentSource}</p>
+    <p class="mt-6 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.segmentSource)}`} class="text-accent hover:underline">[{cite(t.segmentSource)}]</a></p>
   </div>
 </section>
 
@@ -214,7 +231,7 @@ const prices: Array<[string, string, number]> = [
         </div>
       ))}
     </div>
-    <p class="mt-4 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.spotlightSource}</p>
+    <p class="mt-4 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.spotlightSource)}`} class="text-accent hover:underline">[{cite(t.spotlightSource)}]</a></p>
   </div>
 </section>
 
@@ -231,7 +248,7 @@ const prices: Array<[string, string, number]> = [
         </div>
       ))}
     </div>
-    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.signalsSource}</p>
+    <p class="mt-6 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.signalsSource)}`} class="text-accent hover:underline">[{cite(t.signalsSource)}]</a></p>
   </div>
 </section>
 
@@ -257,7 +274,7 @@ const prices: Array<[string, string, number]> = [
         </div>
       ))}
     </div>
-    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.tailwindsSource}</p>
+    <p class="mt-6 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.tailwindsSource)}`} class="text-accent hover:underline">[{cite(t.tailwindsSource)}]</a></p>
   </div>
 </section>
 
@@ -283,7 +300,7 @@ const prices: Array<[string, string, number]> = [
         </div>
       ))}
     </div>
-    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.restraintsSource}</p>
+    <p class="mt-6 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.restraintsSource)}`} class="text-accent hover:underline">[{cite(t.restraintsSource)}]</a></p>
   </div>
 </section>
 
@@ -300,7 +317,7 @@ const prices: Array<[string, string, number]> = [
         </li>
       ))}
     </ol>
-    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.leadersSource}</p>
+    <p class="mt-6 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.leadersSource)}`} class="text-accent hover:underline">[{cite(t.leadersSource)}]</a></p>
   </div>
 </section>
 
@@ -313,17 +330,17 @@ const prices: Array<[string, string, number]> = [
       <div>
         <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{t.cost1Number}</p>
         <p class="mt-3 max-w-[22rem] text-text">{t.cost1Label}</p>
-        <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.cost1Source}</p>
+        <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.cost1Source)}`} class="text-accent hover:underline">[{cite(t.cost1Source)}]</a></p>
       </div>
       <div>
         <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{t.cost2Number}</p>
         <p class="mt-3 max-w-[22rem] text-text">{t.cost2Label}</p>
-        <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.cost2Source}</p>
+        <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.cost2Source)}`} class="text-accent hover:underline">[{cite(t.cost2Source)}]</a></p>
       </div>
       <div>
         <p class="font-accentSerif text-5xl italic text-ink sm:text-6xl">{t.cost3Number}</p>
         <p class="mt-3 max-w-[22rem] text-text">{t.cost3Label}</p>
-        <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.cost3Source}</p>
+        <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.cost3Source)}`} class="text-accent hover:underline">[{cite(t.cost3Source)}]</a></p>
       </div>
     </div>
   </div>
@@ -346,7 +363,7 @@ const prices: Array<[string, string, number]> = [
         </div>
       ))}
     </div>
-    <p class="mt-6 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.pricesSource}</p>
+    <p class="mt-6 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.pricesSource)}`} class="text-accent hover:underline">[{cite(t.pricesSource)}]</a></p>
   </div>
 </section>
 
@@ -383,9 +400,9 @@ const prices: Array<[string, string, number]> = [
     </div>
     <p class="mt-6 max-w-prose text-text">{t.rwandaStandardsNote}</p>
     <p class="mt-4 max-w-prose text-sm text-text-muted">{t.rwandaFinanceNote}</p>
-    <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">
-      <a href="https://blogs.worldbank.org/en/energy/rwanda-electric-mobility" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover:underline">
-        {t.rwandaSource}
+    <p class="mt-2 font-mono text-xs text-text-muted">
+      <a href={`#src-${cite(t.rwandaSource, "https://blogs.worldbank.org/en/energy/rwanda-electric-mobility")}`} class="text-accent hover:underline">
+        [{cite(t.rwandaSource, "https://blogs.worldbank.org/en/energy/rwanda-electric-mobility")}]
       </a>
     </p>
     <p class="mt-4 font-sans text-xs text-text-muted">
@@ -417,7 +434,7 @@ const prices: Array<[string, string, number]> = [
       ))}
     </div>
     <p class="mt-6 max-w-prose text-sm text-text-muted">{t.ecosystemNote}</p>
-    <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.ecosystemSource}</p>
+    <p class="mt-2 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.ecosystemSource)}`} class="text-accent hover:underline">[{cite(t.ecosystemSource)}]</a></p>
   </div>
 </section>
 
@@ -453,7 +470,7 @@ const prices: Array<[string, string, number]> = [
         </div>
       ))}
     </div>
-    <p class="mt-4 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.rankingSource}</p>
+    <p class="mt-4 font-mono text-xs text-text-muted"><a href={`#src-${cite(t.rankingSource)}`} class="text-accent hover:underline">[{cite(t.rankingSource)}]</a></p>
 
     <h3 class="mt-10 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-text-muted">{t.playersGlobalLabel}</h3>
     <div class="mt-4 grid gap-5 sm:grid-cols-3">
@@ -486,6 +503,24 @@ const prices: Array<[string, string, number]> = [
     <p class="mb-1 font-sans font-semibold text-ink">{t.methodologyHeading}</p>
     <p>{t.methodologyText}</p>
   </aside>
+
+  {footnotes.length > 0 && (
+    <div class="mt-8 border-t border-rule pt-6">
+      <p class="font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.sourcesHeading}</p>
+      <ol class="mt-3 space-y-1.5 font-mono text-xs text-text-muted">
+        {footnotes.map((f, i) => (
+          <li id={`src-${i + 1}`} class="scroll-mt-32">
+            {i + 1}.{" "}
+            {f.href ? (
+              <a href={f.href} target="_blank" rel="noopener noreferrer" class="hover:text-accent hover:underline">{f.text}</a>
+            ) : (
+              f.text
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  )}
 </section>
 
 <style>
