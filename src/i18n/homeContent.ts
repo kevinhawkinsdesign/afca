@@ -36,6 +36,7 @@ export interface HomeContent {
   init3Title: string;
   init3Body: string;
   exploreEyebrow: string;
+  exploreHeading: string;
   explore1Title: string;
   explore1Body: string;
   explore2Title: string;
@@ -79,6 +80,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     init3Title: "Practical implementation and ecosystem support",
     init3Body: "Market entry and technical advisory delivered as open training and published guidance, plus harmonisation and standards advocacy to governments and regional economic communities (EAC, ECOWAS).",
     exploreEyebrow: "Explore AfCA",
+    exploreHeading: "Standards guidance, market data, and a full charging glossary",
     explore1Title: "Standards & implementation guidance",
     explore1Body: "Vendor-neutral guides for building a CPMS, a driver app, selecting hardware, and testing OCPI/OCPP connectivity — plus a searchable glossary of the acronyms this guidance leans on.",
     explore2Title: "Intelligence",
@@ -120,6 +122,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     init3Title: "Mise en œuvre pratique et soutien à l'écosystème",
     init3Body: "Conseil technique et d'entrée sur le marché sous forme de formations ouvertes et de guides publiés, ainsi qu'un plaidoyer en faveur de l'harmonisation et des standards auprès des gouvernements et des communautés économiques régionales (EAC, ECOWAS).",
     exploreEyebrow: "Explorer AfCA",
+    exploreHeading: "Des guides de normes, des données de marché, et un glossaire complet de la recharge",
     explore1Title: "Standards et guides de mise en œuvre",
     explore1Body: "Des guides neutres vis-à-vis des fournisseurs pour construire un CPMS, une application conducteur, choisir du matériel et tester la connectivité OCPI/OCPP — avec un glossaire consultable des sigles utilisés dans ces guides.",
     explore2Title: "Intelligence",
@@ -161,6 +164,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     init3Title: "Ishyirwa mu bikorwa n'ubufasha ku rusobe",
     init3Body: "Ubufasha bwa tekiniki n'ubw'kwinjira ku isoko butangwa mu mahugurwa afunguye n'amabwiriza asohotse, hiyongereyeho gushishikariza guhuza amabwiriza n'ibipimo ku miryango ya Leta n'imiryango y'ubukungu y'akarere (EAC, ECOWAS).",
     exploreEyebrow: "Reba AfCA",
+    exploreHeading: "Amabwiriza y'amabwiriza, amakuru y'isoko, n'inkoranya-magambo yuzuye y'icyuzuzo",
     explore1Title: "Amabwiriza n'ubuyobozi bw'ishyirwa mu bikorwa",
     explore1Body: "Amabwiriza adashyigikiye ikigo runaka yo kubaka CPMS, porogaramu y'umushoferi, guhitamo ibikoresho, no kugerageza imikoranire ya OCPI/OCPP — hiyongereyeho inkoranya-magambo ishakishwamo ibinyuranyo bikoreshwa muri aya mabwiriza.",
     explore2Title: "Ubushakashatsi",
@@ -202,6 +206,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     init3Title: "Praktiskt genomförande och ekosystemstöd",
     init3Body: "Marknadsinträdes- och tekniskt rådgivning i form av öppen utbildning och publicerad vägledning, samt påverkansarbete för harmonisering och standarder gentemot regeringar och regionala ekonomiska gemenskaper (EAC, ECOWAS).",
     exploreEyebrow: "Utforska AfCA",
+    exploreHeading: "Standardvägledning, marknadsdata och en fullständig laddordlista",
     explore1Title: "Standarder och implementeringsvägledning",
     explore1Body: "Leverantörsneutral vägledning för att bygga ett CPMS, en förarapp, välja hårdvara och testa OCPI/OCPP-anslutning — plus en sökbar ordlista över förkortningarna som används.",
     explore2Title: "Analys",
