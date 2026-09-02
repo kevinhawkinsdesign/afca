@@ -171,6 +171,9 @@ export interface StatsContent {
   rwandaStandardsNote: string;
   rwandaFinanceNote: string;
   rwandaSource: string;
+  rwandaFurtherReading: string;
+  rwandaEsmapLink: string;
+  rwandaPressLink: string;
   ecosystemEyebrow: string;
   ecosystemHeading: string;
   ecosystemIntro: string;
@@ -365,6 +368,9 @@ export const statsContent: Record<Locale, StatsContent> = {
     rwandaStandardsNote: "The study recommends Rwanda adopt dual charging standards — CCS2 and GB/T — for flexibility, paired with real-time EV-uptake tracking and time-of-use tariffs that reward off-peak charging. Standards questions like this are exactly AfCA's territory.",
     rwandaFinanceNote: "Rwanda estimates up to $900M will be needed for EV purchases and charging infrastructure combined, financed through public-private partnerships, green bonds, blended finance, and the Rwanda Green Fund (FONERWA). BasiGo, IZI, Ampersandand, and Spiro are already piloting electric buses, motorcycles, and charging solutions in the country.",
     rwandaSource: "Source: \"From grid to road: Rwanda's journey to electric mobility,\" World Bank / Africa Energy Portal, 12 June 2026 (author: Tarek Keskes)",
+    rwandaFurtherReading: "Further reading:",
+    rwandaEsmapLink: "Exploring Enabling Energy Frameworks for Electric Mobility in Rwanda (ESMAP)",
+    rwandaPressLink: "Building the Energy Foundations for Rwanda's Electric Mobility Transition (World Bank press release)",
     ecosystemEyebrow: "Ecosystem scale",
     ecosystemHeading: "How big the mobility opportunity already is",
     ecosystemIntro: "A newer, broader data source covering all African sustainable-transport companies, not just EVs — from a 2026 industry ranking backed by the Africa E-Mobility Alliance and UNEP.",
@@ -557,6 +563,9 @@ export const statsContent: Record<Locale, StatsContent> = {
     rwandaStandardsNote: "L'étude recommande au Rwanda d'adopter deux normes de recharge — CCS2 et GB/T — pour plus de flexibilité, associées à un suivi en temps réel de l'adoption des véhicules électriques et à des tarifs différenciés selon l'heure récompensant la recharge hors pointe. Ce type de question de normes est exactement le terrain d'AfCA.",
     rwandaFinanceNote: "Le Rwanda estime qu'il faudra jusqu'à 900 M$ pour l'achat de véhicules électriques et l'infrastructure de recharge combinés, financés via des partenariats public-privé, des obligations vertes, du financement mixte, et le Fonds vert du Rwanda (FONERWA). BasiGo, IZI, Ampersand et Spiro testent déjà des bus électriques, des motos électriques et des solutions de recharge dans le pays.",
     rwandaSource: "Source : « From grid to road: Rwanda's journey to electric mobility », Banque mondiale / Africa Energy Portal, 12 juin 2026 (auteur : Tarek Keskes)",
+    rwandaFurtherReading: "Pour aller plus loin :",
+    rwandaEsmapLink: "Exploring Enabling Energy Frameworks for Electric Mobility in Rwanda (ESMAP)",
+    rwandaPressLink: "Building the Energy Foundations for Rwanda's Electric Mobility Transition (communiqué de presse de la Banque mondiale)",
     ecosystemEyebrow: "Échelle de l'écosystème",
     ecosystemHeading: "L'ampleur déjà atteinte par l'opportunité de mobilité",
     ecosystemIntro: "Une source de données plus récente et plus large, couvrant toutes les entreprises africaines de transport durable, pas seulement les véhicules électriques — issue d'un classement sectoriel 2026 soutenu par l'Africa E-Mobility Alliance et le PNUE.",
@@ -749,6 +758,9 @@ export const statsContent: Record<Locale, StatsContent> = {
     rwandaStandardsNote: "Ubushakashatsi busaba u Rwanda kwemera amabwiriza abiri y'icyuzuzo — CCS2 na GB/T — kugira ngo habeho kwinjira ku bundi buryo, bihuzwa no gukurikirana mu gihe nyacyo ikoreshwa ry'amamodoka akoresha amashanyarazi, hamwe n'ibiciro bitandukanye bishingiye ku gihe bihembera icyuzuzo mu gihe kitari icy'ikoreshwa rinini. Ibibazo by'amabwiriza nk'ibi ni yo murimo nyawo wa AfCA.",
     rwandaFinanceNote: "U Rwanda rugereranya ko hazakenerwa amadolari agera kuri miliyoni 900 kugira ngo hagurwe amamodoka akoresha amashanyarazi hamwe n'ibikorwaremezo by'icyuzuzo, bikazashorwamo binyuze mu bufatanye bw'ubuyobozi n'abikorera, ibigo by'imari bicye, imari ivanze, n'Ikigega Gitoza cy'u Rwanda (FONERWA). BasiGo, IZI, Ampersand, na Spiro basanzwe bagerageza bisi z'amashanyarazi, amapikipiki, n'ibisubizo by'icyuzuzo mu gihugu.",
     rwandaSource: "Isoko: \"From grid to road: Rwanda's journey to electric mobility,\" Banki y'Isi / Africa Energy Portal, 12 Kamena 2026 (uwanditse: Tarek Keskes)",
+    rwandaFurtherReading: "Andi masomo:",
+    rwandaEsmapLink: "Exploring Enabling Energy Frameworks for Electric Mobility in Rwanda (ESMAP)",
+    rwandaPressLink: "Building the Energy Foundations for Rwanda's Electric Mobility Transition (itangazo rya Banki y'Isi)",
     ecosystemEyebrow: "Ubunini bw'urusobe",
     ecosystemHeading: "Ubunini amahirwe y'icyuzuzo asanzwe afite",
     ecosystemIntro: "Isoko rishya kandi ryagutse ry'amakuru, rikubiyemo ibigo byose by'ubwikorezi burambye muri Afurika, atari ay'amamodoka akoresha amashanyarazi gusa — riva mu rutonde rw'urwego rwa 2026 rushyigikiwe na Africa E-Mobility Alliance na UNEP.",
@@ -941,6 +953,9 @@ export const statsContent: Record<Locale, StatsContent> = {
     rwandaStandardsNote: "Studien rekommenderar att Rwanda antar två laddstandarder — CCS2 och GB/T — för flexibilitet, tillsammans med realtidsspårning av elfordonsupptag och tidsdifferentierade taxor som belönar laddning utanför topptid. Den här typen av standardfrågor är precis AfCA:s område.",
     rwandaFinanceNote: "Rwanda uppskattar att upp till 900 miljoner USD kommer att behövas för elfordonsinköp och laddinfrastruktur tillsammans, finansierat genom offentlig-privata partnerskap, gröna obligationer, blandad finansiering och Rwandas gröna fond (FONERWA). BasiGo, IZI, Ampersand och Spiro testar redan elbussar, elmotorcyklar och laddlösningar i landet.",
     rwandaSource: "Källa: \"From grid to road: Rwanda's journey to electric mobility\", Världsbanken / Africa Energy Portal, 12 juni 2026 (författare: Tarek Keskes)",
+    rwandaFurtherReading: "Läs mer:",
+    rwandaEsmapLink: "Exploring Enabling Energy Frameworks for Electric Mobility in Rwanda (ESMAP)",
+    rwandaPressLink: "Building the Energy Foundations for Rwanda's Electric Mobility Transition (Världsbankens pressmeddelande)",
     ecosystemEyebrow: "Ekosystemets skala",
     ecosystemHeading: "Hur stor mobilitetsmöjligheten redan är",
     ecosystemIntro: "En nyare, bredare datakälla som täcker alla afrikanska hållbara transportbolag, inte bara elfordon — från en branschrankning 2026 med stöd av Africa E-Mobility Alliance och UNEP.",

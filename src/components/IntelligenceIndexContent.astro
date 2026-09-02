@@ -383,7 +383,22 @@ const prices: Array<[string, string, number]> = [
     </div>
     <p class="mt-6 max-w-prose text-text">{t.rwandaStandardsNote}</p>
     <p class="mt-4 max-w-prose text-sm text-text-muted">{t.rwandaFinanceNote}</p>
-    <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.rwandaSource}</p>
+    <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">
+      <a href="https://blogs.worldbank.org/en/energy/rwanda-electric-mobility" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover:underline">
+        {t.rwandaSource}
+      </a>
+    </p>
+    <p class="mt-4 font-sans text-xs text-text-muted">
+      {t.rwandaFurtherReading}
+      {" "}
+      <a href="https://www.esmap.org/Enabling-E-Mobility-in-Rwanda" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
+        {t.rwandaEsmapLink}
+      </a>
+      {" · "}
+      <a href="https://www.worldbank.org/en/news/press-release/2025/09/30/building-the-energy-foundations-for-rwanda-s-electric-mobility-transition" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">
+        {t.rwandaPressLink}
+      </a>
+    </p>
   </div>
 </section>
 
