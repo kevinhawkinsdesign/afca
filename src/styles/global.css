@@ -48,6 +48,10 @@
 
   a {
     @apply underline-offset-2;
+    /* Belt-and-braces for mobile tap responsiveness: tells the browser
+       not to wait to see if a tap is the start of a double-tap-to-zoom
+       or pan gesture before registering it as a click. */
+    touch-action: manipulation;
   }
 
   a:focus-visible,

@@ -54,10 +54,10 @@ const navLinkClass =
       <LanguageSwitcher locale={locale} pathname={pathname} technicalEnglishOnly={technicalEnglishOnly} />
     </div>
   </div>
-  <nav aria-label="Primary" class="flex flex-wrap gap-x-4 gap-y-2 border-t border-rule px-6 py-3 font-sans text-sm md:hidden">
+  <nav aria-label="Primary" class="flex flex-wrap border-t border-rule px-3 py-1 font-sans text-sm md:hidden">
     {links.map(([label, href, englishOnly]) => (
-      <a href={navHref(href, englishOnly)} class="text-text no-underline">{label}</a>
+      <a href={navHref(href, englishOnly)} class="inline-flex items-center px-3 py-3 text-text no-underline">{label}</a>
     ))}
-    <a href={localizePath("/contact", locale)} class="text-ink no-underline">{t.nav.contact}</a>
+    <a href={localizePath("/contact", locale)} class="inline-flex items-center px-3 py-3 font-medium text-ink no-underline">{t.nav.contact}</a>
   </nav>
 </header>
