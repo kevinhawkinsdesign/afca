@@ -157,6 +157,20 @@ export interface StatsContent {
   pricesSource: string;
   methodologyHeading: string;
   methodologyText: string;
+  rwandaEyebrow: string;
+  rwandaHeading: string;
+  rwandaIntro: string;
+  rw1Number: string;
+  rw1Label: string;
+  rw2Number: string;
+  rw2Label: string;
+  rw3Number: string;
+  rw3Label: string;
+  rw4Number: string;
+  rw4Label: string;
+  rwandaStandardsNote: string;
+  rwandaFinanceNote: string;
+  rwandaSource: string;
   ecosystemEyebrow: string;
   ecosystemHeading: string;
   ecosystemIntro: string;
@@ -337,6 +351,20 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Ghana market. Source: EV24.africa",
     methodologyHeading: "About this page",
     methodologyText: "These figures are drawn from public reporting by third parties — iAfrikan Insights, Mordor Intelligence, EV24.africa, and UNDP — not from AfCA's own primary research. We cite each source rather than present the numbers as our own findings, and we'll retire this page in favour of AfCA's own Pan-African Interoperability and Reliability Index once that methodology and dataset exist.",
+    rwandaEyebrow: "Grid readiness — Rwanda",
+    rwandaHeading: "What powering the buses actually takes",
+    rwandaIntro: "Charging infrastructure doesn't run on vehicle stats alone — it runs on the power grid underneath it. A World Bank study on Rwanda's Urban Mobility Improvement (RUMI) Project maps out what that grid needs to look like.",
+    rw1Number: "1 in 5",
+    rw1Label: "Kigali buses targeted to be electric by 2030, growing to a fleet of 4,100+ by 2050",
+    rw2Number: "136%",
+    rw2Label: "of safe capacity Kigali's grid was already loaded to at peak in 2024, before EV charging is added",
+    rw3Number: "15%",
+    rw3Label: "reduction in network stress achievable through off-peak and solar-aligned smart charging",
+    rw4Number: "$7.7M",
+    rw4Label: "investment in the Nyabugogo transit hub upgrade: 18 chargers, an 800kW rooftop solar array, and battery storage",
+    rwandaStandardsNote: "The study recommends Rwanda adopt dual charging standards — CCS2 and GB/T — for flexibility, paired with real-time EV-uptake tracking and time-of-use tariffs that reward off-peak charging. Standards questions like this are exactly AfCA's territory.",
+    rwandaFinanceNote: "Rwanda estimates up to $900M will be needed for EV purchases and charging infrastructure combined, financed through public-private partnerships, green bonds, blended finance, and the Rwanda Green Fund (FONERWA). BasiGo, IZI, Ampersandand, and Spiro are already piloting electric buses, motorcycles, and charging solutions in the country.",
+    rwandaSource: "Source: \"From grid to road: Rwanda's journey to electric mobility,\" World Bank / Africa Energy Portal, 12 June 2026 (author: Tarek Keskes)",
     ecosystemEyebrow: "Ecosystem scale",
     ecosystemHeading: "How big the mobility opportunity already is",
     ecosystemIntro: "A newer, broader data source covering all African sustainable-transport companies, not just EVs — from a 2026 industry ranking backed by the Africa E-Mobility Alliance and UNEP.",
@@ -515,6 +543,20 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Marché ghanéen. Source : EV24.africa",
     methodologyHeading: "À propos de cette page",
     methodologyText: "Ces chiffres proviennent de rapports publics de tiers — iAfrikan Insights, Mordor Intelligence, EV24.africa et le PNUD — et non de la recherche propre d'AfCA. Nous citons chaque source plutôt que de présenter ces chiffres comme nos propres conclusions, et nous retirerons cette page au profit du Pan-African Interoperability and Reliability Index d'AfCA une fois cette méthodologie et ce jeu de données disponibles.",
+    rwandaEyebrow: "Préparation du réseau — Rwanda",
+    rwandaHeading: "Ce qu'il faut réellement pour alimenter les bus",
+    rwandaIntro: "L'infrastructure de recharge ne repose pas uniquement sur les statistiques de véhicules — elle repose sur le réseau électrique en dessous. Une étude de la Banque mondiale sur le projet d'amélioration de la mobilité urbaine (RUMI) du Rwanda détaille à quoi ce réseau doit ressembler.",
+    rw1Number: "1 sur 5",
+    rw1Label: "bus de Kigali visés comme électriques d'ici 2030, avec une flotte atteignant 4 100+ d'ici 2050",
+    rw2Number: "136 %",
+    rw2Label: "de la capacité sûre à laquelle le réseau de Kigali était déjà chargé en pointe en 2024, avant même l'ajout de la recharge des véhicules électriques",
+    rw3Number: "15 %",
+    rw3Label: "de réduction du stress sur le réseau réalisable grâce à une recharge intelligente hors pointe et alignée sur le solaire",
+    rw4Number: "7,7 M$",
+    rw4Label: "investis dans la modernisation du pôle multimodal de Nyabugogo : 18 bornes de recharge, une installation solaire de toiture de 800 kW, et du stockage par batterie",
+    rwandaStandardsNote: "L'étude recommande au Rwanda d'adopter deux normes de recharge — CCS2 et GB/T — pour plus de flexibilité, associées à un suivi en temps réel de l'adoption des véhicules électriques et à des tarifs différenciés selon l'heure récompensant la recharge hors pointe. Ce type de question de normes est exactement le terrain d'AfCA.",
+    rwandaFinanceNote: "Le Rwanda estime qu'il faudra jusqu'à 900 M$ pour l'achat de véhicules électriques et l'infrastructure de recharge combinés, financés via des partenariats public-privé, des obligations vertes, du financement mixte, et le Fonds vert du Rwanda (FONERWA). BasiGo, IZI, Ampersand et Spiro testent déjà des bus électriques, des motos électriques et des solutions de recharge dans le pays.",
+    rwandaSource: "Source : « From grid to road: Rwanda's journey to electric mobility », Banque mondiale / Africa Energy Portal, 12 juin 2026 (auteur : Tarek Keskes)",
     ecosystemEyebrow: "Échelle de l'écosystème",
     ecosystemHeading: "L'ampleur déjà atteinte par l'opportunité de mobilité",
     ecosystemIntro: "Une source de données plus récente et plus large, couvrant toutes les entreprises africaines de transport durable, pas seulement les véhicules électriques — issue d'un classement sectoriel 2026 soutenu par l'Africa E-Mobility Alliance et le PNUE.",
@@ -693,6 +735,20 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Isoko rya Ghana. Isoko: EV24.africa",
     methodologyHeading: "Ibyerekeye iyi paji",
     methodologyText: "Iyi mibare ikomoka ku makuru rusange yatanzwe n'izindi nzego — iAfrikan Insights, Mordor Intelligence, EV24.africa, na UNDP — ntabwo ari ubushakashatsi bwa AfCA ubwayo. Dukoresha isoko rya buri mubare aho kuwugaragaza nk'ibyavuye mu bushakashatsi bwacu, kandi tuzavana iyi paji igihe Pan-African Interoperability and Reliability Index ya AfCA izaba yuzuye.",
+    rwandaEyebrow: "Kwiteguza kw'umuyoboro — u Rwanda",
+    rwandaHeading: "Icyo gutanga amashanyarazi ku bisi bisaba by'ukuri",
+    rwandaIntro: "Ibikorwaremezo by'icyuzuzo ntibishingira ku mibare y'amamodoka gusa — bishingira ku muyoboro w'amashanyarazi uri hasi yayo. Ubushakashatsi bwa Banki y'Isi ku mushinga wo Kunoza Ubwikorezi mu Mijyi (RUMI) mu Rwanda busobanura uko uwo muyoboro ugomba kumera.",
+    rw1Number: "1 kuri 5",
+    rw1Label: "bisi za Kigali zigenewe kuba iz'amashanyarazi kugeza 2030, hazamuka kugera ku modoka zirenga 4,100 kugeza 2050",
+    rw2Number: "136%",
+    rw2Label: "by'ubushobozi bwizewe umuyoboro wa Kigali wari umaze gukoreshwa mu gihe cy'ikoreshwa rinini mu 2024, mbere y'uko icyuzuzo cy'amamodoka akoresha amashanyarazi cyongerwaho",
+    rw3Number: "15%",
+    rw3Label: "igabanuka ry'ikoreshwa rikabije ry'umuyoboro rishoboka biturutse ku cyuzuzo kinyabwenge gikorwa mu gihe kitari icy'ikoreshwa rinini kandi gihuye n'izuba",
+    rw4Number: "$7.7M",
+    rw4Label: "amafaranga yashowe mu kuvugurura ikigo cy'ubwikorezi cya Nyabugogo: sitasiyo z'icyuzuzo 18, uruganda rw'izuba rwa 800kW ruri hejuru y'inzu, n'ububiko bwa bateri",
+    rwandaStandardsNote: "Ubushakashatsi busaba u Rwanda kwemera amabwiriza abiri y'icyuzuzo — CCS2 na GB/T — kugira ngo habeho kwinjira ku bundi buryo, bihuzwa no gukurikirana mu gihe nyacyo ikoreshwa ry'amamodoka akoresha amashanyarazi, hamwe n'ibiciro bitandukanye bishingiye ku gihe bihembera icyuzuzo mu gihe kitari icy'ikoreshwa rinini. Ibibazo by'amabwiriza nk'ibi ni yo murimo nyawo wa AfCA.",
+    rwandaFinanceNote: "U Rwanda rugereranya ko hazakenerwa amadolari agera kuri miliyoni 900 kugira ngo hagurwe amamodoka akoresha amashanyarazi hamwe n'ibikorwaremezo by'icyuzuzo, bikazashorwamo binyuze mu bufatanye bw'ubuyobozi n'abikorera, ibigo by'imari bicye, imari ivanze, n'Ikigega Gitoza cy'u Rwanda (FONERWA). BasiGo, IZI, Ampersand, na Spiro basanzwe bagerageza bisi z'amashanyarazi, amapikipiki, n'ibisubizo by'icyuzuzo mu gihugu.",
+    rwandaSource: "Isoko: \"From grid to road: Rwanda's journey to electric mobility,\" Banki y'Isi / Africa Energy Portal, 12 Kamena 2026 (uwanditse: Tarek Keskes)",
     ecosystemEyebrow: "Ubunini bw'urusobe",
     ecosystemHeading: "Ubunini amahirwe y'icyuzuzo asanzwe afite",
     ecosystemIntro: "Isoko rishya kandi ryagutse ry'amakuru, rikubiyemo ibigo byose by'ubwikorezi burambye muri Afurika, atari ay'amamodoka akoresha amashanyarazi gusa — riva mu rutonde rw'urwego rwa 2026 rushyigikiwe na Africa E-Mobility Alliance na UNEP.",
@@ -871,6 +927,20 @@ export const statsContent: Record<Locale, StatsContent> = {
     pricesSource: "Ghanas marknad. Källa: EV24.africa",
     methodologyHeading: "Om den här sidan",
     methodologyText: "Dessa siffror kommer från offentlig rapportering av tredje part — iAfrikan Insights, Mordor Intelligence, EV24.africa och UNDP — inte från AfCA:s egen primärforskning. Vi anger källan för varje siffra i stället för att presentera dem som våra egna resultat, och vi kommer att fasa ut den här sidan till förmån för AfCA:s eget Pan-African Interoperability and Reliability Index när den metodiken och datamängden finns.",
+    rwandaEyebrow: "Nätberedskap — Rwanda",
+    rwandaHeading: "Vad det faktiskt krävs för att driva bussarna",
+    rwandaIntro: "Laddinfrastruktur drivs inte bara av fordonsstatistik — den drivs av elnätet under den. En Världsbanksstudie om Rwandas Urban Mobility Improvement-projekt (RUMI) kartlägger hur det nätet behöver se ut.",
+    rw1Number: "1 av 5",
+    rw1Label: "Kigalis bussar som är målsatta att vara elektriska till 2030, med en flotta som växer till 4 100+ till 2050",
+    rw2Number: "136 %",
+    rw2Label: "av säker kapacitet som Kigalis elnät redan var belastat till vid toppbelastning 2024, innan elfordonsladdning ens läggs till",
+    rw3Number: "15 %",
+    rw3Label: "minskning av nätbelastning som är möjlig genom smart laddning utanför topptid och anpassad efter solkraft",
+    rw4Number: "7,7 miljoner $",
+    rw4Label: "investerat i uppgraderingen av Nyabugogo kollektivtrafiknav: 18 laddare, en 800 kW takmonterad solcellsanläggning och batterilager",
+    rwandaStandardsNote: "Studien rekommenderar att Rwanda antar två laddstandarder — CCS2 och GB/T — för flexibilitet, tillsammans med realtidsspårning av elfordonsupptag och tidsdifferentierade taxor som belönar laddning utanför topptid. Den här typen av standardfrågor är precis AfCA:s område.",
+    rwandaFinanceNote: "Rwanda uppskattar att upp till 900 miljoner USD kommer att behövas för elfordonsinköp och laddinfrastruktur tillsammans, finansierat genom offentlig-privata partnerskap, gröna obligationer, blandad finansiering och Rwandas gröna fond (FONERWA). BasiGo, IZI, Ampersand och Spiro testar redan elbussar, elmotorcyklar och laddlösningar i landet.",
+    rwandaSource: "Källa: \"From grid to road: Rwanda's journey to electric mobility\", Världsbanken / Africa Energy Portal, 12 juni 2026 (författare: Tarek Keskes)",
     ecosystemEyebrow: "Ekosystemets skala",
     ecosystemHeading: "Hur stor mobilitetsmöjligheten redan är",
     ecosystemIntro: "En nyare, bredare datakälla som täcker alla afrikanska hållbara transportbolag, inte bara elfordon — från en branschrankning 2026 med stöd av Africa E-Mobility Alliance och UNEP.",

@@ -72,6 +72,13 @@ const advice: Array<[string, string]> = [
   [t.adv3Heading, t.adv3Text],
 ];
 
+const rwandaGrid: Array<[string, string]> = [
+  [t.rw1Number, t.rw1Label],
+  [t.rw2Number, t.rw2Label],
+  [t.rw3Number, t.rw3Label],
+  [t.rw4Number, t.rw4Label],
+];
+
 const ecosystem: Array<[string, string]> = [
   [t.e1Number, t.e1Label],
   [t.e2Number, t.e2Label],
@@ -362,6 +369,26 @@ const prices: Array<[string, string, number]> = [
 
 <section class="bg-paper-warm">
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">{t.rwandaEyebrow}</p>
+    <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.rwandaHeading}</h2>
+    <p class="mt-3 max-w-prose text-text">{t.rwandaIntro}</p>
+    <div class="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+      {rwandaGrid.map(([number, label]) => (
+        <div>
+          <p class="font-accentSerif text-4xl italic text-ink sm:text-5xl">{number}</p>
+          <span class="stat-bar mt-3 block h-0.5 w-12 bg-accent"></span>
+          <p class="mt-3 max-w-[22rem] text-text">{label}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 max-w-prose text-text">{t.rwandaStandardsNote}</p>
+    <p class="mt-4 max-w-prose text-sm text-text-muted">{t.rwandaFinanceNote}</p>
+    <p class="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">{t.rwandaSource}</p>
+  </div>
+</section>
+
+<section>
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
     <p class="eyebrow">{t.ecosystemEyebrow}</p>
     <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.ecosystemHeading}</h2>
     <p class="mt-3 max-w-prose text-text">{t.ecosystemIntro}</p>
@@ -379,7 +406,7 @@ const prices: Array<[string, string, number]> = [
   </div>
 </section>
 
-<section>
+<section class="bg-paper-warm">
   <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
     <p class="eyebrow">{t.playersEyebrow}</p>
     <h2 class="mt-3 font-sans text-2xl font-semibold text-ink sm:text-3xl">{t.playersHeading}</h2>
@@ -388,7 +415,7 @@ const prices: Array<[string, string, number]> = [
     <h3 class="mt-10 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-text-muted">{t.playersHomegrownLabel}</h3>
     <div class="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {homegrownPlayers.map((p) => (
-        <div class="rounded-lg border border-rule bg-paper-warm p-5" itemscope itemtype="https://schema.org/Organization">
+        <div class="rounded-lg border border-rule bg-paper p-5" itemscope itemtype="https://schema.org/Organization">
           {p.logo && (
             <div class="inline-flex rounded-md bg-white px-3 py-2">
               <img src={withBase(p.logo)} alt={`${p.name} logo`} class="h-6 w-auto max-w-[8rem] object-contain" itemprop="logo" loading="lazy" />
@@ -416,7 +443,7 @@ const prices: Array<[string, string, number]> = [
     <h3 class="mt-10 font-sans text-sm font-semibold uppercase tracking-[0.08em] text-text-muted">{t.playersGlobalLabel}</h3>
     <div class="mt-4 grid gap-5 sm:grid-cols-3">
       {globalPlayers.map((p) => (
-        <div class="rounded-lg border border-rule bg-paper-warm p-5" itemscope itemtype="https://schema.org/Organization">
+        <div class="rounded-lg border border-rule bg-paper p-5" itemscope itemtype="https://schema.org/Organization">
           <div class="flex items-baseline justify-between gap-2">
             <p class="font-sans text-lg font-semibold text-ink" itemprop="name">{p.name}</p>
             <span class="font-mono text-[11px] uppercase tracking-[0.08em] text-text-muted">{p.location}</span>
