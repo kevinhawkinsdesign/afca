@@ -1,6 +1,7 @@
 ---
 import { ui, localizePath, type Locale } from "../i18n/config";
 import { homeContent } from "../i18n/homeContent";
+import { withBase } from "../lib/url";
 
 interface Props {
   locale: Locale;
@@ -16,7 +17,10 @@ const year = new Date().getFullYear();
   <div class="mx-auto max-w-content px-6 py-12">
     <div class="grid gap-10 font-sans text-sm md:grid-cols-3">
       <div>
-        <p class="font-semibold text-ink">African Charging Alliance</p>
+        <div class="flex items-center gap-2.5">
+          <img src={withBase("/logo.png")} alt="" width="24" height="24" class="h-6 w-6" />
+          <p class="font-semibold text-ink">African Charging Alliance</p>
+        </div>
         <p class="mt-2 max-w-prose text-text-muted">{t.footer.tagline}</p>
       </div>
       <nav aria-label="Footer">
