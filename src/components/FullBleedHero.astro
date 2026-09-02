@@ -1,0 +1,31 @@
+---
+// Full-bleed hero used at the top of every primary page — a large,
+// edge-to-edge photo with the title overlapping its bottom edge, in the
+// vein of the annual-report layouts (Parker Institute, etc.) the site
+// took inspiration from. Replaces the earlier two-column PageHero.
+import { withBase } from "../lib/url";
+
+interface Props {
+  title: string;
+  image: string;
+  imageAlt: string;
+  eyebrow?: string;
+}
+const { title, image, imageAlt, eyebrow } = Astro.props;
+---
+
+<section class="relative">
+  <div class="relative h-[42vh] min-h-[280px] w-full overflow-hidden sm:h-[54vh] md:h-[62vh]">
+    <img src={withBase(image)} alt={imageAlt} class="h-full w-full object-cover" loading="eager" />
+    <div class="absolute inset-0 bg-gradient-to-t from-paper via-paper/10 to-transparent"></div>
+  </div>
+  <div class="mx-auto max-w-content px-6">
+    <div class="relative -mt-16 pb-8 sm:-mt-24 md:-mt-28">
+      {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
+      <h1 class="max-w-3xl font-sans text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl md:text-6xl">{title}</h1>
+      <div class="mt-4 max-w-prose">
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>

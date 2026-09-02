@@ -20,10 +20,17 @@
        form controls, scrollbars, etc. render dark by default rather than
        fighting the OS light-mode default. */
     color-scheme: dark;
+    /* Full-bleed breakout elements (FullBleedBreak) use w-screen, which
+       can exceed the viewport by a scrollbar's width — clip at the root
+       so it can never introduce horizontal scroll. Set on both html and
+       body since overflow only propagates from body to the viewport when
+       html has none set, and we want the guarantee either way. */
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-paper text-text font-serif text-[1.0625rem] leading-relaxed antialiased;
+    overflow-x: hidden;
   }
 
   h1,

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PageHero from "../../components/PageHero.astro";
+import FullBleedHero from "../../components/FullBleedHero.astro";
+import GlossarySection from "../../components/GlossarySection.astro";
 import { withBase } from "../../lib/url";
 
 const locale = "en" as const;
@@ -15,22 +16,22 @@ const guides: Array<[string, string, string]> = [
 ---
 
 <BaseLayout locale={locale} title="Standards" technicalEnglishOnly={true}>
+  <FullBleedHero title="Standards &amp; Implementation Guidance" image="/hero/standards.jpg" imageAlt="A motorcycle taxi rider using a ROAM fast charger in Kenya">
+    <p class="text-text">
+      Published, vendor-neutral guides for operators, integrators, and policymakers building
+      charging infrastructure. These reflect open protocols and public standards — AfCA does not
+      own OCPI, OCPP, or OSCP, and does not recommend individual companies.
+    </p>
+
+    <div class="mt-4 rounded border border-rule bg-paper-warm px-4 py-3 font-sans text-sm text-text-muted">
+      OCPI is owned and maintained by the <a href="https://evroaming.org" class="text-ink underline">EVRoaming Foundation</a>.
+      OCPP and OSCP are owned by the <a href="https://openchargealliance.org" class="text-ink underline">Open Charge Alliance</a>.
+      AfCA's contribution is African implementation guidance and benchmarking against these standards.
+    </div>
+  </FullBleedHero>
+
   <section class="mx-auto max-w-content px-6 py-10 md:py-16">
-    <PageHero title="Standards &amp; Implementation Guidance" image="/hero/standards.jpg" imageAlt="A motorcycle taxi rider using a ROAM fast charger in Kenya">
-      <p class="text-text">
-        Published, vendor-neutral guides for operators, integrators, and policymakers building
-        charging infrastructure. These reflect open protocols and public standards — AfCA does not
-        own OCPI, OCPP, or OSCP, and does not recommend individual companies.
-      </p>
-
-      <div class="mt-4 rounded border border-rule bg-paper-warm px-4 py-3 font-sans text-sm text-text-muted">
-        OCPI is owned and maintained by the <a href="https://evroaming.org" class="text-ink underline">EVRoaming Foundation</a>.
-        OCPP and OSCP are owned by the <a href="https://openchargealliance.org" class="text-ink underline">Open Charge Alliance</a>.
-        AfCA's contribution is African implementation guidance and benchmarking against these standards.
-      </div>
-    </PageHero>
-
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
+    <div class="grid gap-6 md:grid-cols-2">
       {guides.map(([href, title, summary]) => (
         <a href={withBase(href)} class="group block rounded border border-rule bg-paper p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-lg hover:shadow-black/20">
           <h2 class="font-sans text-lg font-semibold text-ink">{title}</h2>
@@ -39,16 +40,8 @@ const guides: Array<[string, string, string]> = [
       ))}
     </div>
 
-    <div class="mt-16 rounded border border-rule bg-paper-warm p-6">
-      <h2 class="font-sans text-xl font-semibold text-ink">Glossary</h2>
-      <p class="mt-2 max-w-prose text-sm text-text-muted">
-        CPO, EMSP, CPMS, OCPI, OCPP, GB/T, and the rest of the acronyms this guidance leans on —
-        searchable, with direct links to each term.
-      </p>
-      <a href={withBase("/glossary")} class="eyebrow mt-4 inline-flex items-center gap-2 no-underline hover:text-ink">
-        Open the full glossary
-        <span aria-hidden="true">&rarr;</span>
-      </a>
+    <div class="mt-16">
+      <GlossarySection />
     </div>
   </section>
 </BaseLayout>

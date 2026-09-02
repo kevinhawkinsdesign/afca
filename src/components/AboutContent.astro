@@ -1,26 +1,27 @@
 ---
-import PageHero from "./PageHero.astro";
+import FullBleedHero from "./FullBleedHero.astro";
+import FullBleedBreak from "./FullBleedBreak.astro";
 import { withBase } from "../lib/url";
 ---
 
-<section class="mx-auto max-w-content px-6 py-10 md:py-16">
-  <PageHero title="About African Charging Alliance" image="/hero/about.jpg" imageAlt="Kigali skyline at dusk">
-    <div class="space-y-4 text-text">
-      <p>
-        African Charging Alliance is an independent, non-profit trade association and ecosystem
-        platform committed to accelerating the deployment of reliable, scalable, and interoperable
-        electric vehicle charging infrastructure across Africa.
-      </p>
-      <p>
-        Operating as an apolitical source of truth, AfCA bridges the gap between public policy and
-        ground-level technical implementation and operation. We bring together Charge Point
-        Operators, Electromobility Service Providers, electric utilities, fleet operators, hardware
-        OEMs, and policymakers to build a unified, sustainable charging market.
-      </p>
-    </div>
-  </PageHero>
+<FullBleedHero title="About African Charging Alliance" image="/hero/about.jpg" imageAlt="Kigali skyline at dusk">
+  <div class="space-y-4 text-text">
+    <p>
+      African Charging Alliance is an independent, non-profit trade association and ecosystem
+      platform committed to accelerating the deployment of reliable, scalable, and interoperable
+      electric vehicle charging infrastructure across Africa.
+    </p>
+    <p>
+      Operating as an apolitical source of truth, AfCA bridges the gap between public policy and
+      ground-level technical implementation and operation. We bring together Charge Point
+      Operators, Electromobility Service Providers, electric utilities, fleet operators, hardware
+      OEMs, and policymakers to build a unified, sustainable charging market.
+    </p>
+  </div>
+</FullBleedHero>
 
-  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">Mission</h2>
+<section class="mx-auto max-w-content px-6 py-10 md:py-16">
+  <h2 class="mt-0 font-sans text-2xl font-semibold text-ink">Mission</h2>
   <p class="mt-4 max-w-prose text-lg text-text">
     To advance a comprehensive, economically viable, and technically harmonised EV charging
     ecosystem across Africa through collaborative leadership, open standards, and evidence-based
@@ -60,7 +61,9 @@ import { withBase } from "../lib/url";
     merely asserted.
   </p>
 
-  <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">Founders</h2>
+  <FullBleedBreak image="/hero/summit.jpg" imageAlt="Nairobi skyline at dusk" caption="Nairobi — one of the corridor cities AfCA's guidance is built around" />
+
+  <h2 class="font-sans text-2xl font-semibold text-ink">Founders</h2>
   <div class="mt-6 grid gap-6 md:grid-cols-2">
     <div class="overflow-hidden rounded border border-rule bg-paper">
       <img

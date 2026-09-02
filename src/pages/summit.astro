@@ -1,10 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import SummitContent from "../components/SummitContent.astro";
+import { withBase } from "../lib/url";
 
-const locale = "en" as const;
+// The Summit is now a section on /community (site consolidated to 5
+// primary pages). Redirect anyone with the old URL bookmarked.
+return Astro.redirect(withBase("/community#summit"), 308);
 ---
-
-<BaseLayout locale={locale} title="Summit" description="The AfCA Annual Summit.">
-  <SummitContent />
-</BaseLayout>

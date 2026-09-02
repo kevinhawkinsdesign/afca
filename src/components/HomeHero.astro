@@ -2,36 +2,30 @@
 // English-authored positioning copy (BRIEF.md section 7). This is the
 // canonical content; locale routes render it with a fallback notice
 // until a human translation exists as a sibling content file.
-import PhotoHero from "./PhotoHero.astro";
+import FullBleedHero from "./FullBleedHero.astro";
 ---
 
-<section class="mx-auto max-w-content px-6 py-10 md:py-16">
-  <div class="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-    <div class="order-2 lg:order-1">
-      <p class="mb-3 eyebrow">
-        Registration pending in Rwanda
-      </p>
-      <h1 class="max-w-3xl font-sans text-4xl font-semibold leading-[0.98] text-ink sm:text-5xl md:text-6xl lg:text-7xl">
-        African <em>Charging</em> Alliance
-      </h1>
-      <p class="mt-6 max-w-prose text-lg text-text">
-        African Charging Alliance is an independent, non-profit trade association and ecosystem
-        platform committed to accelerating the deployment of reliable, scalable, and interoperable
-        electric vehicle charging infrastructure across Africa.
-      </p>
-      <p class="mt-4 max-w-prose text-text">
-        Operating as an apolitical source of truth, AfCA bridges the gap between public policy and
-        ground-level technical implementation and operation. We bring together Charge Point
-        Operators, Electromobility Service Providers, electric utilities, fleet operators, hardware
-        OEMs, and policymakers to build a unified, sustainable charging market.
-      </p>
-    </div>
-    <div class="order-1 mx-auto w-full max-w-sm sm:max-w-md lg:order-2 lg:mx-0 lg:max-w-none">
-      <PhotoHero src="/hero/home.jpg" alt="Kigali Convention Centre lit at dusk, an aerial view of Rwanda's capital" />
-    </div>
-  </div>
+<FullBleedHero
+  title="African Charging Alliance"
+  image="/hero/home.jpg"
+  imageAlt="Kigali Convention Centre lit at dusk, an aerial view of Rwanda's capital"
+  eyebrow="Registration pending in Rwanda"
+>
+  <p class="text-lg text-text">
+    African Charging Alliance is an independent, non-profit trade association and ecosystem
+    platform committed to accelerating the deployment of reliable, scalable, and interoperable
+    electric vehicle charging infrastructure across Africa.
+  </p>
+  <p class="mt-4 text-text">
+    Operating as an apolitical source of truth, AfCA bridges the gap between public policy and
+    ground-level technical implementation and operation. We bring together Charge Point
+    Operators, Electromobility Service Providers, electric utilities, fleet operators, hardware
+    OEMs, and policymakers to build a unified, sustainable charging market.
+  </p>
+</FullBleedHero>
 
-  <a href="#initiatives" class="mt-14 hidden items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-text-muted no-underline hover:text-accent md:flex md:w-fit">
+<div class="mx-auto max-w-content px-6">
+  <a href="#initiatives" class="mb-4 hidden items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-text-muted no-underline hover:text-accent md:flex md:w-fit">
     Scroll
     <span class="scroll-cue-arrow flex h-6 w-6 items-center justify-center rounded-full border border-rule">
       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
@@ -39,7 +33,7 @@ import PhotoHero from "./PhotoHero.astro";
       </svg>
     </span>
   </a>
-</section>
+</div>
 
 <style>
   @media (prefers-reduced-motion: no-preference) {

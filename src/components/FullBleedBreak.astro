@@ -1,0 +1,26 @@
+---
+// A full-width photo used mid-page to break up long text sections,
+// echoing the section-divider photography in annual-report layouts.
+import { withBase } from "../lib/url";
+
+interface Props {
+  image: string;
+  imageAlt: string;
+  caption?: string;
+}
+const { image, imageAlt, caption } = Astro.props;
+---
+
+<figure class="reveal my-14 ml-[50%] w-screen -translate-x-1/2 md:my-20">
+  <img
+    src={withBase(image)}
+    alt={imageAlt}
+    class="h-[32vh] min-h-[200px] w-full object-cover sm:h-[42vh] md:h-[48vh]"
+    loading="lazy"
+  />
+  {caption && (
+    <figcaption class="mx-auto max-w-content px-6 pt-2 font-mono text-xs uppercase tracking-[0.1em] text-text-muted">
+      {caption}
+    </figcaption>
+  )}
+</figure>

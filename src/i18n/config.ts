@@ -30,7 +30,6 @@ export const ui = {
       about: "About",
       intelligence: "Intelligence",
       standards: "Standards",
-      summit: "Summit",
       community: "Community",
     },
     footer: {
@@ -51,7 +50,6 @@ export const ui = {
       about: "À propos",
       intelligence: "Intelligence",
       standards: "Normes",
-      summit: "Sommet",
       community: "Communauté",
     },
     footer: {
@@ -72,7 +70,6 @@ export const ui = {
       about: "Abo turi bo",
       intelligence: "Ubushakashatsi",
       standards: "Amabwiriza",
-      summit: "Inama",
       community: "Umuryango",
     },
     footer: {
@@ -93,7 +90,6 @@ export const ui = {
       about: "Om oss",
       intelligence: "Analys",
       standards: "Standarder",
-      summit: "Toppmöte",
       community: "Gemenskap",
     },
     footer: {
