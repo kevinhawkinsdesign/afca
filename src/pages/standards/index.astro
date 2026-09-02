@@ -39,15 +39,16 @@ const guides: Array<[string, string, string]> = [
       ))}
     </div>
 
-    <h2 class="mt-16 font-sans text-xl font-semibold text-ink">Glossary</h2>
-    <dl class="mt-4 max-w-prose divide-y divide-rule font-sans text-sm">
-      <div class="py-3"><dt class="font-semibold text-ink">CPO</dt><dd class="text-text-muted">Charge Point Operator — owns and operates physical charging stations.</dd></div>
-      <div class="py-3"><dt class="font-semibold text-ink">EMSP</dt><dd class="text-text-muted">E-Mobility Service Provider — sells charging access to drivers, often across multiple CPO networks.</dd></div>
-      <div class="py-3"><dt class="font-semibold text-ink">DSO</dt><dd class="text-text-muted">Distribution System Operator — the utility responsible for the local electricity grid a site connects to.</dd></div>
-      <div class="py-3"><dt class="font-semibold text-ink">CPMS</dt><dd class="text-text-muted">Charge Point Management System — the backend that monitors, controls, and bills charging stations.</dd></div>
-      <div class="py-3"><dt class="font-semibold text-ink">OCPI</dt><dd class="text-text-muted">Open Charge Point Interface — protocol for roaming between CPOs and EMSPs. Owned by the EVRoaming Foundation.</dd></div>
-      <div class="py-3"><dt class="font-semibold text-ink">OCPP</dt><dd class="text-text-muted">Open Charge Point Protocol — protocol between a charger and its CPMS. Owned by the Open Charge Alliance.</dd></div>
-      <div class="py-3"><dt class="font-semibold text-ink">OICP</dt><dd class="text-text-muted">Open InterCharge Protocol — an alternative roaming protocol, notably used by Hubject.</dd></div>
-    </dl>
+    <div class="mt-16 rounded border border-rule bg-paper-warm p-6">
+      <h2 class="font-sans text-xl font-semibold text-ink">Glossary</h2>
+      <p class="mt-2 max-w-prose text-sm text-text-muted">
+        CPO, EMSP, CPMS, OCPI, OCPP, GB/T, and the rest of the acronyms this guidance leans on —
+        searchable, with direct links to each term.
+      </p>
+      <a href={withBase("/glossary")} class="eyebrow mt-4 inline-flex items-center gap-2 no-underline hover:text-ink">
+        Open the full glossary
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
   </section>
 </BaseLayout>
