@@ -39,7 +39,10 @@
     background-image:
       radial-gradient(ellipse 900px 600px at 90% -5%, rgba(224, 146, 74, 0.14), transparent 60%),
       radial-gradient(ellipse 800px 700px at -10% 40%, rgba(22, 40, 31, 0.9), transparent 55%),
-      radial-gradient(ellipse 1000px 800px at 50% 120%, rgba(224, 146, 74, 0.06), transparent 60%);
+      radial-gradient(ellipse 1000px 800px at 50% 120%, rgba(224, 146, 74, 0.06), transparent 60%),
+      linear-gradient(rgba(224, 146, 74, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(224, 146, 74, 0.05) 1px, transparent 1px);
+    background-size: auto, auto, auto, 64px 64px, 64px 64px;
     background-attachment: fixed;
   }
 
@@ -90,9 +93,33 @@
   }
 
   /* Uppercase monospace "eyebrow" label — used above headlines and as
-     section kickers, echoing a standards-document header. */
+     section kickers, echoing a standards-document header. A small
+     pulsing status dot ahead of the text reads as a live system
+     indicator — part of the site's HUD/technical-instrument styling. */
   .eyebrow {
     @apply font-mono text-xs uppercase tracking-[0.16em] text-accent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 6px 1px currentColor;
+    flex-shrink: 0;
+    animation: eyebrow-pulse 2.4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .eyebrow::before {
+      animation: none;
+    }
+  }
+  @keyframes eyebrow-pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
   }
 
   .locale-notice {

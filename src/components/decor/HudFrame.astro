@@ -1,0 +1,49 @@
+---
+// Four corner brackets, like a targeting/viewfinder overlay on a HUD —
+// a cheap, purely-CSS way to read as "technical instrument" rather than
+// a plain photo crop. Purely decorative.
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<div class:list={["hud-frame pointer-events-none absolute inset-4 sm:inset-6", className]} aria-hidden="true">
+  <span class="hud-frame__corner hud-frame__corner--tl"></span>
+  <span class="hud-frame__corner hud-frame__corner--tr"></span>
+  <span class="hud-frame__corner hud-frame__corner--bl"></span>
+  <span class="hud-frame__corner hud-frame__corner--br"></span>
+</div>
+
+<style>
+  .hud-frame__corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid rgba(224, 146, 74, 0.55);
+  }
+  .hud-frame__corner--tl {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+  .hud-frame__corner--tr {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+  .hud-frame__corner--bl {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+  }
+  .hud-frame__corner--br {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+</style>

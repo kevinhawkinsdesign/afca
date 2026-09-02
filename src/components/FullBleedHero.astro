@@ -7,6 +7,7 @@ import { withBase } from "../lib/url";
 import DotGridCanvas from "./DotGridCanvas.astro";
 import SketchBolt from "./decor/SketchBolt.astro";
 import SketchSpark from "./decor/SketchSpark.astro";
+import HudFrame from "./decor/HudFrame.astro";
 
 interface Props {
   title: string;
@@ -22,6 +23,8 @@ const { title, image, imageAlt, eyebrow } = Astro.props;
     <img src={withBase(image)} alt={imageAlt} class="h-full w-full object-cover" loading="eager" />
     <div class="absolute inset-0 bg-gradient-to-t from-paper via-paper/10 to-transparent"></div>
     <DotGridCanvas class="opacity-70" />
+    <HudFrame />
+    <div class="hero-scanline pointer-events-none absolute inset-x-0 h-24 opacity-0 mix-blend-screen" aria-hidden="true"></div>
   </div>
   <div class="mx-auto max-w-content px-6">
     <div class="relative -mt-16 pb-8 sm:-mt-24 md:-mt-28">
@@ -35,3 +38,19 @@ const { title, image, imageAlt, eyebrow } = Astro.props;
     </div>
   </div>
 </section>
+
+<style>
+  .hero-scanline {
+    background: linear-gradient(180deg, transparent, rgba(224, 146, 74, 0.12), transparent);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-scanline {
+      opacity: 1;
+      animation: hero-scanline-sweep 7s linear infinite;
+    }
+  }
+  @keyframes hero-scanline-sweep {
+    0% { top: -10%; }
+    100% { top: 110%; }
+  }
+</style>
