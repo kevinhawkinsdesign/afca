@@ -19,7 +19,7 @@ interface Props {
 const { image, imageAlt, caption, fromWarm = false, toWarm = false } = Astro.props;
 ---
 
-<figure class="reveal relative my-14 ml-[50%] w-screen -translate-x-1/2 sm:mx-auto sm:w-full sm:max-w-content sm:translate-x-0 sm:px-6 md:my-20">
+<figure class="reveal relative my-14 ml-[calc(50%-50vw)] w-screen sm:mx-auto sm:ml-auto sm:w-full sm:max-w-content sm:px-6 md:my-20">
   <div class="relative overflow-hidden sm:rounded-lg">
     <img
       src={withBase(image)}
