@@ -1,0 +1,47 @@
+---
+import { withBase } from "../lib/url";
+
+const founders: Array<[string, string, string, string]> = [
+  [
+    "/founders/kevin-hawkins.jpg",
+    "Kevin Hawkins",
+    "Product design & engineering specialist",
+    "Led product design and research at Monta, the charging platform behind Europe's largest CPO and eMSP network.",
+  ],
+  [
+    "/founders/puya-neda.jpg",
+    "Puya Neda",
+    "EV roaming & OCPI specialist",
+    "Built roaming products from zero at Monta and has contributed directly to the OCPI protocol.",
+  ],
+];
+---
+
+<section class="border-t border-rule bg-paper-warm">
+  <div class="reveal mx-auto max-w-content px-6 py-10 md:py-16">
+    <p class="eyebrow">Who's behind AfCA</p>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      {founders.map(([photo, name, role, blurb]) => (
+        <div class="flex items-center gap-4 rounded border border-rule bg-paper p-5">
+          <img
+            src={withBase(photo)}
+            alt={name}
+            width="200"
+            height="200"
+            class="h-20 w-20 flex-shrink-0 rounded-full object-cover"
+            loading="lazy"
+          />
+          <div>
+            <p class="font-sans font-semibold text-ink">{name}</p>
+            <p class="text-sm font-medium text-accent">{role}</p>
+            <p class="mt-1 text-sm text-text-muted">{blurb}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <a href={withBase("/about")} class="eyebrow mt-6 inline-flex items-center gap-2 no-underline hover:text-ink">
+      Read more about our founders
+      <span aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
