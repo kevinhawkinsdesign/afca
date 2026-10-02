@@ -1,5 +1,5 @@
 ---
-import { ui, localizePath, type Locale } from "../i18n/config";
+import { ui, type Locale } from "../i18n/config";
 import { homeContent } from "../i18n/homeContent";
 import { withBase } from "../lib/url";
 
@@ -15,7 +15,7 @@ const year = new Date().getFullYear();
 
 <footer class="bg-paper-warm">
   <div class="mx-auto max-w-content px-6 py-12">
-    <div class="grid gap-10 font-sans text-sm md:grid-cols-3">
+    <div class="grid gap-10 font-sans text-sm md:grid-cols-2">
       <div>
         <div class="flex items-center gap-2.5">
           <img src={withBase("/logo.png")} alt="" width="24" height="24" class="h-6 w-6" />
@@ -23,13 +23,6 @@ const year = new Date().getFullYear();
         </div>
         <p class="mt-2 max-w-prose text-text-muted">{t.footer.tagline}</p>
       </div>
-      <nav aria-label="Footer">
-        <ul class="space-y-1.5">
-          <li><a href={localizePath("/about", locale)} class="text-text hover:text-ink">{t.nav.about}</a></li>
-          <li><a href={localizePath("/intelligence", locale)} class="text-text hover:text-ink">{t.nav.intelligence}</a></li>
-          <li><a href={localizePath("/standards", locale)} class="text-text hover:text-ink">{t.nav.standards}</a></li>
-        </ul>
-      </nav>
       <div>
         <p class="text-xs text-text-muted">&copy; {year} African Charging Alliance.</p>
       </div>

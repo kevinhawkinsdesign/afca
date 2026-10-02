@@ -1,5 +1,8 @@
 ---
-import { localizePath, prefixedLocales } from "../../i18n/config";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CommunityContent from "../../components/CommunityContent.astro";
+import { prefixedLocales, localizePath } from "../../i18n/config";
+import { isHidden } from "../../lib/hiddenSections";
 
 export function getStaticPaths() {
   return prefixedLocales.map((locale) => ({ params: { locale } }));
@@ -7,6 +10,14 @@ export function getStaticPaths() {
 
 const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
 
-// The Community page is hidden for now (see src/pages/community.astro).
-return Astro.redirect(localizePath("/", locale), 307);
+if (isHidden("/community")) return Astro.redirect(localizePath("/", locale), 307);
 ---
+
+<BaseLayout
+  image="/hero/community.jpg"
+  locale={locale}
+  title="Community"
+  description="Membership, working groups, the AfCA participant directory, and the AfCA Annual Summit."
+>
+  <CommunityContent locale={locale} />
+</BaseLayout>

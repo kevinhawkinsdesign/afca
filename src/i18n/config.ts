@@ -32,6 +32,7 @@ export const ui = {
       intelligence: "Intelligence",
       standards: "Standards",
       community: "Community",
+      glossary: "Glossary",
     },
     footer: {
       tagline:
@@ -51,6 +52,7 @@ export const ui = {
       intelligence: "Intelligence",
       standards: "Normes",
       community: "Communauté",
+      glossary: "Glossaire",
     },
     footer: {
       tagline:
@@ -70,6 +72,7 @@ export const ui = {
       intelligence: "Ubushakashatsi",
       standards: "Amabwiriza",
       community: "Umuryango",
+      glossary: "Inkoranya-magambo",
     },
     footer: {
       tagline:
@@ -89,6 +92,7 @@ export const ui = {
       intelligence: "Analys",
       standards: "Standarder",
       community: "Gemenskap",
+      glossary: "Ordlista",
     },
     footer: {
       tagline:

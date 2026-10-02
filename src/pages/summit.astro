@@ -1,7 +1,10 @@
 ---
 import { withBase } from "../lib/url";
+import { isHidden } from "../lib/hiddenSections";
 
-// The Summit section lived on /community, which is hidden for now.
-// Send old links to the home page.
-return Astro.redirect(withBase("/"), 307);
+// The Summit is now a section on /community (site consolidated to 5
+// primary pages). Redirect anyone with the old URL bookmarked, or send
+// them home while /community is hidden.
+if (isHidden("/community")) return Astro.redirect(withBase("/"), 307);
+return Astro.redirect(withBase("/community#summit"), 308);
 ---
