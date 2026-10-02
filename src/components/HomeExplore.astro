@@ -2,7 +2,7 @@
 import DotGridCanvas from "./DotGridCanvas.astro";
 import ElectricDivider from "./decor/ElectricDivider.astro";
 import { withBase } from "../lib/url";
-import { isHidden } from "../lib/hiddenSections";
+import { isHidden, hideHomeExplore } from "../lib/hiddenSections";
 import { homeContent } from "../i18n/homeContent";
 import { localizePath, type Locale } from "../i18n/config";
 
@@ -21,7 +21,7 @@ const allSections: Array<[string, string, string, boolean]> = [
 const sections = allSections.filter(([href]) => !isHidden(href));
 ---
 
-{sections.length > 0 && (
+{!hideHomeExplore && sections.length > 0 && (
 <>
 <ElectricDivider />
 <section>
