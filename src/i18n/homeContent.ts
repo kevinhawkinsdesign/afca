@@ -15,12 +15,6 @@ export interface HomeContent {
   missionHeading: string;
   missionBody: string;
   missionCta: string;
-  foundersEyebrow: string;
-  founder1Role: string;
-  founder1Blurb: string;
-  founder2Role: string;
-  founder2Blurb: string;
-  foundersCta: string;
   statsEyebrow: string;
   stat1Label: string;
   stat1Source: string;
@@ -62,13 +56,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     missionEyebrow: "Our mission",
     missionHeading: "A comprehensive, economically viable, and technically harmonised EV charging ecosystem across Africa.",
     missionBody: "Cross-border and cross-city corridors — Mombasa to Nairobi, Kigali to Nairobi — don't follow operator boundaries. A driver on one of these routes shouldn't need three apps and three accounts to complete a single journey. AfCA is the apolitical, vendor-neutral body bringing Charge Point Operators, eMobility Service Providers, utilities, fleet operators, hardware OEMs, and policymakers together to build that interoperability through open standards and collaborative leadership — not by favouring any one company or technology.",
-    missionCta: "Read our full story and founders",
-    foundersEyebrow: "Who's behind AfCA",
-    founder1Role: "Product design & engineering specialist",
-    founder1Blurb: "Led product design and research at Monta, the charging platform behind Europe's largest CPO and eMSP network.",
-    founder2Role: "EV roaming & OCPI specialist",
-    founder2Blurb: "Built roaming products from zero at Monta and contributed directly to the OCPI protocol; now advises CPOs and national agencies on OCPI integrations and CDR reconciliation.",
-    foundersCta: "Read more about our founders",
+    missionCta: "Read our full story",
     statsEyebrow: "The opportunity",
     stat1Label: "of African countries have 10+ public EV charging stations today",
     stat1Source: "Source: iAfrikan Insights",
@@ -108,13 +96,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     missionEyebrow: "Notre mission",
     missionHeading: "Un écosystème de recharge de véhicules électriques complet, économiquement viable et techniquement harmonisé à travers l'Afrique.",
     missionBody: "Les corridors transfrontaliers et interurbains — Mombasa-Nairobi, Kigali-Nairobi — ne suivent pas les frontières des opérateurs. Un conducteur sur l'un de ces trajets ne devrait pas avoir besoin de trois applications et trois comptes pour un seul voyage. AfCA est l'organisme apolitique et neutre vis-à-vis des fournisseurs qui réunit Charge Point Operators, eMobility Service Providers, distributeurs d'électricité, opérateurs de flottes, fabricants de matériel et décideurs publics pour construire cette interopérabilité par des standards ouverts et un leadership collaboratif — sans favoriser une entreprise ou une technologie en particulier.",
-    missionCta: "Lire notre histoire et découvrir les fondateurs",
-    foundersEyebrow: "Qui est derrière AfCA",
-    founder1Role: "Spécialiste en design produit et ingénierie",
-    founder1Blurb: "A dirigé le design produit et la recherche chez Monta, la plateforme de recharge à l'origine du plus grand réseau de CPO et d'eMSP en Europe.",
-    founder2Role: "Spécialiste en itinérance EV et OCPI",
-    founder2Blurb: "A construit des produits d'itinérance depuis zéro chez Monta et a contribué directement au protocole OCPI ; conseille désormais des CPO et agences nationales sur les intégrations OCPI et le rapprochement des CDR.",
-    foundersCta: "En savoir plus sur nos fondateurs",
+    missionCta: "Lire toute notre histoire",
     statsEyebrow: "L'opportunité",
     stat1Label: "des pays africains disposent aujourd'hui d'au moins 10 stations de recharge publiques",
     stat1Source: "Source : iAfrikan Insights",
@@ -154,13 +136,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     missionEyebrow: "Intego yacu",
     missionHeading: "Urusobe rwuzuye, rufite agaciro mu bukungu, kandi ruhuriweho neza mu buryo bwa tekiniki rwo gucyura amamodoka akoresha amashanyarazi muri Afurika.",
     missionBody: "Imihanda ihuza ibihugu n'imijyi — Mombasa na Nairobi, Kigali na Nairobi — ntibikurikiza imbibi z'abakora iyi mirimo. Umushoferi ukoresha imwe muri iyi mihanda ntagomba gukoresha porogaramu eshatu na konti eshatu kugira ngo agere ku ntego imwe. AfCA ni urwego rudashyigikiye politiki cyangwa ikigo runaka, ruhuza Charge Point Operators, eMobility Service Providers, ibigo by'amashanyarazi, abakoresha imodoka nyinshi, abakora ibikoresho, n'abafata ibyemezo kugira ngo dubake iyo mikoranire binyuze mu mabwiriza mbonezamubano n'ubuyobozi bw'ubufatanye — tutarobanuye ikigo cyangwa ikoranabuhanga runaka.",
-    missionCta: "Soma inkuru yacu yose n'abashinze",
-    foundersEyebrow: "Abari inyuma ya AfCA",
-    founder1Role: "Impuguke mu igenamigambi n'ubuhanga bw'ibicuruzwa",
-    founder1Blurb: "Yayoboye igenamigambi ry'ibicuruzwa n'ubushakashatsi kuri Monta, urubuga rw'icyuzuzo rwatumye Uburayi bugira urusobe runini rwa CPO na eMSP.",
-    founder2Role: "Impuguke mu mikoranire y'icyuzuzo cy'amamodoka n'ikoranabuhanga OCPI",
-    founder2Blurb: "Yubatse ibicuruzwa by'imikoranire uhereye ku busa kuri Monta kandi yagize uruhare mu iterambere ry'ikoranabuhanga OCPI; ubu agiriye inama CPO n'ibigo bya Leta ku bijyanye n'imikoranire ya OCPI n'iyunganira rya CDR.",
-    foundersCta: "Menya byinshi ku bashinze bacu",
+    missionCta: "Soma inkuru yacu yose",
     statsEyebrow: "Amahirwe ariho",
     stat1Label: "by'ibihugu bya Afurika bifite ubu sitasiyo z'icyuzuzo z'abaturage zirenga 10",
     stat1Source: "Isoko: iAfrikan Insights",
@@ -200,13 +176,7 @@ export const homeContent: Record<Locale, HomeContent> = {
     missionEyebrow: "Vårt uppdrag",
     missionHeading: "Ett heltäckande, ekonomiskt hållbart och tekniskt harmoniserat ekosystem för elbilsladdning i hela Afrika.",
     missionBody: "Gränsöverskridande och interurbana korridorer — Mombasa till Nairobi, Kigali till Nairobi — följer inte operatörsgränser. En förare på en av dessa sträckor ska inte behöva tre appar och tre konton för att slutföra en enda resa. AfCA är det opolitiska, leverantörsneutrala organ som samlar Charge Point Operators, eMobility Service Providers, elbolag, flottoperatörer, hårdvarutillverkare och beslutsfattare för att bygga den interoperabiliteten genom öppna standarder och gemensamt ledarskap — utan att gynna ett enskilt företag eller en enskild teknik.",
-    missionCta: "Läs hela vår historia och möt grundarna",
-    foundersEyebrow: "Vilka står bakom AfCA",
-    founder1Role: "Specialist inom produktdesign och teknik",
-    founder1Blurb: "Ledde produktdesign och research på Monta, laddningsplattformen bakom Europas största CPO- och eMSP-nätverk.",
-    founder2Role: "Specialist inom EV-roaming och OCPI",
-    founder2Blurb: "Byggde roamingprodukter från grunden på Monta och bidrog direkt till OCPI-protokollet; rådgör numera CPO:er och nationella myndigheter om OCPI-integrationer och CDR-avstämning.",
-    foundersCta: "Läs mer om våra grundare",
+    missionCta: "Läs hela vår historia",
     statsEyebrow: "Möjligheten",
     stat1Label: "av Afrikas länder har idag 10 eller fler publika laddstationer",
     stat1Source: "Källa: iAfrikan Insights",

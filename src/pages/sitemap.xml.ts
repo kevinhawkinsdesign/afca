@@ -8,10 +8,8 @@ import { standardsGuides } from "../i18n/standardsGuides";
 const localizedPaths = [
   "/",
   "/about",
-  "/community",
   "/intelligence",
   "/standards",
-  "/summit",
   ...Object.keys(standardsGuides).map((slug) => `/standards/${slug}`),
 ];
 
