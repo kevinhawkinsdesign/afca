@@ -1,7 +1,6 @@
 ---
 import FullBleedHero from "./FullBleedHero.astro";
 import FullBleedBreak from "./FullBleedBreak.astro";
-import { withBase } from "../lib/url";
 import { homeContent } from "../i18n/homeContent";
 import { aboutContent } from "../i18n/aboutContent";
 import type { Locale } from "../i18n/config";
@@ -49,40 +48,6 @@ const t = aboutContent[locale];
   <p class="mt-8 max-w-prose text-text">{t.independenceText}</p>
 
   <FullBleedBreak image="/hero/summit.jpg" imageAlt="Nairobi skyline at dusk" caption={t.breakCaption} />
-
-  <h2 class="font-sans text-2xl font-semibold text-ink">{t.foundersHeading}</h2>
-  <div class="mt-6 grid gap-6 md:grid-cols-2">
-    <div class="overflow-hidden rounded-lg border border-rule bg-paper">
-      <img
-        src={withBase("/founders/kevin-hawkins.jpg")}
-        alt="Kevin Hawkins, co-founder of African Charging Alliance"
-        width="1276"
-        height="1276"
-        class="aspect-square w-full object-cover"
-        loading="eager"
-      />
-      <div class="p-5">
-        <h3 class="font-sans font-semibold text-ink">Kevin Hawkins</h3>
-        <p class="mt-1 text-sm font-medium text-accent">{h.founder1Role}</p>
-        <p class="mt-2 text-sm text-text-muted">{t.founder1Bio}</p>
-      </div>
-    </div>
-    <div class="overflow-hidden rounded-lg border border-rule bg-paper">
-      <img
-        src={withBase("/founders/puya-neda.jpg")}
-        alt="Puya Neda, co-founder of African Charging Alliance"
-        width="717"
-        height="717"
-        class="aspect-square w-full object-cover"
-        loading="eager"
-      />
-      <div class="p-5">
-        <h3 class="font-sans font-semibold text-ink">Puya Neda</h3>
-        <p class="mt-1 text-sm font-medium text-accent">{h.founder2Role}</p>
-        <p class="mt-2 text-sm text-text-muted">{t.founder2Bio}</p>
-      </div>
-    </div>
-  </div>
 
   <h2 class="mt-14 font-sans text-2xl font-semibold text-ink">{t.governanceHeading}</h2>
   <p class="mt-4 max-w-prose text-text-muted">

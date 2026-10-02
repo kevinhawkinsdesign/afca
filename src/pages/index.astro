@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HomeHero from "../components/HomeHero.astro";
 import HomeMission from "../components/HomeMission.astro";
-import HomeFounders from "../components/HomeFounders.astro";
 import HomeStats from "../components/HomeStats.astro";
 import HomeInitiatives from "../components/HomeInitiatives.astro";
 import HomeExplore from "../components/HomeExplore.astro";
@@ -34,7 +33,6 @@ function cite(text: string, href?: string): number {
 >
   <HomeHero locale={locale} />
   <HomeMission locale={locale} />
-  <HomeFounders locale={locale} />
   <HomeStats locale={locale} cite={cite} />
   <HomeInitiatives locale={locale} cite={cite} />
   <HomeExplore locale={locale} />
