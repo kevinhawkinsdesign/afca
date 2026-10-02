@@ -8,3 +8,6 @@ export function isHidden(path: string): boolean {
   const bare = path.split("#")[0];
   return hiddenSections.some((section) => bare === section || bare.startsWith(`${section}/`));
 }
+
+// Hides the home page "Explore AfCA" cards. Set to false to show them again.
+export const hideHomeExplore = true;
