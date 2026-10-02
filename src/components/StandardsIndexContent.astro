@@ -1,6 +1,5 @@
 ---
 import FullBleedHero from "./FullBleedHero.astro";
-import GlossarySection from "./GlossarySection.astro";
 import { withBase } from "../lib/url";
 import { localizePath, type Locale } from "../i18n/config";
 import { standardsIndex } from "../i18n/standardsIndex";
@@ -32,9 +31,5 @@ function guideHref(slug: string): string {
         <p class="mt-2 text-sm text-text-muted">{summary}</p>
       </a>
     ))}
-  </div>
-
-  <div class="mt-16">
-    <GlossarySection locale={locale} />
   </div>
 </section>

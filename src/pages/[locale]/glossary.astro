@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import GlossarySection from "../../components/GlossarySection.astro";
+import { prefixedLocales } from "../../i18n/config";
+import { glossaryUi } from "../../i18n/glossaryContent";
+
+export function getStaticPaths() {
+  return prefixedLocales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
+---
+
+<BaseLayout
+  locale={locale}
+  title={glossaryUi[locale].heading}
+  description="A searchable, vendor-neutral glossary of EV charging and interoperability terminology."
+>
+  <section class="mx-auto max-w-content px-6 py-10 md:py-16">
+    <GlossarySection locale={locale} />
+  </section>
+</BaseLayout>

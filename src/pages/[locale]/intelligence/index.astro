@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import IntelligenceIndexContent from "../../../components/IntelligenceIndexContent.astro";
-import { prefixedLocales } from "../../../i18n/config";
+import { prefixedLocales, localizePath } from "../../../i18n/config";
+import { isHidden } from "../../../lib/hiddenSections";
 
 export function getStaticPaths() {
   return prefixedLocales.map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params as { locale: (typeof prefixedLocales)[number] };
+
+if (isHidden("/intelligence")) return Astro.redirect(localizePath("/", locale), 307);
 ---
 
 <BaseLayout

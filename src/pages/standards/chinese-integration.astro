@@ -1,5 +1,9 @@
 ---
 import GuideLayout from "../../layouts/GuideLayout.astro";
+import { isHidden } from "../../lib/hiddenSections";
+import { withBase } from "../../lib/url";
+
+if (isHidden("/standards")) return Astro.redirect(withBase("/"), 307);
 ---
 
 <GuideLayout

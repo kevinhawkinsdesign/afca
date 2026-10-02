@@ -1,7 +1,16 @@
 ---
-import { withBase } from "../lib/url";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GlossarySection from "../components/GlossarySection.astro";
 
-// The glossary now lives as a section on /standards (site consolidated
-// to 5 primary pages). Redirect anyone with the old URL bookmarked.
-return Astro.redirect(withBase("/standards#glossary"), 308);
+const locale = "en" as const;
 ---
+
+<BaseLayout
+  locale={locale}
+  title="Glossary"
+  description="A searchable, vendor-neutral glossary of EV charging and interoperability terminology."
+>
+  <section class="mx-auto max-w-content px-6 py-10 md:py-16">
+    <GlossarySection locale={locale} />
+  </section>
+</BaseLayout>

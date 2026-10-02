@@ -16,8 +16,6 @@ export interface AboutContent {
   principle4Body: string;
   independenceText: string;
   breakCaption: string;
-  governanceHeading: string;
-  governanceText: string;
 }
 
 export const aboutContent: Record<Locale, AboutContent> = {
@@ -37,8 +35,6 @@ export const aboutContent: Record<Locale, AboutContent> = {
     principle4Body: "We bring competitors together rather than advising one in isolation.",
     independenceText: "AfCA does not favour individual technologies or companies. Governance includes at least one independent board member, so independence is structurally visible rather than merely asserted.",
     breakCaption: "Nairobi — one of the corridor cities AfCA's guidance is built around",
-    governanceHeading: "Governance",
-    governanceText: "Full governance documentation, including board composition and bylaws, will be published once AfCA's registration in Rwanda is complete.",
   },
   fr: {
     heroTitle: "À propos d'African Charging Alliance",
@@ -56,8 +52,6 @@ export const aboutContent: Record<Locale, AboutContent> = {
     principle4Body: "Nous réunissons des concurrents plutôt que de conseiller l'un d'eux isolément.",
     independenceText: "AfCA ne favorise aucune technologie ni entreprise en particulier. La gouvernance inclut au moins un membre indépendant du conseil, afin que l'indépendance soit structurellement visible et non simplement affirmée.",
     breakCaption: "Nairobi — l'une des villes-corridors sur lesquelles s'appuient les guides d'AfCA",
-    governanceHeading: "Gouvernance",
-    governanceText: "La documentation complète de gouvernance, y compris la composition du conseil et les statuts, sera publiée une fois l'enregistrement d'AfCA au Rwanda finalisé.",
   },
   rw: {
     heroTitle: "Ibijyanye na African Charging Alliance",
@@ -75,8 +69,6 @@ export const aboutContent: Record<Locale, AboutContent> = {
     principle4Body: "Duhuza abahatana aho kugira inama kimwe muri bo wenyine.",
     independenceText: "AfCA ntirobanura ikoranabuhanga cyangwa ikigo runaka. Ubuyobozi bugizwe n'nibura umwe mu banyamuryango b'inama y'ubuyobozi wigenga, kugira ngo ubwigenge bugaragare mu miterere y'urwego aho kuba bivugwa gusa.",
     breakCaption: "Nairobi — umwe mu mijyi ihuza imihanda amabwiriza ya AfCA ashingiyeho",
-    governanceHeading: "Ubuyobozi",
-    governanceText: "Inyandiko zuzuye ku buyobozi, harimo abagize inama y'ubuyobozi n'amategeko ngenga, zizasohoka nyuma y'uko iyandikwa rya AfCA mu Rwanda rirangiye.",
   },
   sv: {
     heroTitle: "Om African Charging Alliance",
@@ -94,7 +86,5 @@ export const aboutContent: Record<Locale, AboutContent> = {
     principle4Body: "Vi för samman konkurrenter snarare än att rådge en part isolerat.",
     independenceText: "AfCA gynnar inte enskilda teknologier eller företag. Styrningen omfattar minst en oberoende styrelseledamot, så att oberoendet är strukturellt synligt snarare än enbart påstått.",
     breakCaption: "Nairobi — en av korridorstäderna som AfCA:s vägledning bygger på",
-    governanceHeading: "Styrning",
-    governanceText: "Fullständig styrningsdokumentation, inklusive styrelsesammansättning och stadgar, publiceras när AfCA:s registrering i Rwanda är klar.",
   },
 };

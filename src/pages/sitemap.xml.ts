@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import { locales, defaultLocale, localizePath } from "../i18n/config";
 import { standardsGuides } from "../i18n/standardsGuides";
+import { isHidden } from "../lib/hiddenSections";
 
 // Every localized route in the app. Kept as a flat list here (rather than
 // walking the filesystem) so it stays trivially readable — add a path when
@@ -8,13 +9,15 @@ import { standardsGuides } from "../i18n/standardsGuides";
 const localizedPaths = [
   "/",
   "/about",
+  "/community",
+  "/glossary",
   "/intelligence",
   "/standards",
   ...Object.keys(standardsGuides).map((slug) => `/standards/${slug}`),
-];
+].filter((path) => !isHidden(path));
 
 // Routes that only exist in English (no [locale] counterpart).
-const englishOnlyPaths = ["/glossary"];
+const englishOnlyPaths: string[] = [];
 
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL("https://africancharging.org");

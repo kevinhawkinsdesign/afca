@@ -3,6 +3,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 import BatteryScrollIndicator from "./BatteryScrollIndicator.astro";
 import { ui, localizePath, type Locale } from "../i18n/config";
 import { withBase } from "../lib/url";
+import { isHidden } from "../lib/hiddenSections";
 
 interface Props {
   locale: Locale;
@@ -13,11 +14,14 @@ interface Props {
 const { locale, pathname, technicalEnglishOnly = false } = Astro.props;
 const t = ui[locale];
 
-const links: Array<[string, string, boolean]> = [
+const allLinks: Array<[string, string, boolean]> = [
   [t.nav.about, "/about", false],
   [t.nav.intelligence, "/intelligence", false],
   [t.nav.standards, "/standards", false],
+  [t.nav.community, "/community", false],
+  [t.nav.glossary, "/glossary", false],
 ];
+const links = allLinks.filter(([, href]) => !isHidden(href));
 
 function navHref(href: string, englishOnly: boolean): string {
   return englishOnly ? withBase(href) : localizePath(href, locale);

@@ -1,8 +1,9 @@
 ---
 import GuideLayout from "../../../layouts/GuideLayout.astro";
-import { prefixedLocales } from "../../../i18n/config";
+import { prefixedLocales, localizePath } from "../../../i18n/config";
 import { standardsGuides } from "../../../i18n/standardsGuides";
 import { standardsIndex } from "../../../i18n/standardsIndex";
+import { isHidden } from "../../../lib/hiddenSections";
 
 export function getStaticPaths() {
   const paths: Array<{ params: { locale: string; slug: string } }> = [];
@@ -17,6 +18,8 @@ export function getStaticPaths() {
 const { locale, slug } = Astro.params as { locale: (typeof prefixedLocales)[number]; slug: string };
 const guide = standardsGuides[slug][locale];
 const standardsLabel = standardsIndex[locale].heroTitle;
+
+if (isHidden("/standards")) return Astro.redirect(localizePath("/", locale), 307);
 ---
 
 <GuideLayout title={guide.title} description={guide.description} locale={locale} standardsLabel={standardsLabel}>

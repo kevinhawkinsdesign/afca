@@ -1,8 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import IntelligenceIndexContent from "../../components/IntelligenceIndexContent.astro";
+import { isHidden } from "../../lib/hiddenSections";
+import { localizePath } from "../../i18n/config";
 
 const locale = "en" as const;
+
+if (isHidden("/intelligence")) return Astro.redirect(localizePath("/", locale), 307);
 ---
 
 <BaseLayout

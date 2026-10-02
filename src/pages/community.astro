@@ -1,8 +1,15 @@
 ---
-import { withBase } from "../lib/url";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CommunityContent from "../components/CommunityContent.astro";
+import { isHidden } from "../lib/hiddenSections";
+import { localizePath } from "../i18n/config";
 
-// The Community page is hidden for now. Send old links to the home page.
-// To restore it, render CommunityContent here again and re-add the nav,
-// footer, home "Explore" card and sitemap entries.
-return Astro.redirect(withBase("/"), 307);
+const locale = "en" as const;
+
+if (isHidden("/community")) return Astro.redirect(localizePath("/", locale), 307);
 ---
+
+<BaseLayout
+  image="/hero/community.jpg" locale={locale} title="Community" description="Membership, working groups, the AfCA participant directory, and the AfCA Annual Summit.">
+  <CommunityContent locale={locale} />
+</BaseLayout>
