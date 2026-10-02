@@ -14,7 +14,6 @@ const t = homeContent[locale];
 const sections: Array<[string, string, string, boolean]> = [
   ["/standards", t.explore1Title, t.explore1Body, false],
   ["/intelligence", t.explore2Title, t.explore2Body, false],
-  ["/community", t.explore3Title, t.explore3Body, false],
   ["/standards#glossary", t.explore4Title, t.explore4Body, false],
 ];
 ---
@@ -26,7 +25,7 @@ const sections: Array<[string, string, string, boolean]> = [
     <div class="reveal relative mx-auto mt-4 h-16 max-w-xs">
       <DotGridCanvas class="opacity-80" />
     </div>
-    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {sections.map(([href, title, summary, englishOnly], i) => (
         <a
           href={englishOnly ? withBase(href) : localizePath(href, locale)}

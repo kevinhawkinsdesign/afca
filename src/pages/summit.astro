@@ -1,7 +1,7 @@
 ---
 import { withBase } from "../lib/url";
 
-// The Summit is now a section on /community (site consolidated to 5
-// primary pages). Redirect anyone with the old URL bookmarked.
-return Astro.redirect(withBase("/community#summit"), 308);
+// The Summit section lived on /community, which is hidden for now.
+// Send old links to the home page.
+return Astro.redirect(withBase("/"), 307);
 ---
